@@ -1,0 +1,563 @@
+#category("Item Pool")
+#name("Telekinesis")
+#description("Telekinesis is the moving or manipulating of objects with the mind, without directly touching them.")
+
+!config_integer_range(item_amount, 55, 0, 110, "Item Amount", "The specified amount of Telekinesis items will be pulled randomly from all available items.")
+
+!random_pool(states, String, [
+    "Marsh.HowlDefeated",
+    "Marsh.CollapsingLog.Collapsed",
+    "Marsh.Bells.BurrowsOpen",
+    "Marsh.Bells.TreeOpen",
+    "Marsh.CollapsingLog.OpherWall",
+    "Marsh.TokkCave.EntranceWall",
+    "Marsh.TokkCave.LizardFight",
+    "Marsh.Sand.Fight",
+    "Marsh.UpperPoolsPath.Floor",
+    "Marsh.Den.ExitLoopBottomWall",
+    "Marsh.Den.ExitLoopTopWall",
+    "Marsh.StormLifted",
+    "Marsh.Den.BottomAreaWall",
+    "Marsh.Den.DoorLoopSecretWall",
+    "Marsh.DoubleJumpTree.Fight",
+    "Marsh.Den.CombatShrineCompleted",
+    "Marsh.Trial.EntranceWall",
+    "Marsh.SpiritTrial.Active",
+    "Marsh.EyestoneDoor",
+    "Marsh.Trial.CombatShrineCompleted",
+    "Hollow.HornbugDefeated",
+    "Hollow.Hornbug.VoiceDoor",
+    "Hollow.BashTreeApproach.Lever",
+    "Hollow.DepthsOpen",
+    "Hollow.WoodsSwim.Wall",
+    "Hollow.TP.BowDoor",
+    "Hollow.Drain.RockPuzzleSolved",
+    "Hollow.DrainWater.Gone",
+    "Hollow.Trial.DashTreeDoor",
+    "Hollow.SpiritTrial.Active",
+    "Glades.GromsWall",
+    "Glades.TuleySpawned",
+    "Glades.CombatShrineCompleted",
+    "Burrows.Lever",
+    "Burrows.DenShortcutWall",
+    "Wellspring.DrainClimb.Lever",
+    "Wellspring.FirstFloor.SwimSwitch",
+    "Wellspring.DrainClimb.SubmergedWheel",
+    "Wellspring.DrainClimb.CentralWheel",
+    "Wellspring.MiddleDoors",
+    "Wellspring.FirstFloor.ShortcutLever",
+    "Wellspring.SecondFloor.SpinArena",
+    "Wellspring.RotatingRoom.Entrance",
+    "Wellspring.RotatingRoom.Solved",
+    "Wellspring.FirstFloor.ThreeWheels",
+    "Wellspring.TopDoor",
+    "Wellspring.DrainClimb.LeverWheel",
+    "Wellspring.BottomDoor",
+    "Wellspring.OutsideLeft.ShardLever",
+    "Wellspring.OutsideLeft.ShardWall",
+    "Wellspring.OutsideLeftDoor.BlueMoon",
+    "Wellspring.OutsideLeft.FallingWheel",
+    "Wellspring.SpiritTrial.Active",
+    "Woods.KuKSRoom.YellowWall",
+    "Woods.BehindSkull.Corruption",
+    "Woods.BehindSkull.YellowWall",
+    "Woods.ExitTP.Corruption",
+    "Woods.SpiritTrial.Active",
+    "Woods.CombatShrineCompleted",
+    "Reach.WispClimb.Fight",
+    "Reach.BelowBaur.Floor",
+    "Reach.Baur.Sneezed",
+    "Reach.AboveBaur.Lever",
+    "Reach.TPWind.Lantern",
+    "Reach.TP.ShortcutLantern",
+    "Reach.Snowball.Rolled",
+    "Reach.IceCave.Lantern",
+    "Reach.SpiritTrial.Active",
+    "Depths.IlluminableTunnel.Solved",
+    "Depths.SpiritTrial.Active",
+    "Depths.CombatShrineCompleted",
+    "Pools.BelowWheel.LeftWall",
+    "Pools.Wheel",
+    "Pools.WellspringPath.UnderwaterWall",
+    "Pools.WellspringPath.EFWall",
+    "Pools.CentralTPApproach.BubbleFree",
+    "Pools.CentralTPApproach.PurpleWall",
+    "Pools.EntranceLever",
+    "Pools.EntranceLeverRoom.BubbleFloor",
+    "Pools.WaterArena.PurpleFloor",
+    "Pools.CentralTPSwim.ShardWall",
+    "Pools.WaterArena.WaterDashFight",
+    "Pools.CentralTPSwim.Drained",
+    "Pools.Lupo.PurpleFloor",
+    "Pools.SeedRoom.PurpleWall",
+    "Pools.SeedRoom.BubbleFree",
+    "Pools.SpiritTrial.Active",
+    "Pools.KSRoom.BubbleFree",
+    "Pools.WaterDashTree.LeftBubbleFree",
+    "Pools.WaterDashTree.RightBubbleFree",
+    "Pools.WaterDashDrain.Solved",
+    "Pools.WaterDashTree.WaterDashButton",
+    "Pools.WaterDashDrain.PurpleWall",
+    "Pools.BubbleSpam.Lever",
+    "Pools.BubbleSpam.Wall",
+    "Wastes.DoubleBridge.Lever",
+    "Wastes.SpiritTrial.Active",
+    "Wastes.MissilePuzzles.LeverDoor",
+    "Ruins.PillarCorruption",
+    "Ruins.Lever",
+    "Woods.Ridge.ElevatorFight",
+    "Willow.GrappleWheelsHeart",
+    "Willow.BoulderHeart",
+    "Willow.RedirectHeart",
+    "Willow.BurrowHeart",
+    "Willow.MinibossHeart",
+    "Willow.SpinLasersHeart",
+    "Willow.GlideHeart",
+    "Willow.SpinPortalsHeart",
+    "Willow.Entrance.TPShortcut",
+])
+
+!repeat item_amount {
+    !random_from_pool(state, states)
+
+    !if state == "Marsh.HowlDefeated" { !add_item({
+        item_message("Marsh.HowlDefeated")
+        store(Marsh.HowlDefeated, true)
+    }, 1)}
+    !if state == "Marsh.CollapsingLog.Collapsed" { !add_item({
+        item_message("Marsh.CollapsingLog.Collapsed")
+        store(Marsh.CollapsingLog.Collapsed, true)
+    }, 1)}
+    !if state == "Marsh.Bells.BurrowsOpen" { !add_item({
+        item_message("Marsh.Bells.BurrowsOpen")
+        store(Marsh.Bells.BurrowsOpen, true)
+    }, 1)}
+    !if state == "Marsh.Bells.TreeOpen" { !add_item({
+        item_message("Marsh.Bells.TreeOpen")
+        store(Marsh.Bells.TreeOpen, true)
+    }, 1)}
+    !if state == "Marsh.CollapsingLog.OpherWall" { !add_item({
+        item_message("Marsh.CollapsingLog.OpherWall")
+        store(Marsh.CollapsingLog.OpherWall, true)
+    }, 1)}
+    !if state == "Marsh.TokkCave.EntranceWall" { !add_item({
+        item_message("Marsh.TokkCave.EntranceWall")
+        store(Marsh.TokkCave.EntranceWall, true)
+    }, 1)}
+    !if state == "Marsh.TokkCave.LizardFight" { !add_item({
+        item_message("Marsh.TokkCave.LizardFight")
+        store(Marsh.TokkCave.LizardFight, true)
+    }, 1)}
+    !if state == "Marsh.Sand.Fight" { !add_item({
+        item_message("Marsh.Sand.Fight")
+        store(Marsh.Sand.Fight, true)
+    }, 1)}
+    !if state == "Marsh.UpperPoolsPath.Floor" { !add_item({
+        item_message("Marsh.UpperPoolsPath.Floor")
+        store(Marsh.UpperPoolsPath.Floor, true)
+    }, 1)}
+    !if state == "Marsh.Den.ExitLoopBottomWall" { !add_item({
+        item_message("Marsh.Den.ExitLoopBottomWall")
+        store(Marsh.Den.ExitLoopBottomWall, true)
+    }, 1)}
+    !if state == "Marsh.Den.ExitLoopTopWall" { !add_item({
+        item_message("Marsh.Den.ExitLoopTopWall")
+        store(Marsh.Den.ExitLoopTopWall, true)
+    }, 1)}
+    !if state == "Marsh.StormLifted" { !add_item({
+        item_message("Marsh.StormLifted")
+        store(Marsh.StormLifted, true)
+    }, 1)}
+    !if state == "Marsh.Den.BottomAreaWall" { !add_item({
+        item_message("Marsh.Den.BottomAreaWall")
+        store(Marsh.Den.BottomAreaWall, true)
+    }, 1)}
+    !if state == "Marsh.Den.DoorLoopSecretWall" { !add_item({
+        item_message("Marsh.Den.DoorLoopSecretWall")
+        store(Marsh.Den.DoorLoopSecretWall, true)
+    }, 1)}
+    !if state == "Marsh.DoubleJumpTree.Fight" { !add_item({
+        item_message("Marsh.DoubleJumpTree.Fight")
+        store(inkwaterMarshStateGroup.lizardMultiWaveArenaInt, 3)
+    }, 1)}
+    !if state == "Marsh.Den.CombatShrineCompleted" { !add_item({
+        item_message("Marsh.Den.CombatShrineCompleted")
+        store(Marsh.Den.CombatShrineCompleted, true)
+    }, 1)}
+    !if state == "Marsh.Trial.EntranceWall" { !add_item({
+        item_message("Marsh.Trial.EntranceWall")
+        store(Marsh.Trial.EntranceWall, true)
+    }, 1)}
+    !if state == "Marsh.SpiritTrial.Active" { !add_item({
+        item_message("Marsh.SpiritTrial.Active")
+        store(raceGroup.inkwaterMarshRace, 1)
+    }, 1)}
+    !if state == "Marsh.EyestoneDoor" { !add_item({
+        item_message("Marsh.EyestoneDoor")
+        store(Marsh.EyestoneDoor, true)
+    }, 1)}
+    !if state == "Marsh.Trial.CombatShrineCompleted" { !add_item({
+        item_message("Marsh.Trial.CombatShrineCompleted")
+        store(Marsh.Trial.CombatShrineCompleted, true)
+    }, 1)}
+    !if state == "Hollow.HornbugDefeated" { !add_item({
+        item_message("Hollow.HornbugDefeated")
+        store(Hollow.HornbugDefeated, true)
+    }, 1)}
+    !if state == "Hollow.Hornbug.VoiceDoor" { !add_item({
+        item_message("Hollow.Hornbug.VoiceDoor")
+        store(Hollow.Hornbug.VoiceDoor, true)
+    }, 1)}
+    !if state == "Hollow.BashTreeApproach.Lever" { !add_item({
+        item_message("Hollow.BashTreeApproach.Lever")
+        store(Hollow.BashTreeApproach.Lever, true)
+    }, 1)}
+    !if state == "Hollow.DepthsOpen" { !add_item({
+        item_message("Hollow.DepthsOpen")
+        store(Hollow.DepthsOpen, true)
+    }, 1)}
+    !if state == "Hollow.WoodsSwim.Wall" { !add_item({
+        item_message("Hollow.WoodsSwim.Wall")
+        store(Hollow.WoodsSwim.Wall, true)
+    }, 1)}
+    !if state == "Hollow.TP.BowDoor" { !add_item({
+        item_message("Hollow.TP.BowDoor")
+        store(Hollow.TP.BowDoor, true)
+    }, 1)}
+    !if state == "Hollow.Drain.RockPuzzleSolved" { !add_item({
+        item_message("Hollow.Drain.RockPuzzleSolved")
+        store(Hollow.Drain.RockPuzzleSolved, true)
+    }, 1)}
+    !if state == "Hollow.DrainWater.Gone" { !add_item({
+        item_message("Hollow.DrainWater.Gone")
+        store(kwolokGroupDescriptor.recedingWaterSetup, 2)
+    }, 1)}
+    !if state == "Hollow.Trial.DashTreeDoor" { !add_item({
+        item_message("Hollow.Trial.DashTreeDoor")
+        store(Hollow.Trial.DashTreeDoor, true)
+    }, 1)}
+    !if state == "Hollow.SpiritTrial.Active" { !add_item({
+        item_message("Hollow.SpiritTrial.Active")
+        store(raceGroup.kwolokDropRace, 1)
+    }, 1)}
+    !if state == "Glades.GromsWall" { !add_item({
+        item_message("Glades.GromsWall")
+        store(Glades.GromsWall, true)
+    }, 1)}
+    !if state == "Glades.TuleySpawned" { !add_item({
+        item_message("Glades.TuleySpawned")
+        store(Glades.TuleySpawned, true)
+    }, 1)}
+    !if state == "Glades.CombatShrineCompleted" { !add_item({
+        item_message("Glades.CombatShrineCompleted")
+        store(Glades.CombatShrineCompleted, true)
+    }, 1)}
+    !if state == "Burrows.Lever" { !add_item({
+        item_message("Burrows.Lever")
+        store(Burrows.Lever, true)
+    }, 1)}
+    !if state == "Burrows.DenShortcutWall" { !add_item({
+        item_message("Burrows.DenShortcutWall")
+        store(Burrows.DenShortcutWall, true)
+    }, 1)}
+    !if state == "Wellspring.DrainClimb.Lever" { !add_item({
+        item_message("Wellspring.DrainClimb.Lever")
+        store(Wellspring.DrainClimb.Lever, true)
+    }, 1)}
+    !if state == "Wellspring.FirstFloor.SwimSwitch" { !add_item({
+        item_message("Wellspring.FirstFloor.SwimSwitch")
+        store(Wellspring.FirstFloor.SwimSwitch, true)
+    }, 1)}
+    !if state == "Wellspring.DrainClimb.SubmergedWheel" { !add_item({
+        item_message("Wellspring.DrainClimb.SubmergedWheel")
+        store(Wellspring.DrainClimb.SubmergedWheel, true)
+    }, 1)}
+    !if state == "Wellspring.DrainClimb.CentralWheel" { !add_item({
+        item_message("Wellspring.DrainClimb.CentralWheel")
+        store(Wellspring.DrainClimb.CentralWheel, true)
+    }, 1)}
+    !if state == "Wellspring.MiddleDoors" { !add_item({
+        item_message("Wellspring.MiddleDoors")
+        store(Wellspring.MiddleDoors, true)
+    }, 1)}
+    !if state == "Wellspring.FirstFloor.ShortcutLever" { !add_item({
+        item_message("Wellspring.FirstFloor.ShortcutLever")
+        store(Wellspring.FirstFloor.ShortcutLever, true)
+    }, 1)}
+    !if state == "Wellspring.SecondFloor.SpinArena" { !add_item({
+        item_message("Wellspring.SecondFloor.SpinArena")
+        store(waterMillStateGroupDescriptor.rotatingEnemyArenaStates, 2)
+    }, 1)}
+    !if state == "Wellspring.RotatingRoom.Entrance" { !add_item({
+        item_message("Wellspring.RotatingRoom.Entrance")
+        store(waterMillStateGroupDescriptor.rotatingEnemyArenaStates, 5)
+    }, 1)}
+    !if state == "Wellspring.RotatingRoom.Solved" { !add_item({
+        item_message("Wellspring.RotatingRoom.Solved")
+        store(waterMillStateGroupDescriptor.rotationState, 3)
+    }, 1)}
+    !if state == "Wellspring.FirstFloor.ThreeWheels" { !add_item({
+        item_message("Wellspring.FirstFloor.ThreeWheels")
+        store(Wellspring.FirstFloor.ThreeWheels, true)
+    }, 1)}
+    !if state == "Wellspring.TopDoor" { !add_item({
+        item_message("Wellspring.TopDoor")
+        store(Wellspring.TopDoor, true)
+    }, 1)}
+    !if state == "Wellspring.DrainClimb.LeverWheel" { !add_item({
+        item_message("Wellspring.DrainClimb.LeverWheel")
+        store(Wellspring.DrainClimb.LeverWheel, true)
+    }, 1)}
+    !if state == "Wellspring.BottomDoor" { !add_item({
+        item_message("Wellspring.BottomDoor")
+        store(Wellspring.BottomDoor, true)
+    }, 1)}
+    !if state == "Wellspring.OutsideLeft.ShardLever" { !add_item({
+        item_message("Wellspring.OutsideLeft.ShardLever")
+        store(Wellspring.OutsideLeft.ShardLever, true)
+    }, 1)}
+    !if state == "Wellspring.OutsideLeft.ShardWall" { !add_item({
+        item_message("Wellspring.OutsideLeft.ShardWall")
+        store(Wellspring.OutsideLeft.ShardWall, true)
+    }, 1)}
+    !if state == "Wellspring.OutsideLeftDoor.BlueMoon" { !add_item({
+        item_message("Wellspring.OutsideLeftDoor.BlueMoon")
+        store(Wellspring.OutsideLeftDoor.BlueMoon, true)
+    }, 1)}
+    !if state == "Wellspring.OutsideLeft.FallingWheel" { !add_item({
+        item_message("Wellspring.OutsideLeft.FallingWheel")
+        store(Wellspring.OutsideLeft.FallingWheel, true)
+    }, 1)}
+    !if state == "Wellspring.SpiritTrial.Active" { !add_item({
+        item_message("Wellspring.SpiritTrial.Active")
+        store(raceGroup.wellspringRace, 1)
+    }, 1)}
+    !if state == "Woods.KuKSRoom.YellowWall" { !add_item({
+        item_message("Woods.KuKSRoom.YellowWall")
+        store(Woods.KuKSRoom.YellowWall, true)
+    }, 1)}
+    !if state == "Woods.BehindSkull.Corruption" { !add_item({
+        item_message("Woods.BehindSkull.Corruption")
+        store(Woods.BehindSkull.Corruption, true)
+    }, 1)}
+    !if state == "Woods.BehindSkull.YellowWall" { !add_item({
+        item_message("Woods.BehindSkull.YellowWall")
+        store(Woods.BehindSkull.YellowWall, true)
+    }, 1)}
+    !if state == "Woods.ExitTP.Corruption" { !add_item({
+        item_message("Woods.ExitTP.Corruption")
+        store(Woods.ExitTP.Corruption, true)
+    }, 1)}
+    !if state == "Woods.SpiritTrial.Active" { !add_item({
+        item_message("Woods.SpiritTrial.Active")
+        store(raceGroup.silentWoodlandRace, 1)
+    }, 1)}
+    !if state == "Woods.CombatShrineCompleted" { !add_item({
+        item_message("Woods.CombatShrineCompleted")
+        store(Woods.CombatShrineCompleted, true)
+    }, 1)}
+    !if state == "Reach.WispClimb.Fight" { !add_item({
+        item_message("Reach.WispClimb.Fight")
+        store(Reach.WispClimb.Fight, true)
+    }, 1)}
+    !if state == "Reach.BelowBaur.Floor" { !add_item({
+        item_message("Reach.BelowBaur.Floor")
+        store(Reach.BelowBaur.Floor, true)
+    }, 1)}
+    !if state == "Reach.Baur.Sneezed" { !add_item({
+        item_message("Reach.Baur.Sneezed")
+        store(baursReachGroup.baurNpcState, 1)
+    }, 1)}
+    !if state == "Reach.AboveBaur.Lever" { !add_item({
+        item_message("Reach.AboveBaur.Lever")
+        store(Reach.AboveBaur.Lever, true)
+    }, 1)}
+    !if state == "Reach.TPWind.Lantern" { !add_item({
+        item_message("Reach.TPWind.Lantern")
+        store(Reach.TPWind.Lantern, true)
+    }, 1)}
+    !if state == "Reach.TP.ShortcutLantern" { !add_item({
+        item_message("Reach.TP.ShortcutLantern")
+        store(Reach.TP.ShortcutLantern, true)
+    }, 1)}
+    !if state == "Reach.Snowball.Rolled" { !add_item({
+        item_message("Reach.Snowball.Rolled")
+        store(Reach.Snowball.Rolled, true)
+    }, 1)}
+    !if state == "Reach.IceCave.Lantern" { !add_item({
+        item_message("Reach.IceCave.Lantern")
+        store(Reach.IceCave.Lantern, true)
+    }, 1)}
+    !if state == "Reach.SpiritTrial.Active" { !add_item({
+        item_message("Reach.SpiritTrial.Active")
+        store(raceGroup.baursReachWindTunnelRace, 1)
+    }, 1)}
+    !if state == "Depths.IlluminableTunnel.Solved" { !add_item({
+        item_message("Depths.IlluminableTunnel.Solved")
+        store(Depths.IlluminableTunnel.Solved, true)
+    }, 1)}
+    !if state == "Depths.SpiritTrial.Active" { !add_item({
+        item_message("Depths.SpiritTrial.Active")
+        store(raceGroup.mouldwoodDepthsRace, 1)
+    }, 1)}
+    !if state == "Depths.CombatShrineCompleted" { !add_item({
+        item_message("Depths.CombatShrineCompleted")
+        store(Depths.CombatShrineCompleted, true)
+    }, 1)}
+    !if state == "Pools.BelowWheel.LeftWall" { !add_item({
+        item_message("Pools.BelowWheel.LeftWall")
+        store(Pools.BelowWheel.LeftWall, true)
+    }, 1)}
+    !if state == "Pools.Wheel" { !add_item({
+        item_message("Pools.Wheel")
+        store(Pools.Wheel, true)
+    }, 1)}
+    !if state == "Pools.WellspringPath.UnderwaterWall" { !add_item({
+        item_message("Pools.WellspringPath.UnderwaterWall")
+        store(Pools.WellspringPath.UnderwaterWall, true)
+    }, 1)}
+    !if state == "Pools.WellspringPath.EFWall" { !add_item({
+        item_message("Pools.WellspringPath.EFWall")
+        store(Pools.WellspringPath.EFWall, true)
+    }, 1)}
+    !if state == "Pools.CentralTPApproach.BubbleFree" { !add_item({
+        item_message("Pools.CentralTPApproach.BubbleFree")
+        store(Pools.CentralTPApproach.BubbleFree, true)
+    }, 1)}
+    !if state == "Pools.CentralTPApproach.PurpleWall" { !add_item({
+        item_message("Pools.CentralTPApproach.PurpleWall")
+        store(Pools.CentralTPApproach.PurpleWall, true)
+    }, 1)}
+    !if state == "Pools.EntranceLever" { !add_item({
+        item_message("Pools.EntranceLever")
+        store(Pools.EntranceLever, true)
+    }, 1)}
+    !if state == "Pools.EntranceLeverRoom.BubbleFloor" { !add_item({
+        item_message("Pools.EntranceLeverRoom.BubbleFloor")
+        store(Pools.EntranceLeverRoom.BubbleFloor, true)
+    }, 1)}
+    !if state == "Pools.WaterArena.PurpleFloor" { !add_item({
+        item_message("Pools.WaterArena.PurpleFloor")
+        store(Pools.WaterArena.PurpleFloor, true)
+    }, 1)}
+    !if state == "Pools.CentralTPSwim.ShardWall" { !add_item({
+        item_message("Pools.CentralTPSwim.ShardWall")
+        store(Pools.CentralTPSwim.ShardWall, true)
+    }, 1)}
+    !if state == "Pools.WaterArena.WaterDashFight" { !add_item({
+        item_message("Pools.WaterArena.WaterDashFight")
+        store(lumaPoolsStateGroup.arenaBByteStateSerialized, 4)
+    }, 1)}
+    !if state == "Pools.CentralTPSwim.Drained" { !add_item({
+        item_message("Pools.CentralTPSwim.Drained")
+        store(Pools.CentralTPSwim.Drained, true)
+    }, 1)}
+    !if state == "Pools.Lupo.PurpleFloor" { !add_item({
+        item_message("Pools.Lupo.PurpleFloor")
+        store(Pools.Lupo.PurpleFloor, true)
+    }, 1)}
+    !if state == "Pools.SeedRoom.PurpleWall" { !add_item({
+        item_message("Pools.SeedRoom.PurpleWall")
+        store(Pools.SeedRoom.PurpleWall, true)
+    }, 1)}
+    !if state == "Pools.SeedRoom.BubbleFree" { !add_item({
+        item_message("Pools.SeedRoom.BubbleFree")
+        store(Pools.SeedRoom.BubbleFree, true)
+    }, 1)}
+    !if state == "Pools.SpiritTrial.Active" { !add_item({
+        item_message("Pools.SpiritTrial.Active")
+        store(raceGroup.lumaPoolsRace, 1)
+    }, 1)}
+    !if state == "Pools.KSRoom.BubbleFree" { !add_item({
+        item_message("Pools.KSRoom.BubbleFree")
+        store(Pools.KSRoom.BubbleFree, true)
+    }, 1)}
+    !if state == "Pools.WaterDashTree.LeftBubbleFree" { !add_item({
+        item_message("Pools.WaterDashTree.LeftBubbleFree")
+        store(Pools.WaterDashTree.LeftBubbleFree, true)
+    }, 1)}
+    !if state == "Pools.WaterDashTree.RightBubbleFree" { !add_item({
+        item_message("Pools.WaterDashTree.RightBubbleFree")
+        store(Pools.WaterDashTree.RightBubbleFree, true)
+    }, 1)}
+    !if state == "Pools.WaterDashDrain.Solved" { !add_item({
+        item_message("Pools.WaterDashDrain.Solved")
+        store(Pools.WaterDashDrain.Solved, true)
+    }, 1)}
+    !if state == "Pools.WaterDashTree.WaterDashButton" { !add_item({
+        item_message("Pools.WaterDashTree.WaterDashButton")
+        store(Pools.WaterDashTree.WaterDashButton, true)
+    }, 1)}
+    !if state == "Pools.WaterDashDrain.PurpleWall" { !add_item({
+        item_message("Pools.WaterDashDrain.PurpleWall")
+        store(Pools.WaterDashDrain.PurpleWall, true)
+    }, 1)}
+    !if state == "Pools.BubbleSpam.Lever" { !add_item({
+        item_message("Pools.BubbleSpam.Lever")
+        store(Pools.BubbleSpam.Lever, true)
+    }, 1)}
+    !if state == "Pools.BubbleSpam.Wall" { !add_item({
+        item_message("Pools.BubbleSpam.Wall")
+        store(Pools.BubbleSpam.Wall, true)
+    }, 1)}
+    !if state == "Wastes.DoubleBridge.Lever" { !add_item({
+        item_message("Wastes.DoubleBridge.Lever")
+        store(Wastes.DoubleBridge.Lever, true)
+    }, 1)}
+    !if state == "Wastes.SpiritTrial.Active" { !add_item({
+        item_message("Wastes.SpiritTrial.Active")
+        store(raceGroup.desertRace, 1)
+    }, 1)}
+    !if state == "Wastes.MissilePuzzles.LeverDoor" { !add_item({
+        item_message("Wastes.MissilePuzzles.LeverDoor")
+        store(Wastes.MissilePuzzles.LeverDoor, true)
+    }, 1)}
+    !if state == "Ruins.PillarCorruption" { !add_item({
+        item_message("Ruins.PillarCorruption")
+        store(Ruins.PillarCorruption, true)
+    }, 1)}
+    !if state == "Ruins.Lever" { !add_item({
+        item_message("Ruins.Lever")
+        store(Ruins.Lever, true)
+    }, 1)}
+    !if state == "Woods.Ridge.ElevatorFight" { !add_item({
+        item_message("Woods.Ridge.ElevatorFight")
+        store(Woods.Ridge.ElevatorFight, true)
+    }, 1)}
+    !if state == "Willow.GrappleWheelsHeart" { !add_item({
+        item_message("Willow.GrappleWheelsHeart")
+        store(Willow.GrappleWheelsHeart, true)
+    }, 1)}
+    !if state == "Willow.BoulderHeart" { !add_item({
+        item_message("Willow.BoulderHeart")
+        store(Willow.BoulderHeart, true)
+    }, 1)}
+    !if state == "Willow.RedirectHeart" { !add_item({
+        item_message("Willow.RedirectHeart")
+        store(Willow.RedirectHeart, true)
+    }, 1)}
+    !if state == "Willow.BurrowHeart" { !add_item({
+        item_message("Willow.BurrowHeart")
+        store(Willow.BurrowHeart, true)
+    }, 1)}
+    !if state == "Willow.MinibossHeart" { !add_item({
+        item_message("Willow.MinibossHeart")
+        store(Willow.MinibossHeart, true)
+    }, 1)}
+    !if state == "Willow.SpinLasersHeart" { !add_item({
+        item_message("Willow.SpinLasersHeart")
+        store(Willow.SpinLasersHeart, true)
+    }, 1)}
+    !if state == "Willow.GlideHeart" { !add_item({
+        item_message("Willow.GlideHeart")
+        store(Willow.GlideHeart, true)
+    }, 1)}
+    !if state == "Willow.SpinPortalsHeart" { !add_item({
+        item_message("Willow.SpinPortalsHeart")
+        store(Willow.SpinPortalsHeart, true)
+    }, 1)}
+    !if state == "Willow.Entrance.TPShortcut" { !add_item({
+        item_message("Willow.Entrance.TPShortcut")
+        store(Willow.Entrance.TPShortcut, true)
+    }, 1)}
+}

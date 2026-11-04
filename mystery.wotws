@@ -1,0 +1,40 @@
+#category("World Changes")
+#name("Mystery")
+#description("If I told you it wouldn't be a mystery!")
+
+!random_integer(length, 5, 9)
+
+!random_integer(size, 1, 3)
+on spawn store(modifications.bell1, size)
+
+!random_integer(size, 1, 3)
+on spawn store(modifications.bell2, size)
+
+!random_integer(size, 1, 3)
+on spawn store(modifications.bell3, size)
+
+!random_integer(size, 1, 3)
+on spawn store(modifications.bell4, size)
+
+!random_integer(size, 1, 3)
+on spawn store(modifications.bell5, size)
+
+!if length >= 6 {
+    !random_integer(size, 1, 3)
+    on spawn store(modifications.bell6, size)
+}
+
+!if length >= 7 {
+    !random_integer(size, 1, 3)
+    on spawn store(modifications.bell7, size)
+}
+
+!if length >= 8 {
+    !random_integer(size, 1, 3)
+    on spawn store(modifications.bell8, size)
+}
+
+!if length >= 9 {
+    !random_integer(size, 1, 3)
+    on spawn store(modifications.bell9, size)
+}

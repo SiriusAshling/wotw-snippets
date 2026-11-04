@@ -1,0 +1,185 @@
+#category("World Changes")
+#name("Dusselige Ladenbesitzer")
+#description("Oh no! The shopkeepers have lost the keys to their storage rooms!")
+
+!include("progress_helper", write_progress_message, write_map_progress_message)
+!include("list_core", new_row, add_row_item, add_current_row)
+
+!state(ophers_key, Boolean)
+!state(twillens_key, Boolean)
+!state(lupos_key, Boolean)
+
+!state(opher_met, Boolean)
+!state(twillen_met, Boolean)
+!state(lupo_met, Boolean)
+
+on spawn {
+    set_shop_item_locked(Shop.Opher.Slot1, true)
+    set_shop_item_locked(Shop.Opher.Slot2, true)
+    set_shop_item_locked(Shop.Opher.Slot3, true)
+    set_shop_item_locked(Shop.Opher.Slot4, true)
+    set_shop_item_locked(Shop.Opher.Slot5, true)
+    set_shop_item_locked(Shop.Opher.Slot6, true)
+    set_shop_item_locked(Shop.Opher.Slot7, true)
+    set_shop_item_locked(Shop.Opher.Slot8, true)
+    set_shop_item_locked(Shop.Opher.Slot9, true)
+    set_shop_item_locked(Shop.Opher.Slot10, true)
+    set_shop_item_locked(Shop.Opher.Slot11, true)
+    set_shop_item_locked(Shop.Opher.Slot12, true)
+    set_shop_item_locked(Shop.Twillen.Slot1, true)
+    set_shop_item_locked(Shop.Twillen.Slot2, true)
+    set_shop_item_locked(Shop.Twillen.Slot3, true)
+    set_shop_item_locked(Shop.Twillen.Slot4, true)
+    set_shop_item_locked(Shop.Twillen.Slot5, true)
+    set_shop_item_locked(Shop.Twillen.Slot6, true)
+    set_shop_item_locked(Shop.Twillen.Slot7, true)
+    set_shop_item_locked(Shop.Twillen.Slot8, true)
+    set_shop_item_locked(Shop.Lupo.Slot1, true)
+    set_shop_item_locked(Shop.Lupo.Slot2, true)
+    set_shop_item_locked(Shop.Lupo.Slot3, true)
+}
+
+on ophers_key {
+    item_message("#Opher's key#")
+    set_shop_item_locked(Shop.Opher.Slot1, false)
+    set_shop_item_locked(Shop.Opher.Slot2, false)
+    set_shop_item_locked(Shop.Opher.Slot3, false)
+    set_shop_item_locked(Shop.Opher.Slot4, false)
+    set_shop_item_locked(Shop.Opher.Slot5, false)
+    set_shop_item_locked(Shop.Opher.Slot6, false)
+    set_shop_item_locked(Shop.Opher.Slot7, false)
+    set_shop_item_locked(Shop.Opher.Slot8, false)
+    set_shop_item_locked(Shop.Opher.Slot9, false)
+    set_shop_item_locked(Shop.Opher.Slot10, false)
+    set_shop_item_locked(Shop.Opher.Slot11, false)
+    set_shop_item_locked(Shop.Opher.Slot12, false)
+}
+
+!add_item(store(ophers_key, true), 1)
+!item_data(
+    store(ophers_key, true),
+    "Opher's key",
+    400,
+    "Unlocks Opher's shop",
+    Placeholder,
+    Opher
+)
+!area_of(ophers_key_area, store(ophers_key, true))
+
+on questUberStateGroup.luposMapQuest > 4 {
+    set_boolean("is_at_lupo", is_in_rectangle(-192, -4523, -155, -4492))
+    if get_boolean("is_at_lupo") store(lupo_met, true)
+    if (get_boolean("is_at_lupo") || lupo_met) == false store(questUberStateGroup.luposMapQuest, 4)
+}
+
+// this is a hack to counteract no_cutscenes, which sets desertRuinsLoreWispE very late
+on npcsStateGroup.metOpherHubBeforeWatermill if npcsStateGroup.desertRuinsLoreWispE == false store(npcsStateGroup.metOpherHubBeforeWatermill, false)
+on npcsStateGroup.metOpherHubAfterWatermill if npcsStateGroup.desertRuinsLoreWispE == false store(npcsStateGroup.metOpherHubAfterWatermill, false)
+
+on npcsStateGroup.metOpherHubBeforeWatermill || npcsStateGroup.metOpherHubAfterWatermill if npcsStateGroup.desertRuinsLoreWispE store(opher_met, true)
+
+on opher_met {
+    write_ophers_key_hint()
+    item_message(get_string("hint"))
+}
+
+fun write_ophers_key_hint() {
+    set_string("hint", "Opher's key: " + ophers_key_area)
+    if ophers_key set_string("hint", "$" + get_string("hint") + "$")
+}
+
+on twillens_key {
+    item_message("#Twillen's key#")
+    set_shop_item_locked(Shop.Twillen.Slot1, false)
+    set_shop_item_locked(Shop.Twillen.Slot2, false)
+    set_shop_item_locked(Shop.Twillen.Slot3, false)
+    set_shop_item_locked(Shop.Twillen.Slot4, false)
+    set_shop_item_locked(Shop.Twillen.Slot5, false)
+    set_shop_item_locked(Shop.Twillen.Slot6, false)
+    set_shop_item_locked(Shop.Twillen.Slot7, false)
+    set_shop_item_locked(Shop.Twillen.Slot8, false)
+}
+
+!add_item(store(twillens_key, true), 1)
+!item_data(
+    store(twillens_key, true),
+    "Twillen's key",
+    400,
+    "Unlocks Twillen's shop",
+    Placeholder,
+    Twillen
+)
+!area_of(twillens_key_area, store(twillens_key, true))
+
+on npcsStateGroup.twillenHubDialogState > 0 {
+    if npcsStateGroup.desertRuinsLoreWispE store(twillen_met, true)
+    if npcsStateGroup.desertRuinsLoreWispE == false store(npcsStateGroup.twillenHubDialogState, 0)
+}
+
+on twillen_met {
+    write_twillens_key_hint()
+    item_message(get_string("hint"))
+}
+
+fun write_twillens_key_hint() {
+    set_string("hint", "Twillen's key: " + twillens_key_area)
+    if twillens_key set_string("hint", "$" + get_string("hint") + "$")
+}
+
+on lupos_key {
+    item_message("#Lupo's key#")
+    set_shop_item_locked(Shop.Lupo.Slot1, false)
+    set_shop_item_locked(Shop.Lupo.Slot2, false)
+    set_shop_item_locked(Shop.Lupo.Slot3, false)
+}
+
+!add_item(store(lupos_key, true), 1)
+!item_data(
+    store(lupos_key, true),
+    "Lupo's key",
+    400,
+    "Unlocks Lupo's shop",
+    Placeholder,
+    Lupo
+)
+!area_of(lupos_key_area, store(lupos_key, true))
+
+on questUberStateGroup.luposMapQuest > 4 {
+    set_boolean("is_at_lupo", is_in_rectangle(-192, -4523, -155, -4492))
+    if get_boolean("is_at_lupo") store(lupo_met, true)
+    if (get_boolean("is_at_lupo") || lupo_met) == false store(questUberStateGroup.luposMapQuest, 4)
+}
+
+on lupo_met {
+    write_lupos_key_hint()
+    item_message(get_string("hint"))
+}
+
+fun write_lupos_key_hint() {
+    set_string("hint", "Lupo's key: " + lupos_key_area)
+    if lupos_key set_string("hint", "$" + get_string("hint") + "$")
+}
+
+!augment_fun(write_progress_message(), write_hints())
+!augment_fun(write_map_progress_message(), write_hints())
+
+fun write_hints() {
+    new_row("")
+
+    if opher_met {
+        write_ophers_key_hint()
+        add_row_item(get_string("hint"))
+    }
+
+    if twillen_met {
+        write_twillens_key_hint()
+        add_row_item(get_string("hint"))
+    }
+
+    if lupo_met {
+        write_lupos_key_hint()
+        add_row_item(get_string("hint"))
+    }
+
+    add_current_row()
+}

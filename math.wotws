@@ -1,0 +1,46 @@
+#hidden
+#name("Math")
+#description("Provides math helper functions")
+
+// Absolute of x
+!export(abs)
+fun abs(x: Float) {
+    if x >= 0 set_float("return", x)
+    if x < 0 set_float("return", 0 - x)
+}
+
+// Approximate square root
+//
+// PREREQUISITE: x > 0
+//
+// https://en.wikipedia.org/wiki/Square_root_algorithms#Heron's_method
+!export(unchecked_sqrt)
+fun unchecked_sqrt(x: Float) {
+    set_float("return", x / 2)  // Initial guess
+    set_float("return", 0.5 * (get_float("return") + x / get_float("return")))
+    set_float("return", 0.5 * (get_float("return") + x / get_float("return")))
+    set_float("return", 0.5 * (get_float("return") + x / get_float("return")))  // Good enough?
+}
+
+// Distance between (x1, y1) and (x2, y2)
+!export(distance)
+fun distance(x1: Float, y1: Float, x2: Float, y2: Float) {
+    set_float("x", x1 - x2)
+    set_float("return", y1 - y2)
+    // PREREQUISITE: squares are positive
+    unchecked_sqrt(get_float("x") * get_float("x") + get_float("return") * get_float("return"))
+}
+
+// Whether (check_x, check_y) is in the circle at (circle_x, circle_y) with radius
+!export(is_in_circle)
+fun is_in_circle(check_x: Float, check_y: Float, circle_x: Float, circle_y: Float, radius: Float) {
+    set_float("x", check_x - circle_x)
+    set_float("return", check_y - circle_y)
+    set_boolean("return", get_float("x") * get_float("x") + get_float("return") * get_float("return") <= radius * radius)
+}
+
+// Whether Ori is in the circle at (x, y) with radius
+!export(ori_is_in_circle)
+fun ori_is_in_circle(x: Float, y: Float, radius: Float) {
+    is_in_circle(player.positionX, player.positionY, x, y, radius)
+}

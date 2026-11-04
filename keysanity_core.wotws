@@ -1,0 +1,1321 @@
+#hidden
+#name("Keysanity Core")
+#description("Adds support for keystones that only fit into their designated doors")
+
+// For your convenience, this is an include for all the keystones:
+// !include(
+//     "keysanity_core",
+//     regenerate_tree_keystone_a,
+//     regenerate_tree_keystone_b,
+//     eyestone_a,
+//     eyestone_b,
+//     den_keystone_a,
+//     den_keystone_b,
+//     woods_entrance_keystone_a,
+//     woods_entrance_keystone_b,
+//     ku_section_keystone_a,
+//     ku_section_keystone_b,
+//     ku_section_keystone_c,
+//     ku_section_keystone_d,
+//     reach_trial_keystone_a,
+//     reach_trial_keystone_b,
+//     reach_trial_keystone_c,
+//     reach_trial_keystone_d,
+//     grenade_tree_keystone_a,
+//     grenade_tree_keystone_b,
+//     grenade_tree_keystone_c,
+//     grenade_tree_keystone_d,
+//     depths_entrance_keystone_a,
+//     depths_entrance_keystone_b,
+//     firefly_room_keystone_a,
+//     firefly_room_keystone_b,
+//     pools_keystone_a,
+//     pools_keystone_b,
+//     pools_keystone_c,
+//     pools_keystone_d,
+//     wastes_keystone_a,
+//     wastes_keystone_b,
+//     burrows_keystone_a,
+//     burrows_keystone_b,
+//     burrows_keystone_c,
+//     burrows_keystone_d
+// )
+
+!builtin_icon(keystone_icon, "icons/game/keystone.png")
+
+!include("list_core", new_column, add_row, new_row, add_row_item)
+
+!let(total_regenerate_tree_keystones, 2)
+!let(total_eyestones, 2)
+!let(total_den_keystones, 2)
+!let(total_woods_entrance_keystones, 2)
+!let(total_ku_section_keystones, 4)
+!let(total_reach_trial_keystones, 4)
+!let(total_grenade_tree_keystones, 4)
+!let(total_depths_entrance_keystones, 2)
+!let(total_firefly_room_keystones, 2)
+!let(total_pools_keystones, 4)
+!let(total_wastes_keystones, 2)
+!let(total_burrows_keystones, 4)
+
+!state(regenerate_tree_keystones, Integer)
+!state(eyestones, Integer)
+!state(den_keystones, Integer)
+!state(woods_entrance_keystones, Integer)
+!state(ku_section_keystones, Integer)
+!state(reach_trial_keystones, Integer)
+!state(grenade_tree_keystones, Integer)
+!state(depths_entrance_keystones, Integer)
+!state(firefly_room_keystones, Integer)
+!state(pools_keystones, Integer)
+!state(wastes_keystones, Integer)
+!state(burrows_keystones, Integer)
+
+!state(regenerate_tree_keystone_a_collected, Boolean)
+!state(regenerate_tree_keystone_b_collected, Boolean)
+!state(eyestone_a_collected, Boolean)
+!state(eyestone_b_collected, Boolean)
+!state(den_keystone_a_collected, Boolean)
+!state(den_keystone_b_collected, Boolean)
+!state(woods_entrance_keystone_a_collected, Boolean)
+!state(woods_entrance_keystone_b_collected, Boolean)
+!state(ku_section_keystone_a_collected, Boolean)
+!state(ku_section_keystone_b_collected, Boolean)
+!state(ku_section_keystone_c_collected, Boolean)
+!state(ku_section_keystone_d_collected, Boolean)
+!state(reach_trial_keystone_a_collected, Boolean)
+!state(reach_trial_keystone_b_collected, Boolean)
+!state(reach_trial_keystone_c_collected, Boolean)
+!state(reach_trial_keystone_d_collected, Boolean)
+!state(grenade_tree_keystone_a_collected, Boolean)
+!state(grenade_tree_keystone_b_collected, Boolean)
+!state(grenade_tree_keystone_c_collected, Boolean)
+!state(grenade_tree_keystone_d_collected, Boolean)
+!state(depths_entrance_keystone_a_collected, Boolean)
+!state(depths_entrance_keystone_b_collected, Boolean)
+!state(firefly_room_keystone_a_collected, Boolean)
+!state(firefly_room_keystone_b_collected, Boolean)
+!state(pools_keystone_a_collected, Boolean)
+!state(pools_keystone_b_collected, Boolean)
+!state(pools_keystone_c_collected, Boolean)
+!state(pools_keystone_d_collected, Boolean)
+!state(wastes_keystone_a_collected, Boolean)
+!state(wastes_keystone_b_collected, Boolean)
+!state(burrows_keystone_a_collected, Boolean)
+!state(burrows_keystone_b_collected, Boolean)
+!state(burrows_keystone_c_collected, Boolean)
+!state(burrows_keystone_d_collected, Boolean)
+
+!state(current_door_area, Integer)
+
+!let(counter, 1)
+!let(regenerate_tree, counter)
+!let(counter, counter + 1)
+!let(eyestone_statue, counter)
+!let(counter, counter + 1)
+!let(den, counter)
+!let(counter, counter + 1)
+!let(woods_entrance, counter)
+!let(counter, counter + 1)
+!let(ku_section, counter)
+!let(counter, counter + 1)
+!let(reach_trial, counter)
+!let(counter, counter + 1)
+!let(grenade_tree, counter)
+!let(counter, counter + 1)
+!let(depths_entrance, counter)
+!let(counter, counter + 1)
+!let(firefly_room, counter)
+!let(counter, counter + 1)
+!let(pools, counter)
+!let(counter, counter + 1)
+!let(wastes, counter)
+!let(counter, counter + 1)
+!let(burrows, counter)
+
+!export(regenerate_tree_keystone_a)
+fun regenerate_tree_keystone_a() {
+    store(regenerate_tree_keystone_a_collected, true)
+    regenerate_tree_keystone()
+}
+!item_data_name(regenerate_tree_keystone_a(), "Regenerate Tree Keystone")
+
+!export(regenerate_tree_keystone_b)
+fun regenerate_tree_keystone_b() {
+    store(regenerate_tree_keystone_b_collected, true)
+    regenerate_tree_keystone()
+}
+!item_data_name(regenerate_tree_keystone_b(), "Regenerate Tree Keystone")
+
+fun regenerate_tree_keystone() {
+    store(regenerate_tree_keystones, regenerate_tree_keystones + 1)
+    if current_door_area == regenerate_tree store(player.keystones, player.keystones + 1)
+    keysanity_keystone("Regenerate Tree Keystone", regenerate_tree_keystones, total_regenerate_tree_keystones)
+}
+
+!export(eyestone_a)
+fun eyestone_a() {
+    store(eyestone_a_collected, true)
+    eyestone()
+}
+!item_data_name(eyestone_a(), "Eyestone")
+
+!export(eyestone_b)
+fun eyestone_b() {
+    store(eyestone_b_collected, true)
+    eyestone()
+}
+!item_data_name(eyestone_b(), "Eyestone")
+
+fun eyestone() {
+    store(eyestones, eyestones + 1)
+    if current_door_area == eyestone_statue store(player.keystones, player.keystones + 1)
+    keysanity_keystone("Eyestone", eyestones, total_eyestones)
+}
+
+!export(den_keystone_a)
+fun den_keystone_a() {
+    store(den_keystone_a_collected, true)
+    den_keystone()
+}
+!item_data_name(den_keystone_a(), "Den Keystone")
+
+!export(den_keystone_b)
+fun den_keystone_b() {
+    store(den_keystone_b_collected, true)
+    den_keystone()
+}
+!item_data_name(den_keystone_b(), "Den Keystone")
+
+fun den_keystone() {
+    store(den_keystones, den_keystones + 1)
+    if current_door_area == den store(player.keystones, player.keystones + 1)
+    keysanity_keystone("Den Keystone", den_keystones, total_den_keystones)
+}
+
+!export(woods_entrance_keystone_a)
+fun woods_entrance_keystone_a() {
+    store(woods_entrance_keystone_a_collected, true)
+    woods_entrance_keystone()
+}
+!item_data_name(woods_entrance_keystone_a(), "Woods Entrance Keystone")
+
+!export(woods_entrance_keystone_b)
+fun woods_entrance_keystone_b() {
+    store(woods_entrance_keystone_b_collected, true)
+    woods_entrance_keystone()
+}
+!item_data_name(woods_entrance_keystone_b(), "Woods Entrance Keystone")
+
+fun woods_entrance_keystone() {
+    store(woods_entrance_keystones, woods_entrance_keystones + 1)
+    if current_door_area == woods_entrance store(player.keystones, player.keystones + 1)
+    keysanity_keystone("Woods Entrance Keystone", woods_entrance_keystones, total_woods_entrance_keystones)
+}
+
+!export(ku_section_keystone_a)
+fun ku_section_keystone_a() {
+    store(ku_section_keystone_a_collected, true)
+    ku_section_keystone()
+}
+!item_data_name(ku_section_keystone_a(), "Ku Section Keystone")
+
+!export(ku_section_keystone_b)
+fun ku_section_keystone_b() {
+    store(ku_section_keystone_b_collected, true)
+    ku_section_keystone()
+}
+!item_data_name(ku_section_keystone_b(), "Ku Section Keystone")
+
+!export(ku_section_keystone_c)
+fun ku_section_keystone_c() {
+    store(ku_section_keystone_c_collected, true)
+    ku_section_keystone()
+}
+!item_data_name(ku_section_keystone_c(), "Ku Section Keystone")
+
+!export(ku_section_keystone_d)
+fun ku_section_keystone_d() {
+    store(ku_section_keystone_d_collected, true)
+    ku_section_keystone()
+}
+!item_data_name(ku_section_keystone_d(), "Ku Section Keystone")
+
+fun ku_section_keystone() {
+    store(ku_section_keystones, ku_section_keystones + 1)
+    if current_door_area == ku_section store(player.keystones, player.keystones + 1)
+    keysanity_keystone("Ku Section Keystone", ku_section_keystones, total_ku_section_keystones)
+}
+
+!export(reach_trial_keystone_a)
+fun reach_trial_keystone_a() {
+    store(reach_trial_keystone_a_collected, true)
+    reach_trial_keystone()
+}
+!item_data_name(reach_trial_keystone_a(), "Reach Trial Keystone")
+
+!export(reach_trial_keystone_b)
+fun reach_trial_keystone_b() {
+    store(reach_trial_keystone_b_collected, true)
+    reach_trial_keystone()
+}
+!item_data_name(reach_trial_keystone_b(), "Reach Trial Keystone")
+
+!export(reach_trial_keystone_c)
+fun reach_trial_keystone_c() {
+    store(reach_trial_keystone_c_collected, true)
+    reach_trial_keystone()
+}
+!item_data_name(reach_trial_keystone_c(), "Reach Trial Keystone")
+
+!export(reach_trial_keystone_d)
+fun reach_trial_keystone_d() {
+    store(reach_trial_keystone_d_collected, true)
+    reach_trial_keystone()
+}
+!item_data_name(reach_trial_keystone_d(), "Reach Trial Keystone")
+
+fun reach_trial_keystone() {
+    store(reach_trial_keystones, reach_trial_keystones + 1)
+    if current_door_area == reach_trial store(player.keystones, player.keystones + 1)
+    keysanity_keystone("Reach Trial Keystone", reach_trial_keystones, total_reach_trial_keystones)
+}
+
+!export(grenade_tree_keystone_a)
+fun grenade_tree_keystone_a() {
+    store(grenade_tree_keystone_a_collected, true)
+    grenade_tree_keystone()
+}
+!item_data_name(grenade_tree_keystone_a(), "Grenade Tree Keystone")
+
+!export(grenade_tree_keystone_b)
+fun grenade_tree_keystone_b() {
+    store(grenade_tree_keystone_b_collected, true)
+    grenade_tree_keystone()
+}
+!item_data_name(grenade_tree_keystone_b(), "Grenade Tree Keystone")
+
+!export(grenade_tree_keystone_c)
+fun grenade_tree_keystone_c() {
+    store(grenade_tree_keystone_c_collected, true)
+    grenade_tree_keystone()
+}
+!item_data_name(grenade_tree_keystone_c(), "Grenade Tree Keystone")
+
+!export(grenade_tree_keystone_d)
+fun grenade_tree_keystone_d() {
+    store(grenade_tree_keystone_d_collected, true)
+    grenade_tree_keystone()
+}
+!item_data_name(grenade_tree_keystone_d(), "Grenade Tree Keystone")
+
+fun grenade_tree_keystone() {
+    store(grenade_tree_keystones, grenade_tree_keystones + 1)
+    if current_door_area == grenade_tree store(player.keystones, player.keystones + 1)
+    keysanity_keystone("Grenade Tree Keystone", grenade_tree_keystones, total_grenade_tree_keystones)
+}
+
+!export(depths_entrance_keystone_a)
+fun depths_entrance_keystone_a() {
+    store(depths_entrance_keystone_a_collected, true)
+    depths_entrance_keystone()
+}
+!item_data_name(depths_entrance_keystone_a(), "Depths Entrance Keystone")
+
+!export(depths_entrance_keystone_b)
+fun depths_entrance_keystone_b() {
+    store(depths_entrance_keystone_b_collected, true)
+    depths_entrance_keystone()
+}
+!item_data_name(depths_entrance_keystone_b(), "Depths Entrance Keystone")
+
+fun depths_entrance_keystone() {
+    store(depths_entrance_keystones, depths_entrance_keystones + 1)
+    if current_door_area == depths_entrance store(player.keystones, player.keystones + 1)
+    keysanity_keystone("Depths Entrance Keystone", depths_entrance_keystones, total_depths_entrance_keystones)
+}
+
+!export(firefly_room_keystone_a)
+fun firefly_room_keystone_a() {
+    store(firefly_room_keystone_a_collected, true)
+    firefly_room_keystone()
+}
+!item_data_name(firefly_room_keystone_a(), "Firefly Room Keystone")
+
+!export(firefly_room_keystone_b)
+fun firefly_room_keystone_b() {
+    store(firefly_room_keystone_b_collected, true)
+    firefly_room_keystone()
+}
+!item_data_name(firefly_room_keystone_b(), "Firefly Room Keystone")
+
+fun firefly_room_keystone() {
+    store(firefly_room_keystones, firefly_room_keystones + 1)
+    if current_door_area == firefly_room store(player.keystones, player.keystones + 1)
+    keysanity_keystone("Firefly Room Keystone", firefly_room_keystones, total_firefly_room_keystones)
+}
+
+!export(pools_keystone_a)
+fun pools_keystone_a() {
+    store(pools_keystone_a_collected, true)
+    pools_keystone()
+}
+!item_data_name(pools_keystone_a(), "Pools Keystone")
+
+!export(pools_keystone_b)
+fun pools_keystone_b() {
+    store(pools_keystone_b_collected, true)
+    pools_keystone()
+}
+!item_data_name(pools_keystone_b(), "Pools Keystone")
+
+!export(pools_keystone_c)
+fun pools_keystone_c() {
+    store(pools_keystone_c_collected, true)
+    pools_keystone()
+}
+!item_data_name(pools_keystone_c(), "Pools Keystone")
+
+!export(pools_keystone_d)
+fun pools_keystone_d() {
+    store(pools_keystone_d_collected, true)
+    pools_keystone()
+}
+!item_data_name(pools_keystone_d(), "Pools Keystone")
+
+fun pools_keystone() {
+    store(pools_keystones, pools_keystones + 1)
+    if current_door_area == pools store(player.keystones, player.keystones + 1)
+    keysanity_keystone("Pools Keystone", pools_keystones, total_pools_keystones)
+}
+
+!export(wastes_keystone_a)
+fun wastes_keystone_a() {
+    store(wastes_keystone_a_collected, true)
+    wastes_keystone()
+}
+!item_data_name(wastes_keystone_a(), "Wastes Keystone")
+
+!export(wastes_keystone_b)
+fun wastes_keystone_b() {
+    store(wastes_keystone_b_collected, true)
+    wastes_keystone()
+}
+!item_data_name(wastes_keystone_b(), "Wastes Keystone")
+
+fun wastes_keystone() {
+    store(wastes_keystones, wastes_keystones + 1)
+    if current_door_area == wastes store(player.keystones, player.keystones + 1)
+    keysanity_keystone("Wastes Keystone", wastes_keystones, total_wastes_keystones)
+}
+
+!export(burrows_keystone_a)
+fun burrows_keystone_a() {
+    store(burrows_keystone_a_collected, true)
+    burrows_keystone()
+}
+!item_data_name(burrows_keystone_a(), "Burrows Keystone")
+
+!export(burrows_keystone_b)
+fun burrows_keystone_b() {
+    store(burrows_keystone_b_collected, true)
+    burrows_keystone()
+}
+!item_data_name(burrows_keystone_b(), "Burrows Keystone")
+
+!export(burrows_keystone_c)
+fun burrows_keystone_c() {
+    store(burrows_keystone_c_collected, true)
+    burrows_keystone()
+}
+!item_data_name(burrows_keystone_c(), "Burrows Keystone")
+
+!export(burrows_keystone_d)
+fun burrows_keystone_d() {
+    store(burrows_keystone_d_collected, true)
+    burrows_keystone()
+}
+!item_data_name(burrows_keystone_d(), "Burrows Keystone")
+
+fun burrows_keystone() {
+    store(burrows_keystones, burrows_keystones + 1)
+    if current_door_area == burrows store(player.keystones, player.keystones + 1)
+    keysanity_keystone("Burrows Keystone", burrows_keystones, total_burrows_keystones)
+}
+
+fun keysanity_keystone(name: String, amount: Integer, total: Integer) {
+    set_string("color", "")
+    if amount == total set_string("color", "$")
+    item_message(name + get_string("color") + " (" + amount + "/" + total + ")" + get_string("color"))
+}
+
+!state(inside_regenerate_tree_triggers, Integer)
+!state(inside_eyestone_statue_triggers, Integer)
+!state(inside_den_triggers, Integer)
+!state(inside_grenade_tree_triggers, Integer)
+!state(inside_firefly_room_triggers, Integer)
+!state(inside_pools_triggers, Integer)
+!state(inside_wastes_triggers, Integer)
+
+on reload {
+    position_trigger_rectangle("keysanity_regenerate_tree_a", -887, -4454, -575, -4355)
+    position_trigger_enter_callback("keysanity_regenerate_tree_a", enter_regenerate_tree_area())
+    position_trigger_leave_callback("keysanity_regenerate_tree_a", leave_regenerate_tree_area())
+    position_trigger_rectangle("keysanity_regenerate_tree_b", -576, -4413, -442, -4375)
+    position_trigger_enter_callback("keysanity_regenerate_tree_b", enter_regenerate_tree_area())
+    position_trigger_leave_callback("keysanity_regenerate_tree_b", leave_regenerate_tree_area())
+
+    position_trigger_rectangle("keysanity_eyestone_statue_a", -482, -4275, -404, -4180)
+    position_trigger_enter_callback("keysanity_eyestone_statue_a", enter_eyestone_statue_area())
+    position_trigger_leave_callback("keysanity_eyestone_statue_a", leave_eyestone_statue_area())
+    position_trigger_rectangle("keysanity_eyestone_statue_b", -405, -4256, -380, -4180)
+    position_trigger_enter_callback("keysanity_eyestone_statue_b", enter_eyestone_statue_area())
+    position_trigger_leave_callback("keysanity_eyestone_statue_b", leave_eyestone_statue_area())
+    position_trigger_rectangle("keysanity_eyestone_statue_c", -381, -4256, -295, -4190)
+    position_trigger_enter_callback("keysanity_eyestone_statue_c", enter_eyestone_statue_area())
+    position_trigger_leave_callback("keysanity_eyestone_statue_c", leave_eyestone_statue_area())
+    position_trigger_rectangle("keysanity_eyestone_statue_d", -296, -4243, -246, -4205)
+    position_trigger_enter_callback("keysanity_eyestone_statue_d", enter_eyestone_statue_area())
+    position_trigger_leave_callback("keysanity_eyestone_statue_d", leave_eyestone_statue_area())
+
+    position_trigger_rectangle("keysanity_den_a", -580, -4577, -407, -4428)
+    position_trigger_enter_callback("keysanity_den_a", enter_den_area())
+    position_trigger_leave_callback("keysanity_den_a", leave_den_area())
+    position_trigger_rectangle("keysanity_den_b", -408, -4577, -231, -4424)
+    position_trigger_enter_callback("keysanity_den_b", enter_den_area())
+    position_trigger_leave_callback("keysanity_den_b", leave_den_area())
+
+    set_integer("top", -4124)
+    if entrances.teddyHutOutside == 26 && entrances.teddyHutInside == 25 set_integer("top", -4105)
+    position_trigger_rectangle("keysanity_woods_entrance", 391, -4215, 781, get_integer("top"))
+    position_trigger_enter_callback("keysanity_woods_entrance", enter_woods_entrance_area())
+    position_trigger_leave_callback("keysanity_woods_entrance", leave_woods_entrance_area())
+
+    position_trigger_rectangle("keysanity_ku_section", 856, -4229, 1072, -4102)
+    position_trigger_enter_callback("keysanity_ku_section", enter_ku_section_area())
+    position_trigger_leave_callback("keysanity_ku_section", leave_ku_section_area())
+
+    position_trigger_rectangle("keysanity_reach_trial", -103, -4065, 110, -4015)
+    position_trigger_enter_callback("keysanity_reach_trial", enter_reach_trial_area())
+    position_trigger_leave_callback("keysanity_reach_trial", leave_reach_trial_area())
+
+    position_trigger_rectangle("keysanity_grenade_tree_a", -288, -3931, -178, -3839)
+    position_trigger_enter_callback("keysanity_grenade_tree_a", enter_grenade_tree_area())
+    position_trigger_leave_callback("keysanity_grenade_tree_a", leave_grenade_tree_area())
+    set_integer("top", -3875)
+    if entrances.reachSeedOutside == 24 && entrances.reachSeedInside == 23 set_integer("top", -3840)
+    position_trigger_rectangle("keysanity_grenade_tree_b", -179, -3939, -17, get_integer("top"))
+    position_trigger_enter_callback("keysanity_grenade_tree_b", enter_grenade_tree_area())
+    position_trigger_leave_callback("keysanity_grenade_tree_b", leave_grenade_tree_area())
+
+    position_trigger_rectangle("keysanity_depths_entrance", 105, -4483, 398, -4359)
+    position_trigger_enter_callback("keysanity_depths_entrance", enter_depths_entrance_area())
+    position_trigger_leave_callback("keysanity_depths_entrance", leave_depths_entrance_area())
+
+    position_trigger_rectangle("keysanity_firefly_room_a", 401, -4486, 476, -4411)
+    position_trigger_enter_callback("keysanity_firefly_room_a", enter_firefly_room_area())
+    position_trigger_leave_callback("keysanity_firefly_room_a", leave_firefly_room_area())
+    position_trigger_rectangle("keysanity_firefly_room_b", 475, -4486, 533, -4444)
+    position_trigger_enter_callback("keysanity_firefly_room_b", enter_firefly_room_area())
+    position_trigger_leave_callback("keysanity_firefly_room_b", leave_firefly_room_area())
+    position_trigger_rectangle("keysanity_firefly_room_c", 532, -4486, 543, -4447)
+    position_trigger_enter_callback("keysanity_firefly_room_c", enter_firefly_room_area())
+    position_trigger_leave_callback("keysanity_firefly_room_c", leave_firefly_room_area())
+
+    position_trigger_rectangle("keysanity_pools_a", -1588, -4154, -1532, -4085)
+    position_trigger_enter_callback("keysanity_pools_a", enter_pools_area())
+    position_trigger_leave_callback("keysanity_pools_a", leave_pools_area())
+    position_trigger_rectangle("keysanity_pools_b", -1654, -4086, -1532, -3967)
+    position_trigger_enter_callback("keysanity_pools_b", enter_pools_area())
+    position_trigger_leave_callback("keysanity_pools_b", leave_pools_area())
+    position_trigger_rectangle("keysanity_pools_c", -1533, -4101, -1472, -4024)
+    position_trigger_enter_callback("keysanity_pools_c", enter_pools_area())
+    position_trigger_leave_callback("keysanity_pools_c", leave_pools_area())
+    position_trigger_rectangle("keysanity_pools_d", -1473, -4112, -1395, -4030)
+    position_trigger_enter_callback("keysanity_pools_d", enter_pools_area())
+    position_trigger_leave_callback("keysanity_pools_d", leave_pools_area())
+
+    position_trigger_rectangle("keysanity_wastes_a", 1749, -3854, 1927, -3757)
+    position_trigger_enter_callback("keysanity_wastes_a", enter_wastes_area())
+    position_trigger_leave_callback("keysanity_wastes_a", leave_wastes_area())
+    position_trigger_rectangle("keysanity_wastes_b", 1926, -3854, 2072, -3769)
+    position_trigger_enter_callback("keysanity_wastes_b", enter_wastes_area())
+    position_trigger_leave_callback("keysanity_wastes_b", leave_wastes_area())
+}
+
+on player_area() == Burrows enter_burrows_area()
+on player_area() != Burrows leave_burrows_area()
+
+fun enter_regenerate_tree_area() {
+    store(inside_regenerate_tree_triggers, inside_regenerate_tree_triggers + 1)
+    if inside_regenerate_tree_triggers == 1 {
+        store(current_door_area, regenerate_tree)
+        store(player.keystones, player.keystones + regenerate_tree_keystones)
+    }
+}
+fun leave_regenerate_tree_area() {
+    store(inside_regenerate_tree_triggers, inside_regenerate_tree_triggers - 1)
+    if inside_regenerate_tree_triggers == 0 {
+        if current_door_area == regenerate_tree store(current_door_area, 0)
+        store(player.keystones, player.keystones - regenerate_tree_keystones)
+    }
+}
+
+fun enter_eyestone_statue_area() {
+    store(inside_eyestone_statue_triggers, inside_eyestone_statue_triggers + 1)
+    if inside_eyestone_statue_triggers == 1 {
+        store(current_door_area, eyestone_statue)
+        store(player.keystones, player.keystones + eyestones)
+    }
+}
+fun leave_eyestone_statue_area() {
+    store(inside_eyestone_statue_triggers, inside_eyestone_statue_triggers - 1)
+    if inside_eyestone_statue_triggers == 0 {
+        if current_door_area == eyestone_statue store(current_door_area, 0)
+        store(player.keystones, player.keystones - eyestones)
+    }
+}
+
+fun enter_den_area() {
+    store(inside_den_triggers, inside_den_triggers + 1)
+    if inside_den_triggers == 1 {
+        store(current_door_area, den)
+        store(player.keystones, player.keystones + den_keystones)
+    }
+}
+fun leave_den_area() {
+    store(inside_den_triggers, inside_den_triggers - 1)
+    if inside_den_triggers == 0 {
+        if current_door_area == den store(current_door_area, 0)
+        store(player.keystones, player.keystones - den_keystones)
+    }
+}
+
+// single box
+fun enter_woods_entrance_area() {
+    store(current_door_area, woods_entrance)
+    store(player.keystones, player.keystones + woods_entrance_keystones)
+}
+fun leave_woods_entrance_area() {
+    if current_door_area == woods_entrance store(current_door_area, 0)
+    store(player.keystones, player.keystones - woods_entrance_keystones)
+}
+
+// single box
+fun enter_ku_section_area() {
+    store(current_door_area, ku_section)
+    store(player.keystones, player.keystones + ku_section_keystones)
+}
+fun leave_ku_section_area() {
+    if current_door_area == ku_section store(current_door_area, 0)
+    store(player.keystones, player.keystones - ku_section_keystones)
+}
+
+// single box
+fun enter_reach_trial_area() {
+    store(current_door_area, reach_trial)
+    store(player.keystones, player.keystones + reach_trial_keystones)
+}
+fun leave_reach_trial_area() {
+    if current_door_area == reach_trial store(current_door_area, 0)
+    store(player.keystones, player.keystones - reach_trial_keystones)
+}
+
+fun enter_grenade_tree_area() {
+    store(inside_grenade_tree_triggers, inside_grenade_tree_triggers + 1)
+    if inside_grenade_tree_triggers == 1 {
+        store(current_door_area, grenade_tree)
+        store(player.keystones, player.keystones + grenade_tree_keystones)
+    }
+}
+fun leave_grenade_tree_area() {
+    store(inside_grenade_tree_triggers, inside_grenade_tree_triggers - 1)
+    if inside_grenade_tree_triggers == 0 {
+        if current_door_area == grenade_tree store(current_door_area, 0)
+        store(player.keystones, player.keystones - grenade_tree_keystones)
+    }
+}
+
+// single box
+fun enter_depths_entrance_area() {
+    store(current_door_area, depths_entrance)
+    store(player.keystones, player.keystones + depths_entrance_keystones)
+}
+fun leave_depths_entrance_area() {
+    if current_door_area == depths_entrance store(current_door_area, 0)
+    store(player.keystones, player.keystones - depths_entrance_keystones)
+}
+
+fun enter_firefly_room_area() {
+    store(inside_firefly_room_triggers, inside_firefly_room_triggers + 1)
+    if inside_firefly_room_triggers == 1 {
+        store(current_door_area, firefly_room)
+        store(player.keystones, player.keystones + firefly_room_keystones)
+    }
+}
+fun leave_firefly_room_area() {
+    store(inside_firefly_room_triggers, inside_firefly_room_triggers - 1)
+    if inside_firefly_room_triggers == 0 {
+        if current_door_area == firefly_room store(current_door_area, 0)
+        store(player.keystones, player.keystones - firefly_room_keystones)
+    }
+}
+
+fun enter_pools_area() {
+    store(inside_pools_triggers, inside_pools_triggers + 1)
+    if inside_pools_triggers == 1 {
+        store(current_door_area, pools)
+        store(player.keystones, player.keystones + pools_keystones)
+    }
+}
+fun leave_pools_area() {
+    store(inside_pools_triggers, inside_pools_triggers - 1)
+    if inside_pools_triggers == 0 {
+        if current_door_area == pools store(current_door_area, 0)
+        store(player.keystones, player.keystones - pools_keystones)
+    }
+}
+
+fun enter_wastes_area() {
+    store(inside_wastes_triggers, inside_wastes_triggers + 1)
+    if inside_wastes_triggers == 1 {
+        store(current_door_area, wastes)
+        store(player.keystones, player.keystones + wastes_keystones)
+    }
+}
+fun leave_wastes_area() {
+    store(inside_wastes_triggers, inside_wastes_triggers - 1)
+    if inside_wastes_triggers == 0 {
+        if current_door_area == wastes store(current_door_area, 0)
+        store(player.keystones, player.keystones - wastes_keystones)
+    }
+}
+
+// area trigger
+fun enter_burrows_area() {
+    store(current_door_area, burrows)
+    store(player.keystones, player.keystones + burrows_keystones)
+}
+fun leave_burrows_area() {
+    if current_door_area == burrows store(current_door_area, 0)
+    store(player.keystones, player.keystones - burrows_keystones)
+}
+
+on Marsh.Howl.KeystoneDoor if regenerate_tree_keystones >= total_regenerate_tree_keystones store(regenerate_tree_keystones, regenerate_tree_keystones - total_regenerate_tree_keystones)
+on Marsh.EyestoneDoor if eyestones >= total_eyestones store(eyestones, eyestones - total_eyestones)
+on Marsh.Den.KeystoneDoor if den_keystones >= total_den_keystones store(den_keystones, den_keystones - total_den_keystones)
+on Woods.FirstKeystoneDoor if woods_entrance_keystones >= total_woods_entrance_keystones store(woods_entrance_keystones, woods_entrance_keystones - total_woods_entrance_keystones)
+on Woods.KuKeystoneDoor if ku_section_keystones >= total_ku_section_keystones store(ku_section_keystones, ku_section_keystones - total_ku_section_keystones)
+on Reach.Trial.KeystoneDoor if reach_trial_keystones >= total_reach_trial_keystones store(reach_trial_keystones, reach_trial_keystones - total_reach_trial_keystones)
+on Reach.TopKeystoneDoor if grenade_tree_keystones >= total_grenade_tree_keystones store(grenade_tree_keystones, grenade_tree_keystones - total_grenade_tree_keystones)
+on Depths.FirstKeystoneDoor if depths_entrance_keystones >= total_depths_entrance_keystones store(depths_entrance_keystones, depths_entrance_keystones - total_depths_entrance_keystones)
+on Depths.SecondKeystoneDoor if firefly_room_keystones >= total_firefly_room_keystones store(firefly_room_keystones, firefly_room_keystones - total_firefly_room_keystones)
+on Pools.KeystoneDoor if pools_keystones >= total_pools_keystones store(pools_keystones, pools_keystones - total_pools_keystones)
+on Wastes.KeystoneDoor if wastes_keystones >= total_wastes_keystones store(wastes_keystones, wastes_keystones - total_wastes_keystones)
+on Burrows.KeystoneDoor if burrows_keystones >= total_burrows_keystones store(burrows_keystones, burrows_keystones - total_burrows_keystones)
+
+!only_simulation {
+    on regenerate_tree_keystones == total_regenerate_tree_keystones store(Marsh.Howl.KeystoneDoor, true)
+    on eyestones == total_eyestones store(Marsh.EyestoneDoor, true)
+    on den_keystones == total_den_keystones store(Marsh.Den.KeystoneDoor, true)
+    on woods_entrance_keystones == total_woods_entrance_keystones store(Woods.FirstKeystoneDoor, true)
+    on ku_section_keystones == total_ku_section_keystones store(Woods.KuKeystoneDoor, true)
+    on reach_trial_keystones == total_reach_trial_keystones store(Reach.Trial.KeystoneDoor, true)
+    on grenade_tree_keystones == total_grenade_tree_keystones store(Reach.TopKeystoneDoor, true)
+    on depths_entrance_keystones == total_depths_entrance_keystones store(Depths.FirstKeystoneDoor, true)
+    on firefly_room_keystones == total_firefly_room_keystones store(Depths.SecondKeystoneDoor, true)
+    on pools_keystones == total_pools_keystones store(Pools.KeystoneDoor, true)
+    on wastes_keystones == total_wastes_keystones store(Wastes.KeystoneDoor, true)
+    on burrows_keystones == total_burrows_keystones store(Burrows.KeystoneDoor, true)
+}
+
+!let(door_radius, 10)
+!let(regenerate_tree_door_x, -583.7)
+!let(regenerate_tree_door_y, -4389.7)
+!let(eyestone_door_left_x, -358.9)
+!let(eyestone_door_left_y, -4235.0)
+!let(eyestone_door_left_width, 16)
+!let(eyestone_door_left_height, 11)
+!let(eyestone_door_right_x, -312.8)
+!let(eyestone_door_right_y, -4239.8)
+!let(eyestone_door_right_width, 19)
+!let(eyestone_door_right_height, 12)
+!let(den_door_x, -461.2)
+!let(den_door_y, -4487.1)
+!let(woods_entrance_door_x, 682.6)
+!let(woods_entrance_door_y, -4178.4)
+!let(ku_section_door_x, 947.9)
+!let(ku_section_door_y, -4133.3)
+!let(reach_trial_door_x, 86.1)
+!let(reach_trial_door_y, -4042.1)
+!let(grenade_tree_door_x, -167.9)
+!let(grenade_tree_door_y, -3908.5)
+!let(depths_entrance_door_x, 282.1)
+!let(depths_entrance_door_y, -4405.5)
+!let(firefly_room_door_x, 441.1)
+!let(firefly_room_door_y, -4477.7)
+!let(pools_door_x, -1477.8)
+!let(pools_door_y, -4071.9)
+!let(wastes_door_x, 1912.6)
+!let(wastes_door_y, -3791.1)
+!let(burrows_door_x, -830.1)
+!let(burrows_door_y, -4526.9)
+
+!state(regenerate_tree_hint, Boolean)
+!state(eyestones_hint, Boolean)
+!state(den_hint, Boolean)
+!state(woods_entrance_hint, Boolean)
+!state(ku_section_hint, Boolean)
+!state(reach_trial_hint, Boolean)
+!state(grenade_tree_hint, Boolean)
+!state(depths_entrance_hint, Boolean)
+!state(firefly_room_hint, Boolean)
+!state(pools_hint, Boolean)
+!state(wastes_hint, Boolean)
+!state(burrows_hint, Boolean)
+
+// TODO function calls are still a barrier to area_of sight, can't reference the store here
+!area_of(regenerate_tree_keystone_a_area, regenerate_tree_keystone_a())
+!area_of(regenerate_tree_keystone_b_area, regenerate_tree_keystone_b())
+!area_of(eyestone_a_area, eyestone_a())
+!area_of(eyestone_b_area, eyestone_b())
+!area_of(den_keystone_a_area, den_keystone_a())
+!area_of(den_keystone_b_area, den_keystone_b())
+!area_of(woods_entrance_keystone_a_area, woods_entrance_keystone_a())
+!area_of(woods_entrance_keystone_b_area, woods_entrance_keystone_b())
+!area_of(ku_section_keystone_a_area, ku_section_keystone_a())
+!area_of(ku_section_keystone_b_area, ku_section_keystone_b())
+!area_of(ku_section_keystone_c_area, ku_section_keystone_c())
+!area_of(ku_section_keystone_d_area, ku_section_keystone_d())
+!area_of(reach_trial_keystone_a_area, reach_trial_keystone_a())
+!area_of(reach_trial_keystone_b_area, reach_trial_keystone_b())
+!area_of(reach_trial_keystone_c_area, reach_trial_keystone_c())
+!area_of(reach_trial_keystone_d_area, reach_trial_keystone_d())
+!area_of(grenade_tree_keystone_a_area, grenade_tree_keystone_a())
+!area_of(grenade_tree_keystone_b_area, grenade_tree_keystone_b())
+!area_of(grenade_tree_keystone_c_area, grenade_tree_keystone_c())
+!area_of(grenade_tree_keystone_d_area, grenade_tree_keystone_d())
+!area_of(depths_entrance_keystone_a_area, depths_entrance_keystone_a())
+!area_of(depths_entrance_keystone_b_area, depths_entrance_keystone_b())
+!area_of(firefly_room_keystone_a_area, firefly_room_keystone_a())
+!area_of(firefly_room_keystone_b_area, firefly_room_keystone_b())
+!area_of(pools_keystone_a_area, pools_keystone_a())
+!area_of(pools_keystone_b_area, pools_keystone_b())
+!area_of(pools_keystone_c_area, pools_keystone_c())
+!area_of(pools_keystone_d_area, pools_keystone_d())
+!area_of(wastes_keystone_a_area, wastes_keystone_a())
+!area_of(wastes_keystone_b_area, wastes_keystone_b())
+!area_of(burrows_keystone_a_area, burrows_keystone_a())
+!area_of(burrows_keystone_b_area, burrows_keystone_b())
+!area_of(burrows_keystone_c_area, burrows_keystone_c())
+!area_of(burrows_keystone_d_area, burrows_keystone_d())
+
+fun regenerate_tree_progress() {
+    two_keystone_hint(
+        regenerate_tree_hint,
+        regenerate_tree_keystone_a_collected, regenerate_tree_keystone_a_area,
+        regenerate_tree_keystone_b_collected, regenerate_tree_keystone_b_area
+    )
+    keystone_progress("Regenerate Tree: ", regenerate_tree, regenerate_tree_keystones, total_regenerate_tree_keystones)
+}
+
+fun eyestones_progress() {
+    two_keystone_hint(
+        eyestones_hint,
+        eyestone_a_collected, eyestone_a_area,
+        eyestone_b_collected, eyestone_b_area
+    )
+    keystone_progress("Eyestones: ", eyestone_statue, eyestones, total_eyestones)
+}
+
+fun den_progress() {
+    two_keystone_hint(
+        den_hint,
+        den_keystone_a_collected, den_keystone_a_area,
+        den_keystone_b_collected, den_keystone_b_area
+    )
+    keystone_progress("Den: ", den, den_keystones, total_den_keystones)
+}
+
+fun woods_entrance_progress() {
+    two_keystone_hint(
+        woods_entrance_hint,
+        woods_entrance_keystone_a_collected, woods_entrance_keystone_a_area,
+        woods_entrance_keystone_b_collected, woods_entrance_keystone_b_area
+    )
+    keystone_progress("Woods Entrance: ", woods_entrance, woods_entrance_keystones, total_woods_entrance_keystones)
+}
+
+fun ku_section_progress() {
+    four_keystone_hint(
+        ku_section_hint,
+        ku_section_keystone_a_collected, ku_section_keystone_a_area,
+        ku_section_keystone_b_collected, ku_section_keystone_b_area,
+        ku_section_keystone_c_collected, ku_section_keystone_c_area,
+        ku_section_keystone_d_collected, ku_section_keystone_d_area
+    )
+    keystone_progress("Ku Section: ", ku_section, ku_section_keystones, total_ku_section_keystones)
+}
+
+fun reach_trial_progress() {
+    four_keystone_hint(
+        reach_trial_hint,
+        reach_trial_keystone_a_collected, reach_trial_keystone_a_area,
+        reach_trial_keystone_b_collected, reach_trial_keystone_b_area,
+        reach_trial_keystone_c_collected, reach_trial_keystone_c_area,
+        reach_trial_keystone_d_collected, reach_trial_keystone_d_area
+    )
+    keystone_progress("Reach Trial: ", reach_trial, reach_trial_keystones, total_reach_trial_keystones)
+}
+
+fun grenade_tree_progress() {
+    four_keystone_hint(
+        grenade_tree_hint,
+        grenade_tree_keystone_a_collected, grenade_tree_keystone_a_area,
+        grenade_tree_keystone_b_collected, grenade_tree_keystone_b_area,
+        grenade_tree_keystone_c_collected, grenade_tree_keystone_c_area,
+        grenade_tree_keystone_d_collected, grenade_tree_keystone_d_area
+    )
+    keystone_progress("Grenade Tree: ", grenade_tree, grenade_tree_keystones, total_grenade_tree_keystones)
+}
+
+fun depths_entrance_progress() {
+    two_keystone_hint(
+        depths_entrance_hint,
+        depths_entrance_keystone_a_collected, depths_entrance_keystone_a_area,
+        depths_entrance_keystone_b_collected, depths_entrance_keystone_b_area
+    )
+    keystone_progress("Depths Entrance: ", depths_entrance, depths_entrance_keystones, total_depths_entrance_keystones)
+}
+
+fun firefly_room_progress() {
+    two_keystone_hint(
+        firefly_room_hint,
+        firefly_room_keystone_a_collected, firefly_room_keystone_a_area,
+        firefly_room_keystone_b_collected, firefly_room_keystone_b_area
+    )
+    keystone_progress("Firefly Room: ", firefly_room, firefly_room_keystones, total_firefly_room_keystones)
+}
+
+fun pools_progress() {
+    four_keystone_hint(
+        pools_hint,
+        pools_keystone_a_collected, pools_keystone_a_area,
+        pools_keystone_b_collected, pools_keystone_b_area,
+        pools_keystone_c_collected, pools_keystone_c_area,
+        pools_keystone_d_collected, pools_keystone_d_area
+    )
+    keystone_progress("Pools: ", pools, pools_keystones, total_pools_keystones)
+}
+
+fun wastes_progress() {
+    two_keystone_hint(
+        wastes_hint,
+        wastes_keystone_a_collected, wastes_keystone_a_area,
+        wastes_keystone_b_collected, wastes_keystone_b_area
+    )
+    keystone_progress("Wastes: ", wastes, wastes_keystones, total_wastes_keystones)
+}
+
+fun burrows_progress() {
+    four_keystone_hint(
+        burrows_hint,
+        burrows_keystone_a_collected, burrows_keystone_a_area,
+        burrows_keystone_b_collected, burrows_keystone_b_area,
+        burrows_keystone_c_collected, burrows_keystone_c_area,
+        burrows_keystone_d_collected, burrows_keystone_d_area
+    )
+    keystone_progress("Burrows: ", burrows, burrows_keystones, total_burrows_keystones)
+}
+
+fun two_keystone_hint(hint: Boolean, a: Boolean, a_area: String, b: Boolean, b_area: String) {
+    if hint {
+        new_row(" - ")
+        if a == false add_row_item(a_area)
+        if b == false add_row_item(b_area)
+    }
+    if hint == false || get_boolean("comma") == false set_string("row", "")
+}
+
+fun four_keystone_hint(
+    hint: Boolean,
+    a: Boolean, a_area: String,
+    b: Boolean, b_area: String,
+    c: Boolean, c_area: String,
+    d: Boolean, d_area: String,
+) {
+    if hint {
+        new_row(" - ")
+        if a == false add_row_item(a_area)
+        if b == false add_row_item(b_area)
+        if c == false add_row_item(c_area)
+        if d == false add_row_item(d_area)
+    }
+    if hint == false || get_boolean("comma") == false set_string("row", "")
+}
+
+fun keystone_progress(name: String, door_area: Integer, current: Integer, total: Integer) {
+    set_string("color", "")
+    if current_door_area == door_area set_string("color", "#")
+    if current >= total set_string("color", "$")
+    set_string("row", get_string("color") + name + current + "/" + total + get_string("color") + get_string("row"))
+}
+
+on reload {
+    position_trigger_circle("regenerate_tree_door", regenerate_tree_door_x, regenerate_tree_door_y, door_radius)
+    position_trigger_enter_callback("regenerate_tree_door", store(regenerate_tree_hint, true))
+
+    position_trigger_rectangle("eyestone_door_left", eyestone_door_left_x, eyestone_door_left_y, eyestone_door_left_x + eyestone_door_left_width, eyestone_door_left_y + eyestone_door_left_height)
+    position_trigger_enter_callback("eyestone_door_left", store(eyestones_hint, true))
+    position_trigger_rectangle("eyestone_door_right", eyestone_door_right_x, eyestone_door_right_y, eyestone_door_right_x + eyestone_door_right_width, eyestone_door_right_y + eyestone_door_right_height)
+    position_trigger_enter_callback("eyestone_door_right", store(eyestones_hint, true))
+
+    position_trigger_circle("den_door", den_door_x, den_door_y, door_radius)
+    position_trigger_enter_callback("den_door", store(den_hint, true))
+
+    position_trigger_circle("woods_entrance_door", woods_entrance_door_x, woods_entrance_door_y, door_radius)
+    position_trigger_enter_callback("woods_entrance_door", store(woods_entrance_hint, true))
+
+    position_trigger_circle("ku_section_door", ku_section_door_x, ku_section_door_y, door_radius)
+    position_trigger_enter_callback("ku_section_door", store(ku_section_hint, true))
+
+    position_trigger_circle("reach_trial_door", reach_trial_door_x, reach_trial_door_y, door_radius)
+    position_trigger_enter_callback("reach_trial_door", store(reach_trial_hint, true))
+
+    position_trigger_circle("grenade_tree_door", grenade_tree_door_x, grenade_tree_door_y, door_radius)
+    position_trigger_enter_callback("grenade_tree_door", store(grenade_tree_hint, true))
+
+    position_trigger_circle("depths_entrance_door", depths_entrance_door_x, depths_entrance_door_y, door_radius)
+    position_trigger_enter_callback("depths_entrance_door", store(depths_entrance_hint, true))
+
+    position_trigger_circle("firefly_room_door", firefly_room_door_x, firefly_room_door_y, door_radius)
+    position_trigger_enter_callback("firefly_room_door", store(firefly_room_hint, true))
+
+    position_trigger_circle("pools_door", pools_door_x, pools_door_y, door_radius)
+    position_trigger_enter_callback("pools_door", store(pools_hint, true))
+
+    position_trigger_circle("wastes_door", wastes_door_x, wastes_door_y, door_radius)
+    position_trigger_enter_callback("wastes_door", store(wastes_hint, true))
+
+    position_trigger_circle("burrows_door", burrows_door_x, burrows_door_y, door_radius)
+    position_trigger_enter_callback("burrows_door", store(burrows_hint, true))
+}
+
+on regenerate_tree_hint {
+    regenerate_tree_progress()
+    free_message("keysanity_regenerate_tree", get_string("row"))
+    set_message_coordinate_system("keysanity_regenerate_tree", World)
+    set_message_vertical_anchor("keysanity_regenerate_tree", Middle)
+    set_message_position("keysanity_regenerate_tree", regenerate_tree_door_x, regenerate_tree_door_y)
+    position_trigger_destroy("regenerate_tree_door")
+}
+on change regenerate_tree_keystones {
+    regenerate_tree_progress()
+    set_message_text("keysanity_regenerate_tree", get_string("row"))
+}
+
+on eyestones_hint {
+    eyestones_progress()
+    free_message("keysanity_eyestones_left", get_string("row"))
+    set_message_coordinate_system("keysanity_eyestones_left", World)
+    set_message_vertical_anchor("keysanity_eyestones_left", Middle)
+    set_message_position("keysanity_eyestones_left", eyestone_door_left_x + eyestone_door_left_width / 2, eyestone_door_left_y + eyestone_door_left_height / 2)
+    free_message("keysanity_eyestones_right", get_string("row"))
+    set_message_coordinate_system("keysanity_eyestones_right", World)
+    set_message_vertical_anchor("keysanity_eyestones_right", Middle)
+    set_message_position("keysanity_eyestones_right", eyestone_door_right_x + eyestone_door_right_width / 2, eyestone_door_right_y + eyestone_door_right_height / 2)
+    position_trigger_destroy("eyestone_door_left")
+    position_trigger_destroy("eyestone_door_right")
+}
+on change eyestones {
+    eyestones_progress()
+    set_message_text("keysanity_eyestones_left", get_string("row"))
+    set_message_text("keysanity_eyestones_right", get_string("row"))
+}
+
+on den_hint {
+    den_progress()
+    free_message("keysanity_den", get_string("row"))
+    set_message_coordinate_system("keysanity_den", World)
+    set_message_vertical_anchor("keysanity_den", Middle)
+    set_message_position("keysanity_den", den_door_x, den_door_y)
+    position_trigger_destroy("den_door")
+}
+on change den_keystones {
+    den_progress()
+    set_message_text("keysanity_den", get_string("row"))
+}
+
+on woods_entrance_hint {
+    woods_entrance_progress()
+    free_message("keysanity_woods_entrance", get_string("row"))
+    set_message_coordinate_system("keysanity_woods_entrance", World)
+    set_message_vertical_anchor("keysanity_woods_entrance", Middle)
+    set_message_position("keysanity_woods_entrance", woods_entrance_door_x, woods_entrance_door_y)
+    position_trigger_destroy("woods_entrance_door")
+}
+on change woods_entrance_keystones {
+    woods_entrance_progress()
+    set_message_text("keysanity_woods_entrance", get_string("row"))
+}
+
+on ku_section_hint {
+    ku_section_progress()
+    free_message("keysanity_ku_section", get_string("row"))
+    set_message_coordinate_system("keysanity_ku_section", World)
+    set_message_vertical_anchor("keysanity_ku_section", Middle)
+    set_message_position("keysanity_ku_section", ku_section_door_x, ku_section_door_y)
+    position_trigger_destroy("ku_section_door")
+}
+on change ku_section_keystones {
+    ku_section_progress()
+    set_message_text("keysanity_ku_section", get_string("row"))
+}
+
+on reach_trial_hint {
+    reach_trial_progress()
+    free_message("keysanity_reach_trial", get_string("row"))
+    set_message_coordinate_system("keysanity_reach_trial", World)
+    set_message_vertical_anchor("keysanity_reach_trial", Middle)
+    set_message_position("keysanity_reach_trial", reach_trial_door_x, reach_trial_door_y)
+    position_trigger_destroy("reach_trial_door")
+}
+on change reach_trial_keystones {
+    reach_trial_progress()
+    set_message_text("keysanity_reach_trial", get_string("row"))
+}
+
+on grenade_tree_hint {
+    grenade_tree_progress()
+    free_message("keysanity_grenade_tree", get_string("row"))
+    set_message_coordinate_system("keysanity_grenade_tree", World)
+    set_message_vertical_anchor("keysanity_grenade_tree", Middle)
+    set_message_position("keysanity_grenade_tree", grenade_tree_door_x, grenade_tree_door_y)
+    position_trigger_destroy("grenade_tree_door")
+}
+on change grenade_tree_keystones {
+    grenade_tree_progress()
+    set_message_text("keysanity_grenade_tree", get_string("row"))
+}
+
+on depths_entrance_hint {
+    depths_entrance_progress()
+    free_message("keysanity_depths_entrance", get_string("row"))
+    set_message_coordinate_system("keysanity_depths_entrance", World)
+    set_message_vertical_anchor("keysanity_depths_entrance", Middle)
+    set_message_position("keysanity_depths_entrance", depths_entrance_door_x, depths_entrance_door_y)
+    position_trigger_destroy("depths_entrance_door")
+}
+on change depths_entrance_keystones {
+    depths_entrance_progress()
+    set_message_text("keysanity_depths_entrance", get_string("row"))
+}
+
+on firefly_room_hint {
+    firefly_room_progress()
+    free_message("keysanity_firefly_room", get_string("row"))
+    set_message_coordinate_system("keysanity_firefly_room", World)
+    set_message_vertical_anchor("keysanity_firefly_room", Middle)
+    set_message_position("keysanity_firefly_room", firefly_room_door_x, firefly_room_door_y)
+    position_trigger_destroy("firefly_room_door")
+}
+on change firefly_room_keystones {
+    firefly_room_progress()
+    set_message_text("keysanity_firefly_room", get_string("row"))
+}
+
+on pools_hint {
+    pools_progress()
+    free_message("keysanity_pools", get_string("row"))
+    set_message_coordinate_system("keysanity_pools", World)
+    set_message_vertical_anchor("keysanity_pools", Middle)
+    set_message_position("keysanity_pools", pools_door_x, pools_door_y)
+    position_trigger_destroy("pools_door")
+}
+on change pools_keystones {
+    pools_progress()
+    set_message_text("keysanity_pools", get_string("row"))
+}
+
+on wastes_hint {
+    wastes_progress()
+    free_message("keysanity_wastes", get_string("row"))
+    set_message_coordinate_system("keysanity_wastes", World)
+    set_message_vertical_anchor("keysanity_wastes", Middle)
+    set_message_position("keysanity_wastes", wastes_door_x, wastes_door_y)
+    position_trigger_destroy("wastes_door")
+}
+on change wastes_keystones {
+    wastes_progress()
+    set_message_text("keysanity_wastes", get_string("row"))
+}
+
+on burrows_hint {
+    burrows_progress()
+    free_message("keysanity_burrows", get_string("row"))
+    set_message_coordinate_system("keysanity_burrows", World)
+    set_message_vertical_anchor("keysanity_burrows", Middle)
+    set_message_position("keysanity_burrows", burrows_door_x, burrows_door_y)
+    position_trigger_destroy("burrows_door")
+}
+on change burrows_keystones {
+    burrows_progress()
+    set_message_text("keysanity_burrows", get_string("row"))
+}
+
+on Marsh.Howl.KeystoneDoor {
+    store_without_triggers(regenerate_tree_hint, true)
+    position_trigger_destroy("regenerate_tree_door")
+    destroy_message("keysanity_regenerate_tree")
+    position_trigger_destroy("keysanity_regenerate_tree_a")
+    position_trigger_destroy("keysanity_regenerate_tree_b")
+}
+on Marsh.EyestoneDoor {
+    store_without_triggers(eyestones_hint, true)
+    position_trigger_destroy("eyestone_door_left")
+    position_trigger_destroy("eyestone_door_right")
+    destroy_message("keysanity_eyestones_left")
+    destroy_message("keysanity_eyestones_right")
+    position_trigger_destroy("keysanity_eyestone_statue_a")
+    position_trigger_destroy("keysanity_eyestone_statue_b")
+    position_trigger_destroy("keysanity_eyestone_statue_c")
+    position_trigger_destroy("keysanity_eyestone_statue_d")
+}
+on Marsh.Den.KeystoneDoor {
+    store_without_triggers(den_hint, true)
+    position_trigger_destroy("den_door")
+    destroy_message("keysanity_den")
+    position_trigger_destroy("keysanity_den_a")
+    position_trigger_destroy("keysanity_den_b")
+}
+on Woods.FirstKeystoneDoor {
+    store_without_triggers(woods_entrance_hint, true)
+    position_trigger_destroy("woods_entrance_door")
+    destroy_message("keysanity_woods_entrance")
+    position_trigger_destroy("keysanity_woods_entrance")
+}
+on Woods.KuKeystoneDoor {
+    store_without_triggers(ku_section_hint, true)
+    position_trigger_destroy("ku_section_door")
+    destroy_message("keysanity_ku_section")
+    position_trigger_destroy("keysanity_ku_section")
+}
+on Reach.Trial.KeystoneDoor {
+    store_without_triggers(reach_trial_hint, true)
+    position_trigger_destroy("reach_trial_door")
+    destroy_message("keysanity_reach_trial")
+    position_trigger_destroy("keysanity_reach_trial")
+}
+on Reach.TopKeystoneDoor {
+    store_without_triggers(grenade_tree_hint, true)
+    position_trigger_destroy("grenade_tree_door")
+    destroy_message("keysanity_grenade_tree")
+    position_trigger_destroy("keysanity_grenade_tree_a")
+    position_trigger_destroy("keysanity_grenade_tree_b")
+}
+on Depths.FirstKeystoneDoor {
+    store_without_triggers(depths_entrance_hint, true)
+    position_trigger_destroy("depths_entrance_door")
+    destroy_message("keysanity_depths_entrance")
+    position_trigger_destroy("keysanity_depths_entrance")
+}
+on Depths.SecondKeystoneDoor {
+    store_without_triggers(firefly_room_hint, true)
+    position_trigger_destroy("firefly_room_door")
+    destroy_message("keysanity_firefly_room")
+    position_trigger_destroy("keysanity_firefly_room_a")
+    position_trigger_destroy("keysanity_firefly_room_b")
+    position_trigger_destroy("keysanity_firefly_room_c")
+}
+on Pools.KeystoneDoor {
+    store_without_triggers(pools_hint, true)
+    position_trigger_destroy("pools_door")
+    destroy_message("keysanity_pools")
+    position_trigger_destroy("keysanity_pools_a")
+    position_trigger_destroy("keysanity_pools_b")
+    position_trigger_destroy("keysanity_pools_c")
+    position_trigger_destroy("keysanity_pools_d")
+}
+on Wastes.KeystoneDoor {
+    store_without_triggers(wastes_hint, true)
+    position_trigger_destroy("wastes_door")
+    destroy_message("keysanity_wastes")
+    position_trigger_destroy("keysanity_wastes_a")
+    position_trigger_destroy("keysanity_wastes_b")
+}
+on Burrows.KeystoneDoor {
+    store_without_triggers(burrows_hint, true)
+    position_trigger_destroy("burrows_door")
+    destroy_message("keysanity_burrows")
+}
+
+on reload {
+    set_wheel_item_data(
+        "progress_helper",
+        BottomLeft,
+        "Keystone Progress",
+        "[Ability1]View Progress",
+        keystone_icon,
+    )
+    set_wheel_item_all_actions("progress_helper", BottomLeft, {
+        write_keystone_progress()
+        controlled_priority_message("keystone_progress", get_string("column"), 4)
+    })
+}
+
+on change regenerate_tree_keystones update_keystone_progress()
+on change eyestones update_keystone_progress()
+on change den_keystones update_keystone_progress()
+on change woods_entrance_keystones update_keystone_progress()
+on change ku_section_keystones update_keystone_progress()
+on change reach_trial_keystones update_keystone_progress()
+on change grenade_tree_keystones update_keystone_progress()
+on change depths_entrance_keystones update_keystone_progress()
+on change firefly_room_keystones update_keystone_progress()
+on change pools_keystones update_keystone_progress()
+on change wastes_keystones update_keystone_progress()
+on change burrows_keystones update_keystone_progress()
+on change regenerate_tree_hint update_keystone_progress()
+on change eyestones_hint update_keystone_progress()
+on change den_hint update_keystone_progress()
+on change woods_entrance_hint update_keystone_progress()
+on change ku_section_hint update_keystone_progress()
+on change reach_trial_hint update_keystone_progress()
+on change grenade_tree_hint update_keystone_progress()
+on change depths_entrance_hint update_keystone_progress()
+on change firefly_room_hint update_keystone_progress()
+on change pools_hint update_keystone_progress()
+on change wastes_hint update_keystone_progress()
+on change burrows_hint update_keystone_progress()
+fun update_keystone_progress() {
+    write_keystone_progress()
+    set_message_text("keystone_progress", get_string("column"))
+}
+
+fun write_keystone_progress() {
+    new_column("")
+    regenerate_tree_progress()
+    add_row(get_string("row"))
+    eyestones_progress()
+    add_row(get_string("row"))
+    den_progress()
+    add_row(get_string("row"))
+    woods_entrance_progress()
+    add_row(get_string("row"))
+    ku_section_progress()
+    add_row(get_string("row"))
+    reach_trial_progress()
+    add_row(get_string("row"))
+    grenade_tree_progress()
+    add_row(get_string("row"))
+    depths_entrance_progress()
+    add_row(get_string("row"))
+    firefly_room_progress()
+    add_row(get_string("row"))
+    pools_progress()
+    add_row(get_string("row"))
+    wastes_progress()
+    add_row(get_string("row"))
+    burrows_progress()
+    add_row(get_string("row"))
+}

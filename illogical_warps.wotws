@@ -1,0 +1,2723 @@
+#category("Item Pool")
+#name("Illogical Warps")
+#description("Adds custom warp destinations as items which are not logically considered")
+
+!random_pool(anchors, String, [
+    "MarshSpawn.Main",
+    "MarshSpawn.OpherBarrier",
+    "MarshSpawn.BrokenBridge",
+    "MarshSpawn.CaveEntrance",
+    "MarshSpawn.Cave",
+    "MarshSpawn.BurrowFightArena",
+    "MarshSpawn.LifepactLedge",
+    "MarshSpawn.PoolsBurrowsSignpost",
+    "MarshSpawn.BeforeBurrows",
+    "MarshSpawn.BurrowsEntry",
+    "MarshSpawn.LeftSpawnSignpost",
+    "MarshSpawn.PoolsPath",
+    "MarshSpawn.RegenDoor",
+    "MarshSpawn.HowlApproach",
+    "MarshSpawn.MokkTheBrave",
+    "MarshSpawn.AboveHowlArena",
+    "MarshSpawn.FangPlatform",
+    "MarshSpawn.HowlsDenEntrance",
+    "HowlsDen.UpperLoopExit",
+    "HowlsDen.AboveBoneBridge",
+    "HowlsDen.UpperLoopEntrance",
+    "HowlsDen.BoneBridge",
+    "HowlsDen.BoneBridgeDoor",
+    "HowlsDen.OutsideSecretRoom",
+    "HowlsDen.MidwayBottomLoop",
+    "HowlsDen.SecretRoom",
+    "HowlsDen.LeftSecretRoom",
+    "HowlsDen.AboveTeleporter",
+    "HowlsDen.Teleporter",
+    "HowlsDen.DoubleJumpApproach",
+    "HowlsDen.DoubleJumpTreeLedge",
+    "HowlsDen.DoubleJumpTreeArea",
+    "DenShrine",
+    "MarshPastOpher.MillView",
+    "MarshPastOpher.OpherSkipBranch",
+    "MarshPastOpher.TrialStart",
+    "MarshPastOpher.UnderTrunk",
+    "MarshPastOpher.TrialArea",
+    "MarshShrine",
+    "MarshPastOpher.BowPath",
+    "MarshPastOpher.BowApproach",
+    "MarshPastOpher.BowArea",
+    "MarshPastOpher.UpperBowArea",
+    "MarshPastOpher.PoolsPathEast",
+    "MarshPastOpher.PoolsPathMiddle",
+    "MarshPastOpher.PoolsPathOneWayWall",
+    "MarshPastOpher.PoolsPathBellowOneWayWall",
+    "MarshPastOpher.PoolsPathWest",
+    "MidnightBurrows.Teleporter",
+    "MidnightBurrows.BelowLupo",
+    "MidnightBurrows.Central",
+    "MidnightBurrows.TabletRoom",
+    "MidnightBurrows.PortalRoom",
+    "MidnightBurrows.LeverRoom",
+    "MidnightBurrows.East",
+    "MidnightBurrows.DenConnection",
+    "MidnightBurrows.PortalCorridor",
+    "MidnightBurrows.BelowUpperKS",
+    "WestHollow.Entrance",
+    "WestHollow.MokiByTwillen",
+    "WestHollow.InFrontPurpleDoor",
+    "WestHollow.InFrontPurpleDoorEnemyPaths",
+    "WestHollow.HollowDrainMiddle",
+    "WestHollow.RockPuzzle",
+    "WestHollow.PastRockPuzzleDoor",
+    "WestHollow.PastRockPuzzleDoorEnemyPaths",
+    "WestHollow.FarLeftRoom",
+    "WestHollow.SubmergedPlatform",
+    "WestHollow.AboveJumppad",
+    "WestHollow.HollowDrainLower",
+    "WestHollow.TrialApproach",
+    "WestHollow.TrialStart",
+    "WestHollow.PolesPond",
+    "WestHollow.DashApproach",
+    "WestHollow.DashArea",
+    "WestHollow.DashCrushers",
+    "WestHollow.DashRoomTopRight",
+    "WestHollow.AboveDashSemisolid",
+    "EastHollow.Teleporter",
+    "BeetleFight",
+    "EastHollow.VoiceDoorPlatform",
+    "EastHollow.MapMoki",
+    "EastHollow.OutsideGlades",
+    "EastHollow.AfterBeetleFight",
+    "EastHollow.AboveBash",
+    "EastHollow.TreeAreaJumppad",
+    "EastHollow.DepthsLeverDoor",
+    "EastHollow.BashTreeCheckpoint",
+    "EastHollow.AboveDepths",
+    "EastHollow.KwolokPathGrapplePlant",
+    "EastHollow.KwolokPathLantern",
+    "EastHollow.Kwolok",
+    "EastHollow.KwolokShrine",
+    "GladesTown.Teleporter",
+    "GladesTown.ThornyBranch",
+    "GladesTown.TwillenHome",
+    "GladesTown.KeyMokiHutInside",
+    "GladesTown.West",
+    "GladesTown.BuiltMotayHut",
+    "GladesTown.MotayHutDoor",
+    "GladesTown.MotayHutInside",
+    "GladesTown.UpperWest",
+    "GladesTown.InsideThirdHut",
+    "GladesTown.AcornMoki",
+    "GladesTown.AcornCave",
+    "GladesTown.BelowBountyShard",
+    "GladesTown.LeftUpdraft",
+    "GladesTown.AboveOpher",
+    "GladesTown.StorageHut",
+    "GladesTown.PlayfulMoki",
+    "GladesTown.LupoHouse",
+    "GladesTown.InsideLupoHouse",
+    "GladesTown.BelowHoleHut",
+    "GladesTown.HoleHutEntrance",
+    "GladesTown.InsideHoleHut",
+    "WestGlades.RightLowerPool",
+    "WestGlades.LeftLowerPool",
+    "WestGlades.Center",
+    "WestGlades.Upper",
+    "WestGlades.MillApproach",
+    "WestGlades.ShrineArea",
+    "GladesShrine",
+    "OuterWellspring.CutsceneIsland",
+    "OuterWellspring.EntranceDoor",
+    "OuterWellspring.LifeHarvestEntry",
+    "OuterWellspring.Basement",
+    "OuterWellspring.AboveEntranceDoor",
+    "OuterWellspring.WestDoor",
+    "OuterWellspring.EastDoor",
+    "OuterWellspring.AboveWestDoor",
+    "OuterWellspring.TopDoor",
+    "OuterWellspring.RightWallMidpoint",
+    "OuterWellspring.TrialApproach",
+    "OuterWellspring.TrialRoom",
+    "OuterWellspring.TrialStart",
+    "InnerWellspring.EntranceDoor",
+    "InnerWellspring.ThornShardArea",
+    "InnerWellspring.ShortcutLever",
+    "InnerWellspring.DrainRoom",
+    "InnerWellspring.DrainAreaEntrance",
+    "InnerWellspring.DrainAreaSL",
+    "InnerWellspring.DrainAreaExit",
+    "InnerWellspring.DrainRoomCheckpoint",
+    "InnerWellspring.DrainRoomCenter",
+    "InnerWellspring.DrainRoomTop",
+    "InnerWellspring.BelowDrainLever",
+    "InnerWellspring.AtDrainLever",
+    "InnerWellspring.AbovePole",
+    "InnerWellspring.WestDoor",
+    "InnerWellspring.EastDoor",
+    "InnerWellspring.SpinPuzzle",
+    "InnerWellspring.PastSpinPuzzle",
+    "InnerWellspring.GrappleThroughZigZagSpikes",
+    "InnerWellspring.TopSecondRoom",
+    "InnerWellspring.Teleporter",
+    "InnerWellspring.EscapeSequence",
+    "WoodsEntry.ShriekMeet",
+    "WoodsEntry.BellowHut",
+    "WoodsEntry.BelowTeleporter",
+    "WoodsEntry.Teleporter",
+    "WoodsEntry.FamilyHut",
+    "WoodsEntry.FamilyHutInside",
+    "WoodsEntry.TwoKeystoneRoom",
+    "WoodsMain.AfterKuMeet",
+    "WoodsMain.BelowFourKeystoneRoom",
+    "WoodsMain.WallOreLedge",
+    "WoodsMain.FourKeystoneRoom",
+    "WoodsMain.InFrontLowerKS",
+    "WoodsMain.GiantSkull",
+    "WoodsMain.BalloonLure",
+    "WoodsMain.BelowHiddenOre",
+    "WoodsMain.PetrifiedHowl",
+    "WoodsMain.BrokenOwl",
+    "WoodsMain.TrialStart",
+    "WoodsMain.MidwayTrial",
+    "WoodsMain.TrialEnd",
+    "WoodsMain.AboveHowl",
+    "WoodsMain.BeforeLog",
+    "WoodsMain.Teleporter",
+    "WoodsMain.OrangeTree",
+    "WoodsMain.AbovePit",
+    "WoodsMain.FeedingGrounds",
+    "WoodsShrine",
+    "LowerReach.Entry",
+    "LowerReach.AboveEntry",
+    "LowerReach.Icefall",
+    "LowerReach.CentralEnemyPaths",
+    "LowerReach.Central",
+    "LowerReach.OutsideTPRoom",
+    "LowerReach.BelowTokk",
+    "LowerReach.Teleporter",
+    "LowerReach.SecondSoup",
+    "LowerReach.BelowLupo",
+    "LowerReach.CentralFurnacePedestal",
+    "LowerReach.WindChannel",
+    "LowerReach.SoupMoki",
+    "LowerReach.EastEnemyPaths",
+    "LowerReach.East",
+    "LowerReach.SnowballEnemyPaths",
+    "LowerReach.Snowball",
+    "LowerReach.PastSnowball",
+    "LowerReach.IceCavern",
+    "LowerReach.HalfwayIceCavern",
+    "LowerReach.SwimmingPool",
+    "LowerReach.EastFurnace",
+    "LowerReach.ArenaArea",
+    "LowerReach.WindSpinners",
+    "LowerReach.WispPathCheckpoint",
+    "LowerReach.BridgeWispPath",
+    "LowerReach.SnowEscape",
+    "LowerReach.VeralHome",
+    "LowerReach.TownEntry",
+    "LowerReach.TrialStart",
+    "UpperReach.MantisCairn",
+    "UpperReach.BurrowArea",
+    "UpperReach.KeystoneRoom",
+    "UpperReach.KeystoneSnapPlant",
+    "UpperReach.KeystoneSnapPlantThawed",
+    "UpperReach.KeystoneSnapPlantPaths",
+    "UpperReach.KeystoneSnapPlantThawedPaths",
+    "UpperReach.UpperSoup",
+    "UpperReach.UpperSoupFrozen",
+    "UpperReach.UpperSoupThawed",
+    "UpperReach.UpperSoupPaths",
+    "UpperReach.UpperSoupFrozenPaths",
+    "UpperReach.UpperSoupThawedPaths",
+    "UpperReach.OutsideTreeRoom",
+    "UpperReach.TreeRoomLedge",
+    "UpperReach.TreeRoom",
+    "UpperReach.SeedHut",
+    "UpperDepths.Entry",
+    "UpperDepths.FirstFirefly",
+    "UpperDepths.FirstKSRoom",
+    "UpperDepths.KeydoorLedge",
+    "UpperDepths.RightKeystonePath",
+    "UpperDepths.BelowHive",
+    "UpperDepths.Teleporter",
+    "UpperDepths.Central",
+    "UpperDepths.SecondKSRoom",
+    "UpperDepths.MoraPath",
+    "UpperDepths.OutsideMoraFight",
+    "MoraFirstPhase",
+    "MoraEscape",
+    "MoraSecondPhase",
+    "UpperDepths.LowerConnection",
+    "LowerDepths.West",
+    "DepthsShrine",
+    "LowerDepths.Central",
+    "LowerDepths.East",
+    "LowerDepths.BeforeTree",
+    "LowerDepths.TreeArea",
+    "PoolsApproach.MillPathCheckpoint",
+    "PoolsApproach.MillPath",
+    "PoolsApproach.MarshBreakableWall",
+    "PoolsApproach.OnTopOfWheel",
+    "EastPools.LeverRoom",
+    "EastPools.BehindEntryDoor",
+    "EastPools.TokkBubble",
+    "EastPools.TPArea",
+    "EastPools.Teleporter",
+    "EastPools.FishingPool",
+    "EastPools.AboveFishingPool",
+    "EastPools.NextToLupoOre",
+    "EastPools.LupoArea",
+    "EastPools.WaterdashArena",
+    "EastPools.MissilePuzzle",
+    "EastPools.CentralRoom",
+    "UpperPools.KeystoneRoomEntrance",
+    "UpperPools.KeystoneRoomBubbleSpawner",
+    "UpperPools.KeystoneRoom",
+    "UpperPools.BeforeKeystoneDoor",
+    "UpperPools.TreeRoomEntrance",
+    "UpperPools.TreeRoom",
+    "UpperPools.AboveTree",
+    "UpperPools.DrainPuzzleEntrance",
+    "UpperPools.DrainPuzzleRight",
+    "UpperPools.DrainPuzzleExit",
+    "UpperPools.RightBubbleSpamRoom",
+    "UpperPools.LeftBubbleSpamRoom",
+    "WestPools.Teleporter",
+    "WestPools.LeftKwolokPlatform",
+    "WestPools.RightKwolokPlatform",
+    "KwolokEscape",
+    "KwolokFight",
+    "LowerWastes.FeedingGroundsTP",
+    "LowerWastes.SunsetView",
+    "LowerWastes.Shovel",
+    "LowerWastes.MuncherTunnel",
+    "LowerWastes.SandPot",
+    "LowerWastes.WoodenBridge",
+    "LowerWastes.BeforeMinesEntrance",
+    "LowerWastes.MinesEntranceEnemyPaths",
+    "LowerWastes.MinesEntrance",
+    "LowerWastes.LeverArea",
+    "LowerWastes.MuncherClimb",
+    "LowerWastes.LastStandArea",
+    "LowerWastes.SkeetoHive",
+    "LowerWastes.ThirstyGorlek",
+    "LowerWastes.UpperPath",
+    "LowerWastes.CentralTP",
+    "UpperWastes.KeystoneRoom",
+    "UpperWastes.MissilePuzzleLeft",
+    "UpperWastes.MissilePuzzleMiddle",
+    "UpperWastes.MissilePuzzleRight",
+    "UpperWastes.SpinLasers",
+    "UpperWastes.RuinsApproach",
+    "UpperWastes.OuterRuinsTP",
+    "UpperWastes.OutsideRuins",
+    "WindtornRuins.UpperRuinsDoor",
+    "WindtornRuins.BrokenMural",
+    "WindtornRuins.FallenPillar",
+    "WindtornRuins.RuinsTP",
+    "WindtornRuins.Escape",
+    "WindtornRuins.MapstoneAltar",
+    "WeepingRidge.Bottom",
+    "WeepingRidge.Elevator",
+    "WeepingRidge.TopElevator",
+    "WeepingRidge.AfterElementals",
+    "WeepingRidge.AboveTree",
+    "WeepingRidge.WillowEntranceLedge",
+    "WillowsEnd.Entry",
+    "WillowsEnd.EntryFloatingPlatform",
+    "WillowsEnd.GrappleHeartMidPoint",
+    "WillowsEnd.GrappleHeart",
+    "WillowsEnd.BoulderHeartPath",
+    "WillowsEnd.InnerTP",
+    "WillowsEnd.AboveInnerTP",
+    "WillowsEnd.East",
+    "WillowsEnd.RedirectHeartPath",
+    "WillowsEnd.RedirectHeartPuzzle",
+    "WillowsEnd.Upper",
+    "WillowsEnd.ShriekArena",
+    "WillowsEnd.MiniBossFight",
+    "WillowsEnd.West",
+    "WillowsEnd.GlideHeartPath",
+    "WillowsEnd.GlideRooms",
+    "WillowsEnd.UpperHeartPath",
+    "WillowsEnd.UpperHeartCheckpoint",
+    "TuleyShop",
+])
+
+!repeat 5 {
+    !random_from_pool(anchor, anchors)
+
+    !if anchor == "MarshSpawn.Main" {
+        !add_item({
+            create_warp_icon("MarshSpawn.Main", -799, -4310)
+            set_warp_icon_label("MarshSpawn.Main", "#MarshSpawn.Main#")
+            item_message("#MarshSpawn.Main Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MarshSpawn.OpherBarrier" {
+        !add_item({
+            create_warp_icon("MarshSpawn.OpherBarrier", -681, -4309)
+            set_warp_icon_label("MarshSpawn.OpherBarrier", "#MarshSpawn.OpherBarrier#")
+            item_message("#MarshSpawn.OpherBarrier Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MarshSpawn.BrokenBridge" {
+        !add_item({
+            create_warp_icon("MarshSpawn.BrokenBridge", -643, -4351)
+            set_warp_icon_label("MarshSpawn.BrokenBridge", "#MarshSpawn.BrokenBridge#")
+            item_message("#MarshSpawn.BrokenBridge Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MarshSpawn.CaveEntrance" {
+        !add_item({
+            create_warp_icon("MarshSpawn.CaveEntrance", -588, -4393)
+            set_warp_icon_label("MarshSpawn.CaveEntrance", "#MarshSpawn.CaveEntrance#")
+            item_message("#MarshSpawn.CaveEntrance Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MarshSpawn.Cave" {
+        !add_item({
+            create_warp_icon("MarshSpawn.Cave", -707, -4419)
+            set_warp_icon_label("MarshSpawn.Cave", "#MarshSpawn.Cave#")
+            item_message("#MarshSpawn.Cave Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MarshSpawn.BurrowFightArena" {
+        !add_item({
+            create_warp_icon("MarshSpawn.BurrowFightArena", -959, -4406)
+            set_warp_icon_label("MarshSpawn.BurrowFightArena", "#MarshSpawn.BurrowFightArena#")
+            item_message("#MarshSpawn.BurrowFightArena Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MarshSpawn.LifepactLedge" {
+        !add_item({
+            create_warp_icon("MarshSpawn.LifepactLedge", -931, -4399)
+            set_warp_icon_label("MarshSpawn.LifepactLedge", "#MarshSpawn.LifepactLedge#")
+            item_message("#MarshSpawn.LifepactLedge Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MarshSpawn.PoolsBurrowsSignpost" {
+        !add_item({
+            create_warp_icon("MarshSpawn.PoolsBurrowsSignpost", -898, -4436)
+            set_warp_icon_label("MarshSpawn.PoolsBurrowsSignpost", "#MarshSpawn.PoolsBurrowsSignpost#")
+            item_message("#MarshSpawn.PoolsBurrowsSignpost Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MarshSpawn.BeforeBurrows" {
+        !add_item({
+            create_warp_icon("MarshSpawn.BeforeBurrows", -1006, -4497)
+            set_warp_icon_label("MarshSpawn.BeforeBurrows", "#MarshSpawn.BeforeBurrows#")
+            item_message("#MarshSpawn.BeforeBurrows Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MarshSpawn.BurrowsEntry" {
+        !add_item({
+            create_warp_icon("MarshSpawn.BurrowsEntry", -937, -4494)
+            set_warp_icon_label("MarshSpawn.BurrowsEntry", "#MarshSpawn.BurrowsEntry#")
+            item_message("#MarshSpawn.BurrowsEntry Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MarshSpawn.LeftSpawnSignpost" {
+        !add_item({
+            create_warp_icon("MarshSpawn.LeftSpawnSignpost", -954, -4296)
+            set_warp_icon_label("MarshSpawn.LeftSpawnSignpost", "#MarshSpawn.LeftSpawnSignpost#")
+            item_message("#MarshSpawn.LeftSpawnSignpost Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MarshSpawn.PoolsPath" {
+        !add_item({
+            create_warp_icon("MarshSpawn.PoolsPath", -1070, -4275)
+            set_warp_icon_label("MarshSpawn.PoolsPath", "#MarshSpawn.PoolsPath#")
+            item_message("#MarshSpawn.PoolsPath Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MarshSpawn.RegenDoor" {
+        !add_item({
+            create_warp_icon("MarshSpawn.RegenDoor", -573, -4393)
+            set_warp_icon_label("MarshSpawn.RegenDoor", "#MarshSpawn.RegenDoor#")
+            item_message("#MarshSpawn.RegenDoor Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MarshSpawn.HowlApproach" {
+        !add_item({
+            create_warp_icon("MarshSpawn.HowlApproach", -500, -4395)
+            set_warp_icon_label("MarshSpawn.HowlApproach", "#MarshSpawn.HowlApproach#")
+            item_message("#MarshSpawn.HowlApproach Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MarshSpawn.MokkTheBrave" {
+        !add_item({
+            create_warp_icon("MarshSpawn.MokkTheBrave", -376, -4413)
+            set_warp_icon_label("MarshSpawn.MokkTheBrave", "#MarshSpawn.MokkTheBrave#")
+            item_message("#MarshSpawn.MokkTheBrave Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MarshSpawn.AboveHowlArena" {
+        !add_item({
+            create_warp_icon("MarshSpawn.AboveHowlArena", -298, -4388)
+            set_warp_icon_label("MarshSpawn.AboveHowlArena", "#MarshSpawn.AboveHowlArena#")
+            item_message("#MarshSpawn.AboveHowlArena Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MarshSpawn.FangPlatform" {
+        !add_item({
+            create_warp_icon("MarshSpawn.FangPlatform", -218, -4406)
+            set_warp_icon_label("MarshSpawn.FangPlatform", "#MarshSpawn.FangPlatform#")
+            item_message("#MarshSpawn.FangPlatform Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MarshSpawn.HowlsDenEntrance" {
+        !add_item({
+            create_warp_icon("MarshSpawn.HowlsDenEntrance", -429, -4420)
+            set_warp_icon_label("MarshSpawn.HowlsDenEntrance", "#MarshSpawn.HowlsDenEntrance#")
+            item_message("#MarshSpawn.HowlsDenEntrance Teleporter#")
+        }, 1)
+    }
+    !if anchor == "HowlsDen.UpperLoopExit" {
+        !add_item({
+            create_warp_icon("HowlsDen.UpperLoopExit", -401, -4433)
+            set_warp_icon_label("HowlsDen.UpperLoopExit", "#HowlsDen.UpperLoopExit#")
+            item_message("#HowlsDen.UpperLoopExit Teleporter#")
+        }, 1)
+    }
+    !if anchor == "HowlsDen.AboveBoneBridge" {
+        !add_item({
+            create_warp_icon("HowlsDen.AboveBoneBridge", -446, -4436)
+            set_warp_icon_label("HowlsDen.AboveBoneBridge", "#HowlsDen.AboveBoneBridge#")
+            item_message("#HowlsDen.AboveBoneBridge Teleporter#")
+        }, 1)
+    }
+    !if anchor == "HowlsDen.UpperLoopEntrance" {
+        !add_item({
+            create_warp_icon("HowlsDen.UpperLoopEntrance", -407, -4451)
+            set_warp_icon_label("HowlsDen.UpperLoopEntrance", "#HowlsDen.UpperLoopEntrance#")
+            item_message("#HowlsDen.UpperLoopEntrance Teleporter#")
+        }, 1)
+    }
+    !if anchor == "HowlsDen.BoneBridge" {
+        !add_item({
+            create_warp_icon("HowlsDen.BoneBridge", -371, -4468)
+            set_warp_icon_label("HowlsDen.BoneBridge", "#HowlsDen.BoneBridge#")
+            item_message("#HowlsDen.BoneBridge Teleporter#")
+        }, 1)
+    }
+    !if anchor == "HowlsDen.BoneBridgeDoor" {
+        !add_item({
+            create_warp_icon("HowlsDen.BoneBridgeDoor", -466, -4490)
+            set_warp_icon_label("HowlsDen.BoneBridgeDoor", "#HowlsDen.BoneBridgeDoor#")
+            item_message("#HowlsDen.BoneBridgeDoor Teleporter#")
+        }, 1)
+    }
+    !if anchor == "HowlsDen.OutsideSecretRoom" {
+        !add_item({
+            create_warp_icon("HowlsDen.OutsideSecretRoom", -495, -4481)
+            set_warp_icon_label("HowlsDen.OutsideSecretRoom", "#HowlsDen.OutsideSecretRoom#")
+            item_message("#HowlsDen.OutsideSecretRoom Teleporter#")
+        }, 1)
+    }
+    !if anchor == "HowlsDen.MidwayBottomLoop" {
+        !add_item({
+            create_warp_icon("HowlsDen.MidwayBottomLoop", -492, -4459)
+            set_warp_icon_label("HowlsDen.MidwayBottomLoop", "#HowlsDen.MidwayBottomLoop#")
+            item_message("#HowlsDen.MidwayBottomLoop Teleporter#")
+        }, 1)
+    }
+    !if anchor == "HowlsDen.SecretRoom" {
+        !add_item({
+            create_warp_icon("HowlsDen.SecretRoom", -515, -4479)
+            set_warp_icon_label("HowlsDen.SecretRoom", "#HowlsDen.SecretRoom#")
+            item_message("#HowlsDen.SecretRoom Teleporter#")
+        }, 1)
+    }
+    !if anchor == "HowlsDen.LeftSecretRoom" {
+        !add_item({
+            create_warp_icon("HowlsDen.LeftSecretRoom", -565, -4470)
+            set_warp_icon_label("HowlsDen.LeftSecretRoom", "#HowlsDen.LeftSecretRoom#")
+            item_message("#HowlsDen.LeftSecretRoom Teleporter#")
+        }, 1)
+    }
+    !if anchor == "HowlsDen.AboveTeleporter" {
+        !add_item({
+            create_warp_icon("HowlsDen.AboveTeleporter", -348, -4497)
+            set_warp_icon_label("HowlsDen.AboveTeleporter", "#HowlsDen.AboveTeleporter#")
+            item_message("#HowlsDen.AboveTeleporter Teleporter#")
+        }, 1)
+    }
+    !if anchor == "HowlsDen.Teleporter" {
+        !add_item({
+            create_warp_icon("HowlsDen.Teleporter", -328, -4536)
+            set_warp_icon_label("HowlsDen.Teleporter", "#HowlsDen.Teleporter#")
+            item_message("#HowlsDen.Teleporter Teleporter#")
+        }, 1)
+    }
+    !if anchor == "HowlsDen.DoubleJumpApproach" {
+        !add_item({
+            create_warp_icon("HowlsDen.DoubleJumpApproach", -436, -4528)
+            set_warp_icon_label("HowlsDen.DoubleJumpApproach", "#HowlsDen.DoubleJumpApproach#")
+            item_message("#HowlsDen.DoubleJumpApproach Teleporter#")
+        }, 1)
+    }
+    !if anchor == "HowlsDen.DoubleJumpTreeLedge" {
+        !add_item({
+            create_warp_icon("HowlsDen.DoubleJumpTreeLedge", -514, -4549)
+            set_warp_icon_label("HowlsDen.DoubleJumpTreeLedge", "#HowlsDen.DoubleJumpTreeLedge#")
+            item_message("#HowlsDen.DoubleJumpTreeLedge Teleporter#")
+        }, 1)
+    }
+    !if anchor == "HowlsDen.DoubleJumpTreeArea" {
+        !add_item({
+            create_warp_icon("HowlsDen.DoubleJumpTreeArea", -555, -4552)
+            set_warp_icon_label("HowlsDen.DoubleJumpTreeArea", "#HowlsDen.DoubleJumpTreeArea#")
+            item_message("#HowlsDen.DoubleJumpTreeArea Teleporter#")
+        }, 1)
+    }
+    !if anchor == "DenShrine" {
+        !add_item({
+            create_warp_icon("DenShrine", -328, -4569)
+            set_warp_icon_label("DenShrine", "#DenShrine#")
+            item_message("#DenShrine Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MarshPastOpher.MillView" {
+        !add_item({
+            create_warp_icon("MarshPastOpher.MillView", -596, -4293)
+            set_warp_icon_label("MarshPastOpher.MillView", "#MarshPastOpher.MillView#")
+            item_message("#MarshPastOpher.MillView Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MarshPastOpher.OpherSkipBranch" {
+        !add_item({
+            create_warp_icon("MarshPastOpher.OpherSkipBranch", -643, -4270)
+            set_warp_icon_label("MarshPastOpher.OpherSkipBranch", "#MarshPastOpher.OpherSkipBranch#")
+            item_message("#MarshPastOpher.OpherSkipBranch Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MarshPastOpher.TrialStart" {
+        !add_item({
+            create_warp_icon("MarshPastOpher.TrialStart", -602, -4316)
+            set_warp_icon_label("MarshPastOpher.TrialStart", "#MarshPastOpher.TrialStart#")
+            item_message("#MarshPastOpher.TrialStart Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MarshPastOpher.UnderTrunk" {
+        !add_item({
+            create_warp_icon("MarshPastOpher.UnderTrunk", -573, -4339)
+            set_warp_icon_label("MarshPastOpher.UnderTrunk", "#MarshPastOpher.UnderTrunk#")
+            item_message("#MarshPastOpher.UnderTrunk Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MarshPastOpher.TrialArea" {
+        !add_item({
+            create_warp_icon("MarshPastOpher.TrialArea", -427, -4342)
+            set_warp_icon_label("MarshPastOpher.TrialArea", "#MarshPastOpher.TrialArea#")
+            item_message("#MarshPastOpher.TrialArea Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MarshShrine" {
+        !add_item({
+            create_warp_icon("MarshShrine", -382, -4341)
+            set_warp_icon_label("MarshShrine", "#MarshShrine#")
+            item_message("#MarshShrine Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MarshPastOpher.BowPath" {
+        !add_item({
+            create_warp_icon("MarshPastOpher.BowPath", -494, -4294)
+            set_warp_icon_label("MarshPastOpher.BowPath", "#MarshPastOpher.BowPath#")
+            item_message("#MarshPastOpher.BowPath Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MarshPastOpher.BowApproach" {
+        !add_item({
+            create_warp_icon("MarshPastOpher.BowApproach", -490, -4245)
+            set_warp_icon_label("MarshPastOpher.BowApproach", "#MarshPastOpher.BowApproach#")
+            item_message("#MarshPastOpher.BowApproach Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MarshPastOpher.BowArea" {
+        !add_item({
+            create_warp_icon("MarshPastOpher.BowArea", -443, -4236)
+            set_warp_icon_label("MarshPastOpher.BowArea", "#MarshPastOpher.BowArea#")
+            item_message("#MarshPastOpher.BowArea Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MarshPastOpher.UpperBowArea" {
+        !add_item({
+            create_warp_icon("MarshPastOpher.UpperBowArea", -437, -4211)
+            set_warp_icon_label("MarshPastOpher.UpperBowArea", "#MarshPastOpher.UpperBowArea#")
+            item_message("#MarshPastOpher.UpperBowArea Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MarshPastOpher.PoolsPathEast" {
+        !add_item({
+            create_warp_icon("MarshPastOpher.PoolsPathEast", -662, -4241)
+            set_warp_icon_label("MarshPastOpher.PoolsPathEast", "#MarshPastOpher.PoolsPathEast#")
+            item_message("#MarshPastOpher.PoolsPathEast Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MarshPastOpher.PoolsPathMiddle" {
+        !add_item({
+            create_warp_icon("MarshPastOpher.PoolsPathMiddle", -709, -4181)
+            set_warp_icon_label("MarshPastOpher.PoolsPathMiddle", "#MarshPastOpher.PoolsPathMiddle#")
+            item_message("#MarshPastOpher.PoolsPathMiddle Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MarshPastOpher.PoolsPathOneWayWall" {
+        !add_item({
+            create_warp_icon("MarshPastOpher.PoolsPathOneWayWall", -744, -4173)
+            set_warp_icon_label("MarshPastOpher.PoolsPathOneWayWall", "#MarshPastOpher.PoolsPathOneWayWall#")
+            item_message("#MarshPastOpher.PoolsPathOneWayWall Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MarshPastOpher.PoolsPathBellowOneWayWall" {
+        !add_item({
+            create_warp_icon("MarshPastOpher.PoolsPathBellowOneWayWall", -754, -4187)
+            set_warp_icon_label("MarshPastOpher.PoolsPathBellowOneWayWall", "#MarshPastOpher.PoolsPathBellowOneWayWall#")
+            item_message("#MarshPastOpher.PoolsPathBellowOneWayWall Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MarshPastOpher.PoolsPathWest" {
+        !add_item({
+            create_warp_icon("MarshPastOpher.PoolsPathWest", -803, -4187)
+            set_warp_icon_label("MarshPastOpher.PoolsPathWest", "#MarshPastOpher.PoolsPathWest#")
+            item_message("#MarshPastOpher.PoolsPathWest Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MidnightBurrows.Teleporter" {
+        !add_item({
+            create_warp_icon("MidnightBurrows.Teleporter", -945, -4582)
+            set_warp_icon_label("MidnightBurrows.Teleporter", "#MidnightBurrows.Teleporter#")
+            item_message("#MidnightBurrows.Teleporter Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MidnightBurrows.BelowLupo" {
+        !add_item({
+            create_warp_icon("MidnightBurrows.BelowLupo", -850, -4579)
+            set_warp_icon_label("MidnightBurrows.BelowLupo", "#MidnightBurrows.BelowLupo#")
+            item_message("#MidnightBurrows.BelowLupo Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MidnightBurrows.Central" {
+        !add_item({
+            create_warp_icon("MidnightBurrows.Central", -781, -4564)
+            set_warp_icon_label("MidnightBurrows.Central", "#MidnightBurrows.Central#")
+            item_message("#MidnightBurrows.Central Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MidnightBurrows.TabletRoom" {
+        !add_item({
+            create_warp_icon("MidnightBurrows.TabletRoom", -824, -4531)
+            set_warp_icon_label("MidnightBurrows.TabletRoom", "#MidnightBurrows.TabletRoom#")
+            item_message("#MidnightBurrows.TabletRoom Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MidnightBurrows.PortalRoom" {
+        !add_item({
+            create_warp_icon("MidnightBurrows.PortalRoom", -706, -4588)
+            set_warp_icon_label("MidnightBurrows.PortalRoom", "#MidnightBurrows.PortalRoom#")
+            item_message("#MidnightBurrows.PortalRoom Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MidnightBurrows.LeverRoom" {
+        !add_item({
+            create_warp_icon("MidnightBurrows.LeverRoom", -685, -4616)
+            set_warp_icon_label("MidnightBurrows.LeverRoom", "#MidnightBurrows.LeverRoom#")
+            item_message("#MidnightBurrows.LeverRoom Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MidnightBurrows.East" {
+        !add_item({
+            create_warp_icon("MidnightBurrows.East", -687, -4553)
+            set_warp_icon_label("MidnightBurrows.East", "#MidnightBurrows.East#")
+            item_message("#MidnightBurrows.East Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MidnightBurrows.DenConnection" {
+        !add_item({
+            create_warp_icon("MidnightBurrows.DenConnection", -597, -4549)
+            set_warp_icon_label("MidnightBurrows.DenConnection", "#MidnightBurrows.DenConnection#")
+            item_message("#MidnightBurrows.DenConnection Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MidnightBurrows.PortalCorridor" {
+        !add_item({
+            create_warp_icon("MidnightBurrows.PortalCorridor", -632, -4525)
+            set_warp_icon_label("MidnightBurrows.PortalCorridor", "#MidnightBurrows.PortalCorridor#")
+            item_message("#MidnightBurrows.PortalCorridor Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MidnightBurrows.BelowUpperKS" {
+        !add_item({
+            create_warp_icon("MidnightBurrows.BelowUpperKS", -724, -4524)
+            set_warp_icon_label("MidnightBurrows.BelowUpperKS", "#MidnightBurrows.BelowUpperKS#")
+            item_message("#MidnightBurrows.BelowUpperKS Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WestHollow.Entrance" {
+        !add_item({
+            create_warp_icon("WestHollow.Entrance", -303, -4238)
+            set_warp_icon_label("WestHollow.Entrance", "#WestHollow.Entrance#")
+            item_message("#WestHollow.Entrance Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WestHollow.MokiByTwillen" {
+        !add_item({
+            create_warp_icon("WestHollow.MokiByTwillen", -230, -4229)
+            set_warp_icon_label("WestHollow.MokiByTwillen", "#WestHollow.MokiByTwillen#")
+            item_message("#WestHollow.MokiByTwillen Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WestHollow.InFrontPurpleDoor" {
+        !add_item({
+            create_warp_icon("WestHollow.InFrontPurpleDoor", -181, -4240)
+            set_warp_icon_label("WestHollow.InFrontPurpleDoor", "#WestHollow.InFrontPurpleDoor#")
+            item_message("#WestHollow.InFrontPurpleDoor Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WestHollow.InFrontPurpleDoorEnemyPaths" {
+        !add_item({
+            create_warp_icon("WestHollow.InFrontPurpleDoorEnemyPaths", -181, -4240)
+            set_warp_icon_label("WestHollow.InFrontPurpleDoorEnemyPaths", "#WestHollow.InFrontPurpleDoorEnemyPaths#")
+            item_message("#WestHollow.InFrontPurpleDoorEnemyPaths Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WestHollow.HollowDrainMiddle" {
+        !add_item({
+            create_warp_icon("WestHollow.HollowDrainMiddle", -197, -4275)
+            set_warp_icon_label("WestHollow.HollowDrainMiddle", "#WestHollow.HollowDrainMiddle#")
+            item_message("#WestHollow.HollowDrainMiddle Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WestHollow.RockPuzzle" {
+        !add_item({
+            create_warp_icon("WestHollow.RockPuzzle", -249, -4275)
+            set_warp_icon_label("WestHollow.RockPuzzle", "#WestHollow.RockPuzzle#")
+            item_message("#WestHollow.RockPuzzle Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WestHollow.PastRockPuzzleDoor" {
+        !add_item({
+            create_warp_icon("WestHollow.PastRockPuzzleDoor", -322, -4276)
+            set_warp_icon_label("WestHollow.PastRockPuzzleDoor", "#WestHollow.PastRockPuzzleDoor#")
+            item_message("#WestHollow.PastRockPuzzleDoor Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WestHollow.PastRockPuzzleDoorEnemyPaths" {
+        !add_item({
+            create_warp_icon("WestHollow.PastRockPuzzleDoorEnemyPaths", -322, -4276)
+            set_warp_icon_label("WestHollow.PastRockPuzzleDoorEnemyPaths", "#WestHollow.PastRockPuzzleDoorEnemyPaths#")
+            item_message("#WestHollow.PastRockPuzzleDoorEnemyPaths Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WestHollow.FarLeftRoom" {
+        !add_item({
+            create_warp_icon("WestHollow.FarLeftRoom", -357, -4284)
+            set_warp_icon_label("WestHollow.FarLeftRoom", "#WestHollow.FarLeftRoom#")
+            item_message("#WestHollow.FarLeftRoom Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WestHollow.SubmergedPlatform" {
+        !add_item({
+            create_warp_icon("WestHollow.SubmergedPlatform", -215, -4288)
+            set_warp_icon_label("WestHollow.SubmergedPlatform", "#WestHollow.SubmergedPlatform#")
+            item_message("#WestHollow.SubmergedPlatform Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WestHollow.AboveJumppad" {
+        !add_item({
+            create_warp_icon("WestHollow.AboveJumppad", -207, -4304)
+            set_warp_icon_label("WestHollow.AboveJumppad", "#WestHollow.AboveJumppad#")
+            item_message("#WestHollow.AboveJumppad Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WestHollow.HollowDrainLower" {
+        !add_item({
+            create_warp_icon("WestHollow.HollowDrainLower", -216, -4329)
+            set_warp_icon_label("WestHollow.HollowDrainLower", "#WestHollow.HollowDrainLower#")
+            item_message("#WestHollow.HollowDrainLower Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WestHollow.TrialApproach" {
+        !add_item({
+            create_warp_icon("WestHollow.TrialApproach", -155, -4298)
+            set_warp_icon_label("WestHollow.TrialApproach", "#WestHollow.TrialApproach#")
+            item_message("#WestHollow.TrialApproach Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WestHollow.TrialStart" {
+        !add_item({
+            create_warp_icon("WestHollow.TrialStart", -120, -4260)
+            set_warp_icon_label("WestHollow.TrialStart", "#WestHollow.TrialStart#")
+            item_message("#WestHollow.TrialStart Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WestHollow.PolesPond" {
+        !add_item({
+            create_warp_icon("WestHollow.PolesPond", -123, -4377)
+            set_warp_icon_label("WestHollow.PolesPond", "#WestHollow.PolesPond#")
+            item_message("#WestHollow.PolesPond Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WestHollow.DashApproach" {
+        !add_item({
+            create_warp_icon("WestHollow.DashApproach", -111, -4429)
+            set_warp_icon_label("WestHollow.DashApproach", "#WestHollow.DashApproach#")
+            item_message("#WestHollow.DashApproach Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WestHollow.DashArea" {
+        !add_item({
+            create_warp_icon("WestHollow.DashArea", -88, -4423)
+            set_warp_icon_label("WestHollow.DashArea", "#WestHollow.DashArea#")
+            item_message("#WestHollow.DashArea Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WestHollow.DashCrushers" {
+        !add_item({
+            create_warp_icon("WestHollow.DashCrushers", -23, -4443)
+            set_warp_icon_label("WestHollow.DashCrushers", "#WestHollow.DashCrushers#")
+            item_message("#WestHollow.DashCrushers Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WestHollow.DashRoomTopRight" {
+        !add_item({
+            create_warp_icon("WestHollow.DashRoomTopRight", -21, -4411)
+            set_warp_icon_label("WestHollow.DashRoomTopRight", "#WestHollow.DashRoomTopRight#")
+            item_message("#WestHollow.DashRoomTopRight Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WestHollow.AboveDashSemisolid" {
+        !add_item({
+            create_warp_icon("WestHollow.AboveDashSemisolid", -81, -4411)
+            set_warp_icon_label("WestHollow.AboveDashSemisolid", "#WestHollow.AboveDashSemisolid#")
+            item_message("#WestHollow.AboveDashSemisolid Teleporter#")
+        }, 1)
+    }
+    !if anchor == "EastHollow.Teleporter" {
+        !add_item({
+            create_warp_icon("EastHollow.Teleporter", -150, -4237)
+            set_warp_icon_label("EastHollow.Teleporter", "#EastHollow.Teleporter#")
+            item_message("#EastHollow.Teleporter Teleporter#")
+        }, 1)
+    }
+    !if anchor == "BeetleFight" {
+        !add_item({
+            create_warp_icon("BeetleFight", -81, -4243)
+            set_warp_icon_label("BeetleFight", "#BeetleFight#")
+            item_message("#BeetleFight Teleporter#")
+        }, 1)
+    }
+    !if anchor == "EastHollow.VoiceDoorPlatform" {
+        !add_item({
+            create_warp_icon("EastHollow.VoiceDoorPlatform", -96, -4222)
+            set_warp_icon_label("EastHollow.VoiceDoorPlatform", "#EastHollow.VoiceDoorPlatform#")
+            item_message("#EastHollow.VoiceDoorPlatform Teleporter#")
+        }, 1)
+    }
+    !if anchor == "EastHollow.MapMoki" {
+        !add_item({
+            create_warp_icon("EastHollow.MapMoki", -106, -4221)
+            set_warp_icon_label("EastHollow.MapMoki", "#EastHollow.MapMoki#")
+            item_message("#EastHollow.MapMoki Teleporter#")
+        }, 1)
+    }
+    !if anchor == "EastHollow.OutsideGlades" {
+        !add_item({
+            create_warp_icon("EastHollow.OutsideGlades", -152, -4164)
+            set_warp_icon_label("EastHollow.OutsideGlades", "#EastHollow.OutsideGlades#")
+            item_message("#EastHollow.OutsideGlades Teleporter#")
+        }, 1)
+    }
+    !if anchor == "EastHollow.AfterBeetleFight" {
+        !add_item({
+            create_warp_icon("EastHollow.AfterBeetleFight", -41, -4231)
+            set_warp_icon_label("EastHollow.AfterBeetleFight", "#EastHollow.AfterBeetleFight#")
+            item_message("#EastHollow.AfterBeetleFight Teleporter#")
+        }, 1)
+    }
+    !if anchor == "EastHollow.AboveBash" {
+        !add_item({
+            create_warp_icon("EastHollow.AboveBash", -10, -4244)
+            set_warp_icon_label("EastHollow.AboveBash", "#EastHollow.AboveBash#")
+            item_message("#EastHollow.AboveBash Teleporter#")
+        }, 1)
+    }
+    !if anchor == "EastHollow.TreeAreaJumppad" {
+        !add_item({
+            create_warp_icon("EastHollow.TreeAreaJumppad", -15, -4289)
+            set_warp_icon_label("EastHollow.TreeAreaJumppad", "#EastHollow.TreeAreaJumppad#")
+            item_message("#EastHollow.TreeAreaJumppad Teleporter#")
+        }, 1)
+    }
+    !if anchor == "EastHollow.DepthsLeverDoor" {
+        !add_item({
+            create_warp_icon("EastHollow.DepthsLeverDoor", 29, -4302)
+            set_warp_icon_label("EastHollow.DepthsLeverDoor", "#EastHollow.DepthsLeverDoor#")
+            item_message("#EastHollow.DepthsLeverDoor Teleporter#")
+        }, 1)
+    }
+    !if anchor == "EastHollow.BashTreeCheckpoint" {
+        !add_item({
+            create_warp_icon("EastHollow.BashTreeCheckpoint", -7, -4325)
+            set_warp_icon_label("EastHollow.BashTreeCheckpoint", "#EastHollow.BashTreeCheckpoint#")
+            item_message("#EastHollow.BashTreeCheckpoint Teleporter#")
+        }, 1)
+    }
+    !if anchor == "EastHollow.AboveDepths" {
+        !add_item({
+            create_warp_icon("EastHollow.AboveDepths", 47, -4302)
+            set_warp_icon_label("EastHollow.AboveDepths", "#EastHollow.AboveDepths#")
+            item_message("#EastHollow.AboveDepths Teleporter#")
+        }, 1)
+    }
+    !if anchor == "EastHollow.KwolokPathGrapplePlant" {
+        !add_item({
+            create_warp_icon("EastHollow.KwolokPathGrapplePlant", 21, -4220)
+            set_warp_icon_label("EastHollow.KwolokPathGrapplePlant", "#EastHollow.KwolokPathGrapplePlant#")
+            item_message("#EastHollow.KwolokPathGrapplePlant Teleporter#")
+        }, 1)
+    }
+    !if anchor == "EastHollow.KwolokPathLantern" {
+        !add_item({
+            create_warp_icon("EastHollow.KwolokPathLantern", 32, -4217)
+            set_warp_icon_label("EastHollow.KwolokPathLantern", "#EastHollow.KwolokPathLantern#")
+            item_message("#EastHollow.KwolokPathLantern Teleporter#")
+        }, 1)
+    }
+    !if anchor == "EastHollow.Kwolok" {
+        !add_item({
+            create_warp_icon("EastHollow.Kwolok", 177, -4215)
+            set_warp_icon_label("EastHollow.Kwolok", "#EastHollow.Kwolok#")
+            item_message("#EastHollow.Kwolok Teleporter#")
+        }, 1)
+    }
+    !if anchor == "EastHollow.KwolokShrine" {
+        !add_item({
+            create_warp_icon("EastHollow.KwolokShrine", 267, -4208)
+            set_warp_icon_label("EastHollow.KwolokShrine", "#EastHollow.KwolokShrine#")
+            item_message("#EastHollow.KwolokShrine Teleporter#")
+        }, 1)
+    }
+    !if anchor == "GladesTown.Teleporter" {
+        !add_item({
+            create_warp_icon("GladesTown.Teleporter", -307, -4153)
+            set_warp_icon_label("GladesTown.Teleporter", "#GladesTown.Teleporter#")
+            item_message("#GladesTown.Teleporter Teleporter#")
+        }, 1)
+    }
+    !if anchor == "GladesTown.ThornyBranch" {
+        !add_item({
+            create_warp_icon("GladesTown.ThornyBranch", -330, -4135)
+            set_warp_icon_label("GladesTown.ThornyBranch", "#GladesTown.ThornyBranch#")
+            item_message("#GladesTown.ThornyBranch Teleporter#")
+        }, 1)
+    }
+    !if anchor == "GladesTown.TwillenHome" {
+        !add_item({
+            create_warp_icon("GladesTown.TwillenHome", -414, -4160)
+            set_warp_icon_label("GladesTown.TwillenHome", "#GladesTown.TwillenHome#")
+            item_message("#GladesTown.TwillenHome Teleporter#")
+        }, 1)
+    }
+    !if anchor == "GladesTown.KeyMokiHutInside" {
+        !add_item({
+            create_warp_icon("GladesTown.KeyMokiHutInside", -110, -4571)
+            set_warp_icon_label("GladesTown.KeyMokiHutInside", "#GladesTown.KeyMokiHutInside#")
+            item_message("#GladesTown.KeyMokiHutInside Teleporter#")
+        }, 1)
+    }
+    !if anchor == "GladesTown.West" {
+        !add_item({
+            create_warp_icon("GladesTown.West", -430, -4135)
+            set_warp_icon_label("GladesTown.West", "#GladesTown.West#")
+            item_message("#GladesTown.West Teleporter#")
+        }, 1)
+    }
+    !if anchor == "GladesTown.BuiltMotayHut" {
+        !add_item({
+            create_warp_icon("GladesTown.BuiltMotayHut", -394, -4135)
+            set_warp_icon_label("GladesTown.BuiltMotayHut", "#GladesTown.BuiltMotayHut#")
+            item_message("#GladesTown.BuiltMotayHut Teleporter#")
+        }, 1)
+    }
+    !if anchor == "GladesTown.MotayHutDoor" {
+        !add_item({
+            create_warp_icon("GladesTown.MotayHutDoor", -394, -4135)
+            set_warp_icon_label("GladesTown.MotayHutDoor", "#GladesTown.MotayHutDoor#")
+            item_message("#GladesTown.MotayHutDoor Teleporter#")
+        }, 1)
+    }
+    !if anchor == "GladesTown.MotayHutInside" {
+        !add_item({
+            create_warp_icon("GladesTown.MotayHutInside", -182, -4589)
+            set_warp_icon_label("GladesTown.MotayHutInside", "#GladesTown.MotayHutInside#")
+            item_message("#GladesTown.MotayHutInside Teleporter#")
+        }, 1)
+    }
+    !if anchor == "GladesTown.UpperWest" {
+        !add_item({
+            create_warp_icon("GladesTown.UpperWest", -357, -4126)
+            set_warp_icon_label("GladesTown.UpperWest", "#GladesTown.UpperWest#")
+            item_message("#GladesTown.UpperWest Teleporter#")
+        }, 1)
+    }
+    !if anchor == "GladesTown.InsideThirdHut" {
+        !add_item({
+            create_warp_icon("GladesTown.InsideThirdHut", -181, -4552)
+            set_warp_icon_label("GladesTown.InsideThirdHut", "#GladesTown.InsideThirdHut#")
+            item_message("#GladesTown.InsideThirdHut Teleporter#")
+        }, 1)
+    }
+    !if anchor == "GladesTown.AcornMoki" {
+        !add_item({
+            create_warp_icon("GladesTown.AcornMoki", -355, -4184)
+            set_warp_icon_label("GladesTown.AcornMoki", "#GladesTown.AcornMoki#")
+            item_message("#GladesTown.AcornMoki Teleporter#")
+        }, 1)
+    }
+    !if anchor == "GladesTown.AcornCave" {
+        !add_item({
+            create_warp_icon("GladesTown.AcornCave", -50, -4509)
+            set_warp_icon_label("GladesTown.AcornCave", "#GladesTown.AcornCave#")
+            item_message("#GladesTown.AcornCave Teleporter#")
+        }, 1)
+    }
+    !if anchor == "GladesTown.BelowBountyShard" {
+        !add_item({
+            create_warp_icon("GladesTown.BelowBountyShard", -247, -4121)
+            set_warp_icon_label("GladesTown.BelowBountyShard", "#GladesTown.BelowBountyShard#")
+            item_message("#GladesTown.BelowBountyShard Teleporter#")
+        }, 1)
+    }
+    !if anchor == "GladesTown.LeftUpdraft" {
+        !add_item({
+            create_warp_icon("GladesTown.LeftUpdraft", -239, -4136)
+            set_warp_icon_label("GladesTown.LeftUpdraft", "#GladesTown.LeftUpdraft#")
+            item_message("#GladesTown.LeftUpdraft Teleporter#")
+        }, 1)
+    }
+    !if anchor == "GladesTown.AboveOpher" {
+        !add_item({
+            create_warp_icon("GladesTown.AboveOpher", -212, -4133)
+            set_warp_icon_label("GladesTown.AboveOpher", "#GladesTown.AboveOpher#")
+            item_message("#GladesTown.AboveOpher Teleporter#")
+        }, 1)
+    }
+    !if anchor == "GladesTown.StorageHut" {
+        !add_item({
+            create_warp_icon("GladesTown.StorageHut", -119, -4605)
+            set_warp_icon_label("GladesTown.StorageHut", "#GladesTown.StorageHut#")
+            item_message("#GladesTown.StorageHut Teleporter#")
+        }, 1)
+    }
+    !if anchor == "GladesTown.PlayfulMoki" {
+        !add_item({
+            create_warp_icon("GladesTown.PlayfulMoki", -210, -4122)
+            set_warp_icon_label("GladesTown.PlayfulMoki", "#GladesTown.PlayfulMoki#")
+            item_message("#GladesTown.PlayfulMoki Teleporter#")
+        }, 1)
+    }
+    !if anchor == "GladesTown.LupoHouse" {
+        !add_item({
+            create_warp_icon("GladesTown.LupoHouse", -207, -4161)
+            set_warp_icon_label("GladesTown.LupoHouse", "#GladesTown.LupoHouse#")
+            item_message("#GladesTown.LupoHouse Teleporter#")
+        }, 1)
+    }
+    !if anchor == "GladesTown.InsideLupoHouse" {
+        !add_item({
+            create_warp_icon("GladesTown.InsideLupoHouse", -185, -4508)
+            set_warp_icon_label("GladesTown.InsideLupoHouse", "#GladesTown.InsideLupoHouse#")
+            item_message("#GladesTown.InsideLupoHouse Teleporter#")
+        }, 1)
+    }
+    !if anchor == "GladesTown.BelowHoleHut" {
+        !add_item({
+            create_warp_icon("GladesTown.BelowHoleHut", -214, -4111)
+            set_warp_icon_label("GladesTown.BelowHoleHut", "#GladesTown.BelowHoleHut#")
+            item_message("#GladesTown.BelowHoleHut Teleporter#")
+        }, 1)
+    }
+    !if anchor == "GladesTown.HoleHutEntrance" {
+        !add_item({
+            create_warp_icon("GladesTown.HoleHutEntrance", -229, -4094)
+            set_warp_icon_label("GladesTown.HoleHutEntrance", "#GladesTown.HoleHutEntrance#")
+            item_message("#GladesTown.HoleHutEntrance Teleporter#")
+        }, 1)
+    }
+    !if anchor == "GladesTown.InsideHoleHut" {
+        !add_item({
+            create_warp_icon("GladesTown.InsideHoleHut", -107, -4506)
+            set_warp_icon_label("GladesTown.InsideHoleHut", "#GladesTown.InsideHoleHut#")
+            item_message("#GladesTown.InsideHoleHut Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WestGlades.RightLowerPool" {
+        !add_item({
+            create_warp_icon("WestGlades.RightLowerPool", -545, -4113)
+            set_warp_icon_label("WestGlades.RightLowerPool", "#WestGlades.RightLowerPool#")
+            item_message("#WestGlades.RightLowerPool Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WestGlades.LeftLowerPool" {
+        !add_item({
+            create_warp_icon("WestGlades.LeftLowerPool", -642, -4112)
+            set_warp_icon_label("WestGlades.LeftLowerPool", "#WestGlades.LeftLowerPool#")
+            item_message("#WestGlades.LeftLowerPool Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WestGlades.Center" {
+        !add_item({
+            create_warp_icon("WestGlades.Center", -612, -4083)
+            set_warp_icon_label("WestGlades.Center", "#WestGlades.Center#")
+            item_message("#WestGlades.Center Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WestGlades.Upper" {
+        !add_item({
+            create_warp_icon("WestGlades.Upper", -618, -4054)
+            set_warp_icon_label("WestGlades.Upper", "#WestGlades.Upper#")
+            item_message("#WestGlades.Upper Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WestGlades.MillApproach" {
+        !add_item({
+            create_warp_icon("WestGlades.MillApproach", -705, -4065)
+            set_warp_icon_label("WestGlades.MillApproach", "#WestGlades.MillApproach#")
+            item_message("#WestGlades.MillApproach Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WestGlades.ShrineArea" {
+        !add_item({
+            create_warp_icon("WestGlades.ShrineArea", -664, -4026)
+            set_warp_icon_label("WestGlades.ShrineArea", "#WestGlades.ShrineArea#")
+            item_message("#WestGlades.ShrineArea Teleporter#")
+        }, 1)
+    }
+    !if anchor == "GladesShrine" {
+        !add_item({
+            create_warp_icon("GladesShrine", -635, -4020)
+            set_warp_icon_label("GladesShrine", "#GladesShrine#")
+            item_message("#GladesShrine Teleporter#")
+        }, 1)
+    }
+    !if anchor == "OuterWellspring.CutsceneIsland" {
+        !add_item({
+            create_warp_icon("OuterWellspring.CutsceneIsland", -756, -4071)
+            set_warp_icon_label("OuterWellspring.CutsceneIsland", "#OuterWellspring.CutsceneIsland#")
+            item_message("#OuterWellspring.CutsceneIsland Teleporter#")
+        }, 1)
+    }
+    !if anchor == "OuterWellspring.EntranceDoor" {
+        !add_item({
+            create_warp_icon("OuterWellspring.EntranceDoor", -856, -4057)
+            set_warp_icon_label("OuterWellspring.EntranceDoor", "#OuterWellspring.EntranceDoor#")
+            item_message("#OuterWellspring.EntranceDoor Teleporter#")
+        }, 1)
+    }
+    !if anchor == "OuterWellspring.LifeHarvestEntry" {
+        !add_item({
+            create_warp_icon("OuterWellspring.LifeHarvestEntry", -978, -4042)
+            set_warp_icon_label("OuterWellspring.LifeHarvestEntry", "#OuterWellspring.LifeHarvestEntry#")
+            item_message("#OuterWellspring.LifeHarvestEntry Teleporter#")
+        }, 1)
+    }
+    !if anchor == "OuterWellspring.Basement" {
+        !add_item({
+            create_warp_icon("OuterWellspring.Basement", -939, -4114)
+            set_warp_icon_label("OuterWellspring.Basement", "#OuterWellspring.Basement#")
+            item_message("#OuterWellspring.Basement Teleporter#")
+        }, 1)
+    }
+    !if anchor == "OuterWellspring.AboveEntranceDoor" {
+        !add_item({
+            create_warp_icon("OuterWellspring.AboveEntranceDoor", -837, -4026)
+            set_warp_icon_label("OuterWellspring.AboveEntranceDoor", "#OuterWellspring.AboveEntranceDoor#")
+            item_message("#OuterWellspring.AboveEntranceDoor Teleporter#")
+        }, 1)
+    }
+    !if anchor == "OuterWellspring.WestDoor" {
+        !add_item({
+            create_warp_icon("OuterWellspring.WestDoor", -892, -3991)
+            set_warp_icon_label("OuterWellspring.WestDoor", "#OuterWellspring.WestDoor#")
+            item_message("#OuterWellspring.WestDoor Teleporter#")
+        }, 1)
+    }
+    !if anchor == "OuterWellspring.EastDoor" {
+        !add_item({
+            create_warp_icon("OuterWellspring.EastDoor", -814, -3972)
+            set_warp_icon_label("OuterWellspring.EastDoor", "#OuterWellspring.EastDoor#")
+            item_message("#OuterWellspring.EastDoor Teleporter#")
+        }, 1)
+    }
+    !if anchor == "OuterWellspring.AboveWestDoor" {
+        !add_item({
+            create_warp_icon("OuterWellspring.AboveWestDoor", -866, -3949)
+            set_warp_icon_label("OuterWellspring.AboveWestDoor", "#OuterWellspring.AboveWestDoor#")
+            item_message("#OuterWellspring.AboveWestDoor Teleporter#")
+        }, 1)
+    }
+    !if anchor == "OuterWellspring.TopDoor" {
+        !add_item({
+            create_warp_icon("OuterWellspring.TopDoor", -836, -3927)
+            set_warp_icon_label("OuterWellspring.TopDoor", "#OuterWellspring.TopDoor#")
+            item_message("#OuterWellspring.TopDoor Teleporter#")
+        }, 1)
+    }
+    !if anchor == "OuterWellspring.RightWallMidpoint" {
+        !add_item({
+            create_warp_icon("OuterWellspring.RightWallMidpoint", -741, -4018)
+            set_warp_icon_label("OuterWellspring.RightWallMidpoint", "#OuterWellspring.RightWallMidpoint#")
+            item_message("#OuterWellspring.RightWallMidpoint Teleporter#")
+        }, 1)
+    }
+    !if anchor == "OuterWellspring.TrialApproach" {
+        !add_item({
+            create_warp_icon("OuterWellspring.TrialApproach", -727, -3961)
+            set_warp_icon_label("OuterWellspring.TrialApproach", "#OuterWellspring.TrialApproach#")
+            item_message("#OuterWellspring.TrialApproach Teleporter#")
+        }, 1)
+    }
+    !if anchor == "OuterWellspring.TrialRoom" {
+        !add_item({
+            create_warp_icon("OuterWellspring.TrialRoom", -684, -3947)
+            set_warp_icon_label("OuterWellspring.TrialRoom", "#OuterWellspring.TrialRoom#")
+            item_message("#OuterWellspring.TrialRoom Teleporter#")
+        }, 1)
+    }
+    !if anchor == "OuterWellspring.TrialStart" {
+        !add_item({
+            create_warp_icon("OuterWellspring.TrialStart", -665, -3937)
+            set_warp_icon_label("OuterWellspring.TrialStart", "#OuterWellspring.TrialStart#")
+            item_message("#OuterWellspring.TrialStart Teleporter#")
+        }, 1)
+    }
+    !if anchor == "InnerWellspring.EntranceDoor" {
+        !add_item({
+            create_warp_icon("InnerWellspring.EntranceDoor", -1263, -3952)
+            set_warp_icon_label("InnerWellspring.EntranceDoor", "#InnerWellspring.EntranceDoor#")
+            item_message("#InnerWellspring.EntranceDoor Teleporter#")
+        }, 1)
+    }
+    !if anchor == "InnerWellspring.ThornShardArea" {
+        !add_item({
+            create_warp_icon("InnerWellspring.ThornShardArea", -1317, -3933)
+            set_warp_icon_label("InnerWellspring.ThornShardArea", "#InnerWellspring.ThornShardArea#")
+            item_message("#InnerWellspring.ThornShardArea Teleporter#")
+        }, 1)
+    }
+    !if anchor == "InnerWellspring.ShortcutLever" {
+        !add_item({
+            create_warp_icon("InnerWellspring.ShortcutLever", -1264, -3907)
+            set_warp_icon_label("InnerWellspring.ShortcutLever", "#InnerWellspring.ShortcutLever#")
+            item_message("#InnerWellspring.ShortcutLever Teleporter#")
+        }, 1)
+    }
+    !if anchor == "InnerWellspring.DrainRoom" {
+        !add_item({
+            create_warp_icon("InnerWellspring.DrainRoom", -1169, -3946)
+            set_warp_icon_label("InnerWellspring.DrainRoom", "#InnerWellspring.DrainRoom#")
+            item_message("#InnerWellspring.DrainRoom Teleporter#")
+        }, 1)
+    }
+    !if anchor == "InnerWellspring.DrainAreaEntrance" {
+        !add_item({
+            create_warp_icon("InnerWellspring.DrainAreaEntrance", -1128, -3968)
+            set_warp_icon_label("InnerWellspring.DrainAreaEntrance", "#InnerWellspring.DrainAreaEntrance#")
+            item_message("#InnerWellspring.DrainAreaEntrance Teleporter#")
+        }, 1)
+    }
+    !if anchor == "InnerWellspring.DrainAreaSL" {
+        !add_item({
+            create_warp_icon("InnerWellspring.DrainAreaSL", -1064, -3961)
+            set_warp_icon_label("InnerWellspring.DrainAreaSL", "#InnerWellspring.DrainAreaSL#")
+            item_message("#InnerWellspring.DrainAreaSL Teleporter#")
+        }, 1)
+    }
+    !if anchor == "InnerWellspring.DrainAreaExit" {
+        !add_item({
+            create_warp_icon("InnerWellspring.DrainAreaExit", -1093, -3950)
+            set_warp_icon_label("InnerWellspring.DrainAreaExit", "#InnerWellspring.DrainAreaExit#")
+            item_message("#InnerWellspring.DrainAreaExit Teleporter#")
+        }, 1)
+    }
+    !if anchor == "InnerWellspring.DrainRoomCheckpoint" {
+        !add_item({
+            create_warp_icon("InnerWellspring.DrainRoomCheckpoint", -1096, -3938)
+            set_warp_icon_label("InnerWellspring.DrainRoomCheckpoint", "#InnerWellspring.DrainRoomCheckpoint#")
+            item_message("#InnerWellspring.DrainRoomCheckpoint Teleporter#")
+        }, 1)
+    }
+    !if anchor == "InnerWellspring.DrainRoomCenter" {
+        !add_item({
+            create_warp_icon("InnerWellspring.DrainRoomCenter", -1116, -3924)
+            set_warp_icon_label("InnerWellspring.DrainRoomCenter", "#InnerWellspring.DrainRoomCenter#")
+            item_message("#InnerWellspring.DrainRoomCenter Teleporter#")
+        }, 1)
+    }
+    !if anchor == "InnerWellspring.DrainRoomTop" {
+        !add_item({
+            create_warp_icon("InnerWellspring.DrainRoomTop", -1086, -3908)
+            set_warp_icon_label("InnerWellspring.DrainRoomTop", "#InnerWellspring.DrainRoomTop#")
+            item_message("#InnerWellspring.DrainRoomTop Teleporter#")
+        }, 1)
+    }
+    !if anchor == "InnerWellspring.BelowDrainLever" {
+        !add_item({
+            create_warp_icon("InnerWellspring.BelowDrainLever", -1153, -3895)
+            set_warp_icon_label("InnerWellspring.BelowDrainLever", "#InnerWellspring.BelowDrainLever#")
+            item_message("#InnerWellspring.BelowDrainLever Teleporter#")
+        }, 1)
+    }
+    !if anchor == "InnerWellspring.AtDrainLever" {
+        !add_item({
+            create_warp_icon("InnerWellspring.AtDrainLever", -1119, -3876)
+            set_warp_icon_label("InnerWellspring.AtDrainLever", "#InnerWellspring.AtDrainLever#")
+            item_message("#InnerWellspring.AtDrainLever Teleporter#")
+        }, 1)
+    }
+    !if anchor == "InnerWellspring.AbovePole" {
+        !add_item({
+            create_warp_icon("InnerWellspring.AbovePole", -1164, -3874)
+            set_warp_icon_label("InnerWellspring.AbovePole", "#InnerWellspring.AbovePole#")
+            item_message("#InnerWellspring.AbovePole Teleporter#")
+        }, 1)
+    }
+    !if anchor == "InnerWellspring.WestDoor" {
+        !add_item({
+            create_warp_icon("InnerWellspring.WestDoor", -1205, -3894)
+            set_warp_icon_label("InnerWellspring.WestDoor", "#InnerWellspring.WestDoor#")
+            item_message("#InnerWellspring.WestDoor Teleporter#")
+        }, 1)
+    }
+    !if anchor == "InnerWellspring.EastDoor" {
+        !add_item({
+            create_warp_icon("InnerWellspring.EastDoor", -1190, -3732)
+            set_warp_icon_label("InnerWellspring.EastDoor", "#InnerWellspring.EastDoor#")
+            item_message("#InnerWellspring.EastDoor Teleporter#")
+        }, 1)
+    }
+    !if anchor == "InnerWellspring.SpinPuzzle" {
+        !add_item({
+            create_warp_icon("InnerWellspring.SpinPuzzle", -1193, -3806)
+            set_warp_icon_label("InnerWellspring.SpinPuzzle", "#InnerWellspring.SpinPuzzle#")
+            item_message("#InnerWellspring.SpinPuzzle Teleporter#")
+        }, 1)
+    }
+    !if anchor == "InnerWellspring.PastSpinPuzzle" {
+        !add_item({
+            create_warp_icon("InnerWellspring.PastSpinPuzzle", -1101, -3778)
+            set_warp_icon_label("InnerWellspring.PastSpinPuzzle", "#InnerWellspring.PastSpinPuzzle#")
+            item_message("#InnerWellspring.PastSpinPuzzle Teleporter#")
+        }, 1)
+    }
+    !if anchor == "InnerWellspring.GrappleThroughZigZagSpikes" {
+        !add_item({
+            create_warp_icon("InnerWellspring.GrappleThroughZigZagSpikes", -1100, -3725)
+            set_warp_icon_label("InnerWellspring.GrappleThroughZigZagSpikes", "#InnerWellspring.GrappleThroughZigZagSpikes#")
+            item_message("#InnerWellspring.GrappleThroughZigZagSpikes Teleporter#")
+        }, 1)
+    }
+    !if anchor == "InnerWellspring.TopSecondRoom" {
+        !add_item({
+            create_warp_icon("InnerWellspring.TopSecondRoom", -1141, -3698)
+            set_warp_icon_label("InnerWellspring.TopSecondRoom", "#InnerWellspring.TopSecondRoom#")
+            item_message("#InnerWellspring.TopSecondRoom Teleporter#")
+        }, 1)
+    }
+    !if anchor == "InnerWellspring.Teleporter" {
+        !add_item({
+            create_warp_icon("InnerWellspring.Teleporter", -1308, -3674)
+            set_warp_icon_label("InnerWellspring.Teleporter", "#InnerWellspring.Teleporter#")
+            item_message("#InnerWellspring.Teleporter Teleporter#")
+        }, 1)
+    }
+    !if anchor == "InnerWellspring.EscapeSequence" {
+        !add_item({
+            create_warp_icon("InnerWellspring.EscapeSequence", -1240, -3642)
+            set_warp_icon_label("InnerWellspring.EscapeSequence", "#InnerWellspring.EscapeSequence#")
+            item_message("#InnerWellspring.EscapeSequence Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WoodsEntry.ShriekMeet" {
+        !add_item({
+            create_warp_icon("WoodsEntry.ShriekMeet", 391, -4198)
+            set_warp_icon_label("WoodsEntry.ShriekMeet", "#WoodsEntry.ShriekMeet#")
+            item_message("#WoodsEntry.ShriekMeet Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WoodsEntry.BellowHut" {
+        !add_item({
+            create_warp_icon("WoodsEntry.BellowHut", 478, -4205)
+            set_warp_icon_label("WoodsEntry.BellowHut", "#WoodsEntry.BellowHut#")
+            item_message("#WoodsEntry.BellowHut Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WoodsEntry.BelowTeleporter" {
+        !add_item({
+            create_warp_icon("WoodsEntry.BelowTeleporter", 591, -4198)
+            set_warp_icon_label("WoodsEntry.BelowTeleporter", "#WoodsEntry.BelowTeleporter#")
+            item_message("#WoodsEntry.BelowTeleporter Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WoodsEntry.Teleporter" {
+        !add_item({
+            create_warp_icon("WoodsEntry.Teleporter", 611, -4162)
+            set_warp_icon_label("WoodsEntry.Teleporter", "#WoodsEntry.Teleporter#")
+            item_message("#WoodsEntry.Teleporter Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WoodsEntry.FamilyHut" {
+        !add_item({
+            create_warp_icon("WoodsEntry.FamilyHut", 469, -4179)
+            set_warp_icon_label("WoodsEntry.FamilyHut", "#WoodsEntry.FamilyHut#")
+            item_message("#WoodsEntry.FamilyHut Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WoodsEntry.FamilyHutInside" {
+        !add_item({
+            create_warp_icon("WoodsEntry.FamilyHutInside", 445, -4118)
+            set_warp_icon_label("WoodsEntry.FamilyHutInside", "#WoodsEntry.FamilyHutInside#")
+            item_message("#WoodsEntry.FamilyHutInside Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WoodsEntry.TwoKeystoneRoom" {
+        !add_item({
+            create_warp_icon("WoodsEntry.TwoKeystoneRoom", 672, -4183)
+            set_warp_icon_label("WoodsEntry.TwoKeystoneRoom", "#WoodsEntry.TwoKeystoneRoom#")
+            item_message("#WoodsEntry.TwoKeystoneRoom Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WoodsMain.AfterKuMeet" {
+        !add_item({
+            create_warp_icon("WoodsMain.AfterKuMeet", 856, -4192)
+            set_warp_icon_label("WoodsMain.AfterKuMeet", "#WoodsMain.AfterKuMeet#")
+            item_message("#WoodsMain.AfterKuMeet Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WoodsMain.BelowFourKeystoneRoom" {
+        !add_item({
+            create_warp_icon("WoodsMain.BelowFourKeystoneRoom", 951, -4210)
+            set_warp_icon_label("WoodsMain.BelowFourKeystoneRoom", "#WoodsMain.BelowFourKeystoneRoom#")
+            item_message("#WoodsMain.BelowFourKeystoneRoom Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WoodsMain.WallOreLedge" {
+        !add_item({
+            create_warp_icon("WoodsMain.WallOreLedge", 982, -4175)
+            set_warp_icon_label("WoodsMain.WallOreLedge", "#WoodsMain.WallOreLedge#")
+            item_message("#WoodsMain.WallOreLedge Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WoodsMain.FourKeystoneRoom" {
+        !add_item({
+            create_warp_icon("WoodsMain.FourKeystoneRoom", 944, -4137)
+            set_warp_icon_label("WoodsMain.FourKeystoneRoom", "#WoodsMain.FourKeystoneRoom#")
+            item_message("#WoodsMain.FourKeystoneRoom Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WoodsMain.InFrontLowerKS" {
+        !add_item({
+            create_warp_icon("WoodsMain.InFrontLowerKS", 927, -4186)
+            set_warp_icon_label("WoodsMain.InFrontLowerKS", "#WoodsMain.InFrontLowerKS#")
+            item_message("#WoodsMain.InFrontLowerKS Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WoodsMain.GiantSkull" {
+        !add_item({
+            create_warp_icon("WoodsMain.GiantSkull", 957, -4138)
+            set_warp_icon_label("WoodsMain.GiantSkull", "#WoodsMain.GiantSkull#")
+            item_message("#WoodsMain.GiantSkull Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WoodsMain.BalloonLure" {
+        !add_item({
+            create_warp_icon("WoodsMain.BalloonLure", 1047, -4123)
+            set_warp_icon_label("WoodsMain.BalloonLure", "#WoodsMain.BalloonLure#")
+            item_message("#WoodsMain.BalloonLure Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WoodsMain.BelowHiddenOre" {
+        !add_item({
+            create_warp_icon("WoodsMain.BelowHiddenOre", 1038, -4101)
+            set_warp_icon_label("WoodsMain.BelowHiddenOre", "#WoodsMain.BelowHiddenOre#")
+            item_message("#WoodsMain.BelowHiddenOre Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WoodsMain.PetrifiedHowl" {
+        !add_item({
+            create_warp_icon("WoodsMain.PetrifiedHowl", 910, -4071)
+            set_warp_icon_label("WoodsMain.PetrifiedHowl", "#WoodsMain.PetrifiedHowl#")
+            item_message("#WoodsMain.PetrifiedHowl Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WoodsMain.BrokenOwl" {
+        !add_item({
+            create_warp_icon("WoodsMain.BrokenOwl", 848, -4058)
+            set_warp_icon_label("WoodsMain.BrokenOwl", "#WoodsMain.BrokenOwl#")
+            item_message("#WoodsMain.BrokenOwl Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WoodsMain.TrialStart" {
+        !add_item({
+            create_warp_icon("WoodsMain.TrialStart", 820, -4047)
+            set_warp_icon_label("WoodsMain.TrialStart", "#WoodsMain.TrialStart#")
+            item_message("#WoodsMain.TrialStart Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WoodsMain.MidwayTrial" {
+        !add_item({
+            create_warp_icon("WoodsMain.MidwayTrial", 873, -3980)
+            set_warp_icon_label("WoodsMain.MidwayTrial", "#WoodsMain.MidwayTrial#")
+            item_message("#WoodsMain.MidwayTrial Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WoodsMain.TrialEnd" {
+        !add_item({
+            create_warp_icon("WoodsMain.TrialEnd", 868, -3952)
+            set_warp_icon_label("WoodsMain.TrialEnd", "#WoodsMain.TrialEnd#")
+            item_message("#WoodsMain.TrialEnd Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WoodsMain.AboveHowl" {
+        !add_item({
+            create_warp_icon("WoodsMain.AboveHowl", 907, -4044)
+            set_warp_icon_label("WoodsMain.AboveHowl", "#WoodsMain.AboveHowl#")
+            item_message("#WoodsMain.AboveHowl Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WoodsMain.BeforeLog" {
+        !add_item({
+            create_warp_icon("WoodsMain.BeforeLog", 967, -4008)
+            set_warp_icon_label("WoodsMain.BeforeLog", "#WoodsMain.BeforeLog#")
+            item_message("#WoodsMain.BeforeLog Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WoodsMain.Teleporter" {
+        !add_item({
+            create_warp_icon("WoodsMain.Teleporter", 1083, -4052)
+            set_warp_icon_label("WoodsMain.Teleporter", "#WoodsMain.Teleporter#")
+            item_message("#WoodsMain.Teleporter Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WoodsMain.OrangeTree" {
+        !add_item({
+            create_warp_icon("WoodsMain.OrangeTree", 1030, -4010)
+            set_warp_icon_label("WoodsMain.OrangeTree", "#WoodsMain.OrangeTree#")
+            item_message("#WoodsMain.OrangeTree Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WoodsMain.AbovePit" {
+        !add_item({
+            create_warp_icon("WoodsMain.AbovePit", 1234, -3985)
+            set_warp_icon_label("WoodsMain.AbovePit", "#WoodsMain.AbovePit#")
+            item_message("#WoodsMain.AbovePit Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WoodsMain.FeedingGrounds" {
+        !add_item({
+            create_warp_icon("WoodsMain.FeedingGrounds", 1292, -3993)
+            set_warp_icon_label("WoodsMain.FeedingGrounds", "#WoodsMain.FeedingGrounds#")
+            item_message("#WoodsMain.FeedingGrounds Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WoodsShrine" {
+        !add_item({
+            create_warp_icon("WoodsShrine", 1361, -4068)
+            set_warp_icon_label("WoodsShrine", "#WoodsShrine#")
+            item_message("#WoodsShrine Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerReach.Entry" {
+        !add_item({
+            create_warp_icon("LowerReach.Entry", -390, -4025)
+            set_warp_icon_label("LowerReach.Entry", "#LowerReach.Entry#")
+            item_message("#LowerReach.Entry Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerReach.AboveEntry" {
+        !add_item({
+            create_warp_icon("LowerReach.AboveEntry", -401, -4000)
+            set_warp_icon_label("LowerReach.AboveEntry", "#LowerReach.AboveEntry#")
+            item_message("#LowerReach.AboveEntry Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerReach.Icefall" {
+        !add_item({
+            create_warp_icon("LowerReach.Icefall", -448, -3999)
+            set_warp_icon_label("LowerReach.Icefall", "#LowerReach.Icefall#")
+            item_message("#LowerReach.Icefall Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerReach.CentralEnemyPaths" {
+        !add_item({
+            create_warp_icon("LowerReach.CentralEnemyPaths", -335, -4009)
+            set_warp_icon_label("LowerReach.CentralEnemyPaths", "#LowerReach.CentralEnemyPaths#")
+            item_message("#LowerReach.CentralEnemyPaths Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerReach.Central" {
+        !add_item({
+            create_warp_icon("LowerReach.Central", -335, -4009)
+            set_warp_icon_label("LowerReach.Central", "#LowerReach.Central#")
+            item_message("#LowerReach.Central Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerReach.OutsideTPRoom" {
+        !add_item({
+            create_warp_icon("LowerReach.OutsideTPRoom", -311, -3970)
+            set_warp_icon_label("LowerReach.OutsideTPRoom", "#LowerReach.OutsideTPRoom#")
+            item_message("#LowerReach.OutsideTPRoom Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerReach.BelowTokk" {
+        !add_item({
+            create_warp_icon("LowerReach.BelowTokk", -296, -3944)
+            set_warp_icon_label("LowerReach.BelowTokk", "#LowerReach.BelowTokk#")
+            item_message("#LowerReach.BelowTokk Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerReach.Teleporter" {
+        !add_item({
+            create_warp_icon("LowerReach.Teleporter", -259, -3962)
+            set_warp_icon_label("LowerReach.Teleporter", "#LowerReach.Teleporter#")
+            item_message("#LowerReach.Teleporter Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerReach.SecondSoup" {
+        !add_item({
+            create_warp_icon("LowerReach.SecondSoup", -316, -4037)
+            set_warp_icon_label("LowerReach.SecondSoup", "#LowerReach.SecondSoup#")
+            item_message("#LowerReach.SecondSoup Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerReach.BelowLupo" {
+        !add_item({
+            create_warp_icon("LowerReach.BelowLupo", -278, -4031)
+            set_warp_icon_label("LowerReach.BelowLupo", "#LowerReach.BelowLupo#")
+            item_message("#LowerReach.BelowLupo Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerReach.CentralFurnacePedestal" {
+        !add_item({
+            create_warp_icon("LowerReach.CentralFurnacePedestal", -256, -4035)
+            set_warp_icon_label("LowerReach.CentralFurnacePedestal", "#LowerReach.CentralFurnacePedestal#")
+            item_message("#LowerReach.CentralFurnacePedestal Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerReach.WindChannel" {
+        !add_item({
+            create_warp_icon("LowerReach.WindChannel", -223, -4043)
+            set_warp_icon_label("LowerReach.WindChannel", "#LowerReach.WindChannel#")
+            item_message("#LowerReach.WindChannel Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerReach.SoupMoki" {
+        !add_item({
+            create_warp_icon("LowerReach.SoupMoki", -240, -3989)
+            set_warp_icon_label("LowerReach.SoupMoki", "#LowerReach.SoupMoki#")
+            item_message("#LowerReach.SoupMoki Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerReach.EastEnemyPaths" {
+        !add_item({
+            create_warp_icon("LowerReach.EastEnemyPaths", -223, -3967)
+            set_warp_icon_label("LowerReach.EastEnemyPaths", "#LowerReach.EastEnemyPaths#")
+            item_message("#LowerReach.EastEnemyPaths Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerReach.East" {
+        !add_item({
+            create_warp_icon("LowerReach.East", -223, -3966)
+            set_warp_icon_label("LowerReach.East", "#LowerReach.East#")
+            item_message("#LowerReach.East Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerReach.SnowballEnemyPaths" {
+        !add_item({
+            create_warp_icon("LowerReach.SnowballEnemyPaths", -182, -3968)
+            set_warp_icon_label("LowerReach.SnowballEnemyPaths", "#LowerReach.SnowballEnemyPaths#")
+            item_message("#LowerReach.SnowballEnemyPaths Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerReach.Snowball" {
+        !add_item({
+            create_warp_icon("LowerReach.Snowball", -182, -3968)
+            set_warp_icon_label("LowerReach.Snowball", "#LowerReach.Snowball#")
+            item_message("#LowerReach.Snowball Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerReach.PastSnowball" {
+        !add_item({
+            create_warp_icon("LowerReach.PastSnowball", -99, -3982)
+            set_warp_icon_label("LowerReach.PastSnowball", "#LowerReach.PastSnowball#")
+            item_message("#LowerReach.PastSnowball Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerReach.IceCavern" {
+        !add_item({
+            create_warp_icon("LowerReach.IceCavern", -85, -3966)
+            set_warp_icon_label("LowerReach.IceCavern", "#LowerReach.IceCavern#")
+            item_message("#LowerReach.IceCavern Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerReach.HalfwayIceCavern" {
+        !add_item({
+            create_warp_icon("LowerReach.HalfwayIceCavern", -44, -3955)
+            set_warp_icon_label("LowerReach.HalfwayIceCavern", "#LowerReach.HalfwayIceCavern#")
+            item_message("#LowerReach.HalfwayIceCavern Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerReach.SwimmingPool" {
+        !add_item({
+            create_warp_icon("LowerReach.SwimmingPool", -44, -4001)
+            set_warp_icon_label("LowerReach.SwimmingPool", "#LowerReach.SwimmingPool#")
+            item_message("#LowerReach.SwimmingPool Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerReach.EastFurnace" {
+        !add_item({
+            create_warp_icon("LowerReach.EastFurnace", -61, -3987)
+            set_warp_icon_label("LowerReach.EastFurnace", "#LowerReach.EastFurnace#")
+            item_message("#LowerReach.EastFurnace Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerReach.ArenaArea" {
+        !add_item({
+            create_warp_icon("LowerReach.ArenaArea", 44, -3992)
+            set_warp_icon_label("LowerReach.ArenaArea", "#LowerReach.ArenaArea#")
+            item_message("#LowerReach.ArenaArea Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerReach.WindSpinners" {
+        !add_item({
+            create_warp_icon("LowerReach.WindSpinners", 73, -3929)
+            set_warp_icon_label("LowerReach.WindSpinners", "#LowerReach.WindSpinners#")
+            item_message("#LowerReach.WindSpinners Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerReach.WispPathCheckpoint" {
+        !add_item({
+            create_warp_icon("LowerReach.WispPathCheckpoint", 83, -3874)
+            set_warp_icon_label("LowerReach.WispPathCheckpoint", "#LowerReach.WispPathCheckpoint#")
+            item_message("#LowerReach.WispPathCheckpoint Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerReach.BridgeWispPath" {
+        !add_item({
+            create_warp_icon("LowerReach.BridgeWispPath", 67, -3808)
+            set_warp_icon_label("LowerReach.BridgeWispPath", "#LowerReach.BridgeWispPath#")
+            item_message("#LowerReach.BridgeWispPath Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerReach.SnowEscape" {
+        !add_item({
+            create_warp_icon("LowerReach.SnowEscape", 79, -3733)
+            set_warp_icon_label("LowerReach.SnowEscape", "#LowerReach.SnowEscape#")
+            item_message("#LowerReach.SnowEscape Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerReach.VeralHome" {
+        !add_item({
+            create_warp_icon("LowerReach.VeralHome", -140, -4096)
+            set_warp_icon_label("LowerReach.VeralHome", "#LowerReach.VeralHome#")
+            item_message("#LowerReach.VeralHome Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerReach.TownEntry" {
+        !add_item({
+            create_warp_icon("LowerReach.TownEntry", -35, -4077)
+            set_warp_icon_label("LowerReach.TownEntry", "#LowerReach.TownEntry#")
+            item_message("#LowerReach.TownEntry Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerReach.TrialStart" {
+        !add_item({
+            create_warp_icon("LowerReach.TrialStart", 64, -4045)
+            set_warp_icon_label("LowerReach.TrialStart", "#LowerReach.TrialStart#")
+            item_message("#LowerReach.TrialStart Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperReach.MantisCairn" {
+        !add_item({
+            create_warp_icon("UpperReach.MantisCairn", -315, -3934)
+            set_warp_icon_label("UpperReach.MantisCairn", "#UpperReach.MantisCairn#")
+            item_message("#UpperReach.MantisCairn Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperReach.BurrowArea" {
+        !add_item({
+            create_warp_icon("UpperReach.BurrowArea", -369, -3917)
+            set_warp_icon_label("UpperReach.BurrowArea", "#UpperReach.BurrowArea#")
+            item_message("#UpperReach.BurrowArea Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperReach.KeystoneRoom" {
+        !add_item({
+            create_warp_icon("UpperReach.KeystoneRoom", -256, -3914)
+            set_warp_icon_label("UpperReach.KeystoneRoom", "#UpperReach.KeystoneRoom#")
+            item_message("#UpperReach.KeystoneRoom Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperReach.KeystoneSnapPlant" {
+        !add_item({
+            create_warp_icon("UpperReach.KeystoneSnapPlant", -231, -3865)
+            set_warp_icon_label("UpperReach.KeystoneSnapPlant", "#UpperReach.KeystoneSnapPlant#")
+            item_message("#UpperReach.KeystoneSnapPlant Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperReach.KeystoneSnapPlantThawed" {
+        !add_item({
+            create_warp_icon("UpperReach.KeystoneSnapPlantThawed", -231, -3865)
+            set_warp_icon_label("UpperReach.KeystoneSnapPlantThawed", "#UpperReach.KeystoneSnapPlantThawed#")
+            item_message("#UpperReach.KeystoneSnapPlantThawed Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperReach.KeystoneSnapPlantPaths" {
+        !add_item({
+            create_warp_icon("UpperReach.KeystoneSnapPlantPaths", -231, -3865)
+            set_warp_icon_label("UpperReach.KeystoneSnapPlantPaths", "#UpperReach.KeystoneSnapPlantPaths#")
+            item_message("#UpperReach.KeystoneSnapPlantPaths Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperReach.KeystoneSnapPlantThawedPaths" {
+        !add_item({
+            create_warp_icon("UpperReach.KeystoneSnapPlantThawedPaths", -231, -3865)
+            set_warp_icon_label("UpperReach.KeystoneSnapPlantThawedPaths", "#UpperReach.KeystoneSnapPlantThawedPaths#")
+            item_message("#UpperReach.KeystoneSnapPlantThawedPaths Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperReach.UpperSoup" {
+        !add_item({
+            create_warp_icon("UpperReach.UpperSoup", -215, -3877)
+            set_warp_icon_label("UpperReach.UpperSoup", "#UpperReach.UpperSoup#")
+            item_message("#UpperReach.UpperSoup Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperReach.UpperSoupFrozen" {
+        !add_item({
+            create_warp_icon("UpperReach.UpperSoupFrozen", -215, -3877)
+            set_warp_icon_label("UpperReach.UpperSoupFrozen", "#UpperReach.UpperSoupFrozen#")
+            item_message("#UpperReach.UpperSoupFrozen Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperReach.UpperSoupThawed" {
+        !add_item({
+            create_warp_icon("UpperReach.UpperSoupThawed", -215, -3877)
+            set_warp_icon_label("UpperReach.UpperSoupThawed", "#UpperReach.UpperSoupThawed#")
+            item_message("#UpperReach.UpperSoupThawed Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperReach.UpperSoupPaths" {
+        !add_item({
+            create_warp_icon("UpperReach.UpperSoupPaths", -215, -3877)
+            set_warp_icon_label("UpperReach.UpperSoupPaths", "#UpperReach.UpperSoupPaths#")
+            item_message("#UpperReach.UpperSoupPaths Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperReach.UpperSoupFrozenPaths" {
+        !add_item({
+            create_warp_icon("UpperReach.UpperSoupFrozenPaths", -215, -3877)
+            set_warp_icon_label("UpperReach.UpperSoupFrozenPaths", "#UpperReach.UpperSoupFrozenPaths#")
+            item_message("#UpperReach.UpperSoupFrozenPaths Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperReach.UpperSoupThawedPaths" {
+        !add_item({
+            create_warp_icon("UpperReach.UpperSoupThawedPaths", -215, -3877)
+            set_warp_icon_label("UpperReach.UpperSoupThawedPaths", "#UpperReach.UpperSoupThawedPaths#")
+            item_message("#UpperReach.UpperSoupThawedPaths Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperReach.OutsideTreeRoom" {
+        !add_item({
+            create_warp_icon("UpperReach.OutsideTreeRoom", -169, -3911)
+            set_warp_icon_label("UpperReach.OutsideTreeRoom", "#UpperReach.OutsideTreeRoom#")
+            item_message("#UpperReach.OutsideTreeRoom Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperReach.TreeRoomLedge" {
+        !add_item({
+            create_warp_icon("UpperReach.TreeRoomLedge", -136, -3911)
+            set_warp_icon_label("UpperReach.TreeRoomLedge", "#UpperReach.TreeRoomLedge#")
+            item_message("#UpperReach.TreeRoomLedge Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperReach.TreeRoom" {
+        !add_item({
+            create_warp_icon("UpperReach.TreeRoom", -107, -3933)
+            set_warp_icon_label("UpperReach.TreeRoom", "#UpperReach.TreeRoom#")
+            item_message("#UpperReach.TreeRoom Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperReach.SeedHut" {
+        !add_item({
+            create_warp_icon("UpperReach.SeedHut", -131, -3857)
+            set_warp_icon_label("UpperReach.SeedHut", "#UpperReach.SeedHut#")
+            item_message("#UpperReach.SeedHut Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperDepths.Entry" {
+        !add_item({
+            create_warp_icon("UpperDepths.Entry", 161, -4340)
+            set_warp_icon_label("UpperDepths.Entry", "#UpperDepths.Entry#")
+            item_message("#UpperDepths.Entry Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperDepths.FirstFirefly" {
+        !add_item({
+            create_warp_icon("UpperDepths.FirstFirefly", 211, -4391)
+            set_warp_icon_label("UpperDepths.FirstFirefly", "#UpperDepths.FirstFirefly#")
+            item_message("#UpperDepths.FirstFirefly Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperDepths.FirstKSRoom" {
+        !add_item({
+            create_warp_icon("UpperDepths.FirstKSRoom", 223, -4420)
+            set_warp_icon_label("UpperDepths.FirstKSRoom", "#UpperDepths.FirstKSRoom#")
+            item_message("#UpperDepths.FirstKSRoom Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperDepths.KeydoorLedge" {
+        !add_item({
+            create_warp_icon("UpperDepths.KeydoorLedge", 281, -4408)
+            set_warp_icon_label("UpperDepths.KeydoorLedge", "#UpperDepths.KeydoorLedge#")
+            item_message("#UpperDepths.KeydoorLedge Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperDepths.RightKeystonePath" {
+        !add_item({
+            create_warp_icon("UpperDepths.RightKeystonePath", 305, -4426)
+            set_warp_icon_label("UpperDepths.RightKeystonePath", "#UpperDepths.RightKeystonePath#")
+            item_message("#UpperDepths.RightKeystonePath Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperDepths.BelowHive" {
+        !add_item({
+            create_warp_icon("UpperDepths.BelowHive", 422, -4402)
+            set_warp_icon_label("UpperDepths.BelowHive", "#UpperDepths.BelowHive#")
+            item_message("#UpperDepths.BelowHive Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperDepths.Teleporter" {
+        !add_item({
+            create_warp_icon("UpperDepths.Teleporter", 513, -4361)
+            set_warp_icon_label("UpperDepths.Teleporter", "#UpperDepths.Teleporter#")
+            item_message("#UpperDepths.Teleporter Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperDepths.Central" {
+        !add_item({
+            create_warp_icon("UpperDepths.Central", 464, -4484)
+            set_warp_icon_label("UpperDepths.Central", "#UpperDepths.Central#")
+            item_message("#UpperDepths.Central Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperDepths.SecondKSRoom" {
+        !add_item({
+            create_warp_icon("UpperDepths.SecondKSRoom", 542, -4466)
+            set_warp_icon_label("UpperDepths.SecondKSRoom", "#UpperDepths.SecondKSRoom#")
+            item_message("#UpperDepths.SecondKSRoom Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperDepths.MoraPath" {
+        !add_item({
+            create_warp_icon("UpperDepths.MoraPath", 572, -4431)
+            set_warp_icon_label("UpperDepths.MoraPath", "#UpperDepths.MoraPath#")
+            item_message("#UpperDepths.MoraPath Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperDepths.OutsideMoraFight" {
+        !add_item({
+            create_warp_icon("UpperDepths.OutsideMoraFight", 595, -4376)
+            set_warp_icon_label("UpperDepths.OutsideMoraFight", "#UpperDepths.OutsideMoraFight#")
+            item_message("#UpperDepths.OutsideMoraFight Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MoraFirstPhase" {
+        !add_item({
+            create_warp_icon("MoraFirstPhase", 674, -4385)
+            set_warp_icon_label("MoraFirstPhase", "#MoraFirstPhase#")
+            item_message("#MoraFirstPhase Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MoraEscape" {
+        !add_item({
+            create_warp_icon("MoraEscape", 712, -4482)
+            set_warp_icon_label("MoraEscape", "#MoraEscape#")
+            item_message("#MoraEscape Teleporter#")
+        }, 1)
+    }
+    !if anchor == "MoraSecondPhase" {
+        !add_item({
+            create_warp_icon("MoraSecondPhase", 690, -4386)
+            set_warp_icon_label("MoraSecondPhase", "#MoraSecondPhase#")
+            item_message("#MoraSecondPhase Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperDepths.LowerConnection" {
+        !add_item({
+            create_warp_icon("UpperDepths.LowerConnection", 423, -4474)
+            set_warp_icon_label("UpperDepths.LowerConnection", "#UpperDepths.LowerConnection#")
+            item_message("#UpperDepths.LowerConnection Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerDepths.West" {
+        !add_item({
+            create_warp_icon("LowerDepths.West", 322, -4510)
+            set_warp_icon_label("LowerDepths.West", "#LowerDepths.West#")
+            item_message("#LowerDepths.West Teleporter#")
+        }, 1)
+    }
+    !if anchor == "DepthsShrine" {
+        !add_item({
+            create_warp_icon("DepthsShrine", 213, -4515)
+            set_warp_icon_label("DepthsShrine", "#DepthsShrine#")
+            item_message("#DepthsShrine Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerDepths.Central" {
+        !add_item({
+            create_warp_icon("LowerDepths.Central", 482, -4536)
+            set_warp_icon_label("LowerDepths.Central", "#LowerDepths.Central#")
+            item_message("#LowerDepths.Central Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerDepths.East" {
+        !add_item({
+            create_warp_icon("LowerDepths.East", 570, -4550)
+            set_warp_icon_label("LowerDepths.East", "#LowerDepths.East#")
+            item_message("#LowerDepths.East Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerDepths.BeforeTree" {
+        !add_item({
+            create_warp_icon("LowerDepths.BeforeTree", 693, -4515)
+            set_warp_icon_label("LowerDepths.BeforeTree", "#LowerDepths.BeforeTree#")
+            item_message("#LowerDepths.BeforeTree Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerDepths.TreeArea" {
+        !add_item({
+            create_warp_icon("LowerDepths.TreeArea", 776, -4542)
+            set_warp_icon_label("LowerDepths.TreeArea", "#LowerDepths.TreeArea#")
+            item_message("#LowerDepths.TreeArea Teleporter#")
+        }, 1)
+    }
+    !if anchor == "PoolsApproach.MillPathCheckpoint" {
+        !add_item({
+            create_warp_icon("PoolsApproach.MillPathCheckpoint", -826, -4130)
+            set_warp_icon_label("PoolsApproach.MillPathCheckpoint", "#PoolsApproach.MillPathCheckpoint#")
+            item_message("#PoolsApproach.MillPathCheckpoint Teleporter#")
+        }, 1)
+    }
+    !if anchor == "PoolsApproach.MillPath" {
+        !add_item({
+            create_warp_icon("PoolsApproach.MillPath", -873, -4146)
+            set_warp_icon_label("PoolsApproach.MillPath", "#PoolsApproach.MillPath#")
+            item_message("#PoolsApproach.MillPath Teleporter#")
+        }, 1)
+    }
+    !if anchor == "PoolsApproach.MarshBreakableWall" {
+        !add_item({
+            create_warp_icon("PoolsApproach.MarshBreakableWall", -820, -4185)
+            set_warp_icon_label("PoolsApproach.MarshBreakableWall", "#PoolsApproach.MarshBreakableWall#")
+            item_message("#PoolsApproach.MarshBreakableWall Teleporter#")
+        }, 1)
+    }
+    !if anchor == "PoolsApproach.OnTopOfWheel" {
+        !add_item({
+            create_warp_icon("PoolsApproach.OnTopOfWheel", -971, -4164)
+            set_warp_icon_label("PoolsApproach.OnTopOfWheel", "#PoolsApproach.OnTopOfWheel#")
+            item_message("#PoolsApproach.OnTopOfWheel Teleporter#")
+        }, 1)
+    }
+    !if anchor == "EastPools.LeverRoom" {
+        !add_item({
+            create_warp_icon("EastPools.LeverRoom", -1160, -4152)
+            set_warp_icon_label("EastPools.LeverRoom", "#EastPools.LeverRoom#")
+            item_message("#EastPools.LeverRoom Teleporter#")
+        }, 1)
+    }
+    !if anchor == "EastPools.BehindEntryDoor" {
+        !add_item({
+            create_warp_icon("EastPools.BehindEntryDoor", -1239, -4162)
+            set_warp_icon_label("EastPools.BehindEntryDoor", "#EastPools.BehindEntryDoor#")
+            item_message("#EastPools.BehindEntryDoor Teleporter#")
+        }, 1)
+    }
+    !if anchor == "EastPools.TokkBubble" {
+        !add_item({
+            create_warp_icon("EastPools.TokkBubble", -1276, -4175)
+            set_warp_icon_label("EastPools.TokkBubble", "#EastPools.TokkBubble#")
+            item_message("#EastPools.TokkBubble Teleporter#")
+        }, 1)
+    }
+    !if anchor == "EastPools.TPArea" {
+        !add_item({
+            create_warp_icon("EastPools.TPArea", -1297, -4143)
+            set_warp_icon_label("EastPools.TPArea", "#EastPools.TPArea#")
+            item_message("#EastPools.TPArea Teleporter#")
+        }, 1)
+    }
+    !if anchor == "EastPools.Teleporter" {
+        !add_item({
+            create_warp_icon("EastPools.Teleporter", -1316, -4153)
+            set_warp_icon_label("EastPools.Teleporter", "#EastPools.Teleporter#")
+            item_message("#EastPools.Teleporter Teleporter#")
+        }, 1)
+    }
+    !if anchor == "EastPools.FishingPool" {
+        !add_item({
+            create_warp_icon("EastPools.FishingPool", -1278, -4124)
+            set_warp_icon_label("EastPools.FishingPool", "#EastPools.FishingPool#")
+            item_message("#EastPools.FishingPool Teleporter#")
+        }, 1)
+    }
+    !if anchor == "EastPools.AboveFishingPool" {
+        !add_item({
+            create_warp_icon("EastPools.AboveFishingPool", -1300, -4102)
+            set_warp_icon_label("EastPools.AboveFishingPool", "#EastPools.AboveFishingPool#")
+            item_message("#EastPools.AboveFishingPool Teleporter#")
+        }, 1)
+    }
+    !if anchor == "EastPools.NextToLupoOre" {
+        !add_item({
+            create_warp_icon("EastPools.NextToLupoOre", -1373, -4166)
+            set_warp_icon_label("EastPools.NextToLupoOre", "#EastPools.NextToLupoOre#")
+            item_message("#EastPools.NextToLupoOre Teleporter#")
+        }, 1)
+    }
+    !if anchor == "EastPools.LupoArea" {
+        !add_item({
+            create_warp_icon("EastPools.LupoArea", -1409, -4163)
+            set_warp_icon_label("EastPools.LupoArea", "#EastPools.LupoArea#")
+            item_message("#EastPools.LupoArea Teleporter#")
+        }, 1)
+    }
+    !if anchor == "EastPools.WaterdashArena" {
+        !add_item({
+            create_warp_icon("EastPools.WaterdashArena", -1348, -4139)
+            set_warp_icon_label("EastPools.WaterdashArena", "#EastPools.WaterdashArena#")
+            item_message("#EastPools.WaterdashArena Teleporter#")
+        }, 1)
+    }
+    !if anchor == "EastPools.MissilePuzzle" {
+        !add_item({
+            create_warp_icon("EastPools.MissilePuzzle", -1425, -4144)
+            set_warp_icon_label("EastPools.MissilePuzzle", "#EastPools.MissilePuzzle#")
+            item_message("#EastPools.MissilePuzzle Teleporter#")
+        }, 1)
+    }
+    !if anchor == "EastPools.CentralRoom" {
+        !add_item({
+            create_warp_icon("EastPools.CentralRoom", -1485, -4148)
+            set_warp_icon_label("EastPools.CentralRoom", "#EastPools.CentralRoom#")
+            item_message("#EastPools.CentralRoom Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperPools.KeystoneRoomEntrance" {
+        !add_item({
+            create_warp_icon("UpperPools.KeystoneRoomEntrance", -1535, -4115)
+            set_warp_icon_label("UpperPools.KeystoneRoomEntrance", "#UpperPools.KeystoneRoomEntrance#")
+            item_message("#UpperPools.KeystoneRoomEntrance Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperPools.KeystoneRoomBubbleSpawner" {
+        !add_item({
+            create_warp_icon("UpperPools.KeystoneRoomBubbleSpawner", -1566, -4115)
+            set_warp_icon_label("UpperPools.KeystoneRoomBubbleSpawner", "#UpperPools.KeystoneRoomBubbleSpawner#")
+            item_message("#UpperPools.KeystoneRoomBubbleSpawner Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperPools.KeystoneRoom" {
+        !add_item({
+            create_warp_icon("UpperPools.KeystoneRoom", -1540, -4095)
+            set_warp_icon_label("UpperPools.KeystoneRoom", "#UpperPools.KeystoneRoom#")
+            item_message("#UpperPools.KeystoneRoom Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperPools.BeforeKeystoneDoor" {
+        !add_item({
+            create_warp_icon("UpperPools.BeforeKeystoneDoor", -1506, -4068)
+            set_warp_icon_label("UpperPools.BeforeKeystoneDoor", "#UpperPools.BeforeKeystoneDoor#")
+            item_message("#UpperPools.BeforeKeystoneDoor Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperPools.TreeRoomEntrance" {
+        !add_item({
+            create_warp_icon("UpperPools.TreeRoomEntrance", -1467, -4075)
+            set_warp_icon_label("UpperPools.TreeRoomEntrance", "#UpperPools.TreeRoomEntrance#")
+            item_message("#UpperPools.TreeRoomEntrance Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperPools.TreeRoom" {
+        !add_item({
+            create_warp_icon("UpperPools.TreeRoom", -1429, -4081)
+            set_warp_icon_label("UpperPools.TreeRoom", "#UpperPools.TreeRoom#")
+            item_message("#UpperPools.TreeRoom Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperPools.AboveTree" {
+        !add_item({
+            create_warp_icon("UpperPools.AboveTree", -1450, -4053)
+            set_warp_icon_label("UpperPools.AboveTree", "#UpperPools.AboveTree#")
+            item_message("#UpperPools.AboveTree Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperPools.DrainPuzzleEntrance" {
+        !add_item({
+            create_warp_icon("UpperPools.DrainPuzzleEntrance", -1386, -4062)
+            set_warp_icon_label("UpperPools.DrainPuzzleEntrance", "#UpperPools.DrainPuzzleEntrance#")
+            item_message("#UpperPools.DrainPuzzleEntrance Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperPools.DrainPuzzleRight" {
+        !add_item({
+            create_warp_icon("UpperPools.DrainPuzzleRight", -1324, -4060)
+            set_warp_icon_label("UpperPools.DrainPuzzleRight", "#UpperPools.DrainPuzzleRight#")
+            item_message("#UpperPools.DrainPuzzleRight Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperPools.DrainPuzzleExit" {
+        !add_item({
+            create_warp_icon("UpperPools.DrainPuzzleExit", -1318, -4081)
+            set_warp_icon_label("UpperPools.DrainPuzzleExit", "#UpperPools.DrainPuzzleExit#")
+            item_message("#UpperPools.DrainPuzzleExit Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperPools.RightBubbleSpamRoom" {
+        !add_item({
+            create_warp_icon("UpperPools.RightBubbleSpamRoom", -1586, -4052)
+            set_warp_icon_label("UpperPools.RightBubbleSpamRoom", "#UpperPools.RightBubbleSpamRoom#")
+            item_message("#UpperPools.RightBubbleSpamRoom Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperPools.LeftBubbleSpamRoom" {
+        !add_item({
+            create_warp_icon("UpperPools.LeftBubbleSpamRoom", -1634, -4052)
+            set_warp_icon_label("UpperPools.LeftBubbleSpamRoom", "#UpperPools.LeftBubbleSpamRoom#")
+            item_message("#UpperPools.LeftBubbleSpamRoom Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WestPools.Teleporter" {
+        !add_item({
+            create_warp_icon("WestPools.Teleporter", -1656, -4171)
+            set_warp_icon_label("WestPools.Teleporter", "#WestPools.Teleporter#")
+            item_message("#WestPools.Teleporter Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WestPools.LeftKwolokPlatform" {
+        !add_item({
+            create_warp_icon("WestPools.LeftKwolokPlatform", -1668, -4127)
+            set_warp_icon_label("WestPools.LeftKwolokPlatform", "#WestPools.LeftKwolokPlatform#")
+            item_message("#WestPools.LeftKwolokPlatform Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WestPools.RightKwolokPlatform" {
+        !add_item({
+            create_warp_icon("WestPools.RightKwolokPlatform", -1637, -4127)
+            set_warp_icon_label("WestPools.RightKwolokPlatform", "#WestPools.RightKwolokPlatform#")
+            item_message("#WestPools.RightKwolokPlatform Teleporter#")
+        }, 1)
+    }
+    !if anchor == "KwolokEscape" {
+        !add_item({
+            create_warp_icon("KwolokEscape", -1650, -4125)
+            set_warp_icon_label("KwolokEscape", "#KwolokEscape#")
+            item_message("#KwolokEscape Teleporter#")
+        }, 1)
+    }
+    !if anchor == "KwolokFight" {
+        !add_item({
+            create_warp_icon("KwolokFight", -1978, -4135)
+            set_warp_icon_label("KwolokFight", "#KwolokFight#")
+            item_message("#KwolokFight Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerWastes.FeedingGroundsTP" {
+        !add_item({
+            create_warp_icon("LowerWastes.FeedingGroundsTP", 1456, -3997)
+            set_warp_icon_label("LowerWastes.FeedingGroundsTP", "#LowerWastes.FeedingGroundsTP#")
+            item_message("#LowerWastes.FeedingGroundsTP Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerWastes.SunsetView" {
+        !add_item({
+            create_warp_icon("LowerWastes.SunsetView", 1552, -3984)
+            set_warp_icon_label("LowerWastes.SunsetView", "#LowerWastes.SunsetView#")
+            item_message("#LowerWastes.SunsetView Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerWastes.Shovel" {
+        !add_item({
+            create_warp_icon("LowerWastes.Shovel", 1635, -3981)
+            set_warp_icon_label("LowerWastes.Shovel", "#LowerWastes.Shovel#")
+            item_message("#LowerWastes.Shovel Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerWastes.MuncherTunnel" {
+        !add_item({
+            create_warp_icon("LowerWastes.MuncherTunnel", 1681, -4002)
+            set_warp_icon_label("LowerWastes.MuncherTunnel", "#LowerWastes.MuncherTunnel#")
+            item_message("#LowerWastes.MuncherTunnel Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerWastes.SandPot" {
+        !add_item({
+            create_warp_icon("LowerWastes.SandPot", 1726, -3990)
+            set_warp_icon_label("LowerWastes.SandPot", "#LowerWastes.SandPot#")
+            item_message("#LowerWastes.SandPot Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerWastes.WoodenBridge" {
+        !add_item({
+            create_warp_icon("LowerWastes.WoodenBridge", 1796, -3977)
+            set_warp_icon_label("LowerWastes.WoodenBridge", "#LowerWastes.WoodenBridge#")
+            item_message("#LowerWastes.WoodenBridge Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerWastes.BeforeMinesEntrance" {
+        !add_item({
+            create_warp_icon("LowerWastes.BeforeMinesEntrance", 1849, -3986)
+            set_warp_icon_label("LowerWastes.BeforeMinesEntrance", "#LowerWastes.BeforeMinesEntrance#")
+            item_message("#LowerWastes.BeforeMinesEntrance Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerWastes.MinesEntranceEnemyPaths" {
+        !add_item({
+            create_warp_icon("LowerWastes.MinesEntranceEnemyPaths", 1921, -4001)
+            set_warp_icon_label("LowerWastes.MinesEntranceEnemyPaths", "#LowerWastes.MinesEntranceEnemyPaths#")
+            item_message("#LowerWastes.MinesEntranceEnemyPaths Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerWastes.MinesEntrance" {
+        !add_item({
+            create_warp_icon("LowerWastes.MinesEntrance", 1921, -4001)
+            set_warp_icon_label("LowerWastes.MinesEntrance", "#LowerWastes.MinesEntrance#")
+            item_message("#LowerWastes.MinesEntrance Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerWastes.LeverArea" {
+        !add_item({
+            create_warp_icon("LowerWastes.LeverArea", 1833, -3959)
+            set_warp_icon_label("LowerWastes.LeverArea", "#LowerWastes.LeverArea#")
+            item_message("#LowerWastes.LeverArea Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerWastes.MuncherClimb" {
+        !add_item({
+            create_warp_icon("LowerWastes.MuncherClimb", 1791, -3953)
+            set_warp_icon_label("LowerWastes.MuncherClimb", "#LowerWastes.MuncherClimb#")
+            item_message("#LowerWastes.MuncherClimb Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerWastes.LastStandArea" {
+        !add_item({
+            create_warp_icon("LowerWastes.LastStandArea", 1794, -3938)
+            set_warp_icon_label("LowerWastes.LastStandArea", "#LowerWastes.LastStandArea#")
+            item_message("#LowerWastes.LastStandArea Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerWastes.SkeetoHive" {
+        !add_item({
+            create_warp_icon("LowerWastes.SkeetoHive", 1715, -3935)
+            set_warp_icon_label("LowerWastes.SkeetoHive", "#LowerWastes.SkeetoHive#")
+            item_message("#LowerWastes.SkeetoHive Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerWastes.ThirstyGorlek" {
+        !add_item({
+            create_warp_icon("LowerWastes.ThirstyGorlek", 1681, -3923)
+            set_warp_icon_label("LowerWastes.ThirstyGorlek", "#LowerWastes.ThirstyGorlek#")
+            item_message("#LowerWastes.ThirstyGorlek Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerWastes.UpperPath" {
+        !add_item({
+            create_warp_icon("LowerWastes.UpperPath", 1761, -3898)
+            set_warp_icon_label("LowerWastes.UpperPath", "#LowerWastes.UpperPath#")
+            item_message("#LowerWastes.UpperPath Teleporter#")
+        }, 1)
+    }
+    !if anchor == "LowerWastes.CentralTP" {
+        !add_item({
+            create_warp_icon("LowerWastes.CentralTP", 1992, -3902)
+            set_warp_icon_label("LowerWastes.CentralTP", "#LowerWastes.CentralTP#")
+            item_message("#LowerWastes.CentralTP Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperWastes.KeystoneRoom" {
+        !add_item({
+            create_warp_icon("UpperWastes.KeystoneRoom", 1900, -3831)
+            set_warp_icon_label("UpperWastes.KeystoneRoom", "#UpperWastes.KeystoneRoom#")
+            item_message("#UpperWastes.KeystoneRoom Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperWastes.MissilePuzzleLeft" {
+        !add_item({
+            create_warp_icon("UpperWastes.MissilePuzzleLeft", 1937, -3794)
+            set_warp_icon_label("UpperWastes.MissilePuzzleLeft", "#UpperWastes.MissilePuzzleLeft#")
+            item_message("#UpperWastes.MissilePuzzleLeft Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperWastes.MissilePuzzleMiddle" {
+        !add_item({
+            create_warp_icon("UpperWastes.MissilePuzzleMiddle", 2005, -3802)
+            set_warp_icon_label("UpperWastes.MissilePuzzleMiddle", "#UpperWastes.MissilePuzzleMiddle#")
+            item_message("#UpperWastes.MissilePuzzleMiddle Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperWastes.MissilePuzzleRight" {
+        !add_item({
+            create_warp_icon("UpperWastes.MissilePuzzleRight", 2058, -3813)
+            set_warp_icon_label("UpperWastes.MissilePuzzleRight", "#UpperWastes.MissilePuzzleRight#")
+            item_message("#UpperWastes.MissilePuzzleRight Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperWastes.SpinLasers" {
+        !add_item({
+            create_warp_icon("UpperWastes.SpinLasers", 2037, -3751)
+            set_warp_icon_label("UpperWastes.SpinLasers", "#UpperWastes.SpinLasers#")
+            item_message("#UpperWastes.SpinLasers Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperWastes.RuinsApproach" {
+        !add_item({
+            create_warp_icon("UpperWastes.RuinsApproach", 2002, -3698)
+            set_warp_icon_label("UpperWastes.RuinsApproach", "#UpperWastes.RuinsApproach#")
+            item_message("#UpperWastes.RuinsApproach Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperWastes.OuterRuinsTP" {
+        !add_item({
+            create_warp_icon("UpperWastes.OuterRuinsTP", 2044, -3679)
+            set_warp_icon_label("UpperWastes.OuterRuinsTP", "#UpperWastes.OuterRuinsTP#")
+            item_message("#UpperWastes.OuterRuinsTP Teleporter#")
+        }, 1)
+    }
+    !if anchor == "UpperWastes.OutsideRuins" {
+        !add_item({
+            create_warp_icon("UpperWastes.OutsideRuins", 2014, -3609)
+            set_warp_icon_label("UpperWastes.OutsideRuins", "#UpperWastes.OutsideRuins#")
+            item_message("#UpperWastes.OutsideRuins Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WindtornRuins.UpperRuinsDoor" {
+        !add_item({
+            create_warp_icon("WindtornRuins.UpperRuinsDoor", 2163, -3834)
+            set_warp_icon_label("WindtornRuins.UpperRuinsDoor", "#WindtornRuins.UpperRuinsDoor#")
+            item_message("#WindtornRuins.UpperRuinsDoor Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WindtornRuins.BrokenMural" {
+        !add_item({
+            create_warp_icon("WindtornRuins.BrokenMural", 2108, -3959)
+            set_warp_icon_label("WindtornRuins.BrokenMural", "#WindtornRuins.BrokenMural#")
+            item_message("#WindtornRuins.BrokenMural Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WindtornRuins.FallenPillar" {
+        !add_item({
+            create_warp_icon("WindtornRuins.FallenPillar", 2090, -4012)
+            set_warp_icon_label("WindtornRuins.FallenPillar", "#WindtornRuins.FallenPillar#")
+            item_message("#WindtornRuins.FallenPillar Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WindtornRuins.RuinsTP" {
+        !add_item({
+            create_warp_icon("WindtornRuins.RuinsTP", 2130, -3984)
+            set_warp_icon_label("WindtornRuins.RuinsTP", "#WindtornRuins.RuinsTP#")
+            item_message("#WindtornRuins.RuinsTP Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WindtornRuins.Escape" {
+        !add_item({
+            create_warp_icon("WindtornRuins.Escape", 2021, -4026)
+            set_warp_icon_label("WindtornRuins.Escape", "#WindtornRuins.Escape#")
+            item_message("#WindtornRuins.Escape Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WindtornRuins.MapstoneAltar" {
+        !add_item({
+            create_warp_icon("WindtornRuins.MapstoneAltar", 1969, -4024)
+            set_warp_icon_label("WindtornRuins.MapstoneAltar", "#WindtornRuins.MapstoneAltar#")
+            item_message("#WindtornRuins.MapstoneAltar Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WeepingRidge.Bottom" {
+        !add_item({
+            create_warp_icon("WeepingRidge.Bottom", 1210, -3830)
+            set_warp_icon_label("WeepingRidge.Bottom", "#WeepingRidge.Bottom#")
+            item_message("#WeepingRidge.Bottom Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WeepingRidge.Elevator" {
+        !add_item({
+            create_warp_icon("WeepingRidge.Elevator", 1170, -3820)
+            set_warp_icon_label("WeepingRidge.Elevator", "#WeepingRidge.Elevator#")
+            item_message("#WeepingRidge.Elevator Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WeepingRidge.TopElevator" {
+        !add_item({
+            create_warp_icon("WeepingRidge.TopElevator", 1189, -3716)
+            set_warp_icon_label("WeepingRidge.TopElevator", "#WeepingRidge.TopElevator#")
+            item_message("#WeepingRidge.TopElevator Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WeepingRidge.AfterElementals" {
+        !add_item({
+            create_warp_icon("WeepingRidge.AfterElementals", 1303, -3769)
+            set_warp_icon_label("WeepingRidge.AfterElementals", "#WeepingRidge.AfterElementals#")
+            item_message("#WeepingRidge.AfterElementals Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WeepingRidge.AboveTree" {
+        !add_item({
+            create_warp_icon("WeepingRidge.AboveTree", 1344, -3791)
+            set_warp_icon_label("WeepingRidge.AboveTree", "#WeepingRidge.AboveTree#")
+            item_message("#WeepingRidge.AboveTree Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WeepingRidge.WillowEntranceLedge" {
+        !add_item({
+            create_warp_icon("WeepingRidge.WillowEntranceLedge", 1113, -3657)
+            set_warp_icon_label("WeepingRidge.WillowEntranceLedge", "#WeepingRidge.WillowEntranceLedge#")
+            item_message("#WeepingRidge.WillowEntranceLedge Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WillowsEnd.Entry" {
+        !add_item({
+            create_warp_icon("WillowsEnd.Entry", 495, -3950)
+            set_warp_icon_label("WillowsEnd.Entry", "#WillowsEnd.Entry#")
+            item_message("#WillowsEnd.Entry Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WillowsEnd.EntryFloatingPlatform" {
+        !add_item({
+            create_warp_icon("WillowsEnd.EntryFloatingPlatform", 477, -3937)
+            set_warp_icon_label("WillowsEnd.EntryFloatingPlatform", "#WillowsEnd.EntryFloatingPlatform#")
+            item_message("#WillowsEnd.EntryFloatingPlatform Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WillowsEnd.GrappleHeartMidPoint" {
+        !add_item({
+            create_warp_icon("WillowsEnd.GrappleHeartMidPoint", 335, -3887)
+            set_warp_icon_label("WillowsEnd.GrappleHeartMidPoint", "#WillowsEnd.GrappleHeartMidPoint#")
+            item_message("#WillowsEnd.GrappleHeartMidPoint Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WillowsEnd.GrappleHeart" {
+        !add_item({
+            create_warp_icon("WillowsEnd.GrappleHeart", 399, -3928)
+            set_warp_icon_label("WillowsEnd.GrappleHeart", "#WillowsEnd.GrappleHeart#")
+            item_message("#WillowsEnd.GrappleHeart Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WillowsEnd.BoulderHeartPath" {
+        !add_item({
+            create_warp_icon("WillowsEnd.BoulderHeartPath", 555, -3939)
+            set_warp_icon_label("WillowsEnd.BoulderHeartPath", "#WillowsEnd.BoulderHeartPath#")
+            item_message("#WillowsEnd.BoulderHeartPath Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WillowsEnd.InnerTP" {
+        !add_item({
+            create_warp_icon("WillowsEnd.InnerTP", 422, -3864)
+            set_warp_icon_label("WillowsEnd.InnerTP", "#WillowsEnd.InnerTP#")
+            item_message("#WillowsEnd.InnerTP Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WillowsEnd.AboveInnerTP" {
+        !add_item({
+            create_warp_icon("WillowsEnd.AboveInnerTP", 530, -3844)
+            set_warp_icon_label("WillowsEnd.AboveInnerTP", "#WillowsEnd.AboveInnerTP#")
+            item_message("#WillowsEnd.AboveInnerTP Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WillowsEnd.East" {
+        !add_item({
+            create_warp_icon("WillowsEnd.East", 547, -3805)
+            set_warp_icon_label("WillowsEnd.East", "#WillowsEnd.East#")
+            item_message("#WillowsEnd.East Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WillowsEnd.RedirectHeartPath" {
+        !add_item({
+            create_warp_icon("WillowsEnd.RedirectHeartPath", 584, -3814)
+            set_warp_icon_label("WillowsEnd.RedirectHeartPath", "#WillowsEnd.RedirectHeartPath#")
+            item_message("#WillowsEnd.RedirectHeartPath Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WillowsEnd.RedirectHeartPuzzle" {
+        !add_item({
+            create_warp_icon("WillowsEnd.RedirectHeartPuzzle", 614, -3836)
+            set_warp_icon_label("WillowsEnd.RedirectHeartPuzzle", "#WillowsEnd.RedirectHeartPuzzle#")
+            item_message("#WillowsEnd.RedirectHeartPuzzle Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WillowsEnd.Upper" {
+        !add_item({
+            create_warp_icon("WillowsEnd.Upper", 499, -3748)
+            set_warp_icon_label("WillowsEnd.Upper", "#WillowsEnd.Upper#")
+            item_message("#WillowsEnd.Upper Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WillowsEnd.ShriekArena" {
+        !add_item({
+            create_warp_icon("WillowsEnd.ShriekArena", 576, -3610)
+            set_warp_icon_label("WillowsEnd.ShriekArena", "#WillowsEnd.ShriekArena#")
+            item_message("#WillowsEnd.ShriekArena Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WillowsEnd.MiniBossFight" {
+        !add_item({
+            create_warp_icon("WillowsEnd.MiniBossFight", 361, -3740)
+            set_warp_icon_label("WillowsEnd.MiniBossFight", "#WillowsEnd.MiniBossFight#")
+            item_message("#WillowsEnd.MiniBossFight Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WillowsEnd.West" {
+        !add_item({
+            create_warp_icon("WillowsEnd.West", 437, -3840)
+            set_warp_icon_label("WillowsEnd.West", "#WillowsEnd.West#")
+            item_message("#WillowsEnd.West Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WillowsEnd.GlideHeartPath" {
+        !add_item({
+            create_warp_icon("WillowsEnd.GlideHeartPath", 374, -3824)
+            set_warp_icon_label("WillowsEnd.GlideHeartPath", "#WillowsEnd.GlideHeartPath#")
+            item_message("#WillowsEnd.GlideHeartPath Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WillowsEnd.GlideRooms" {
+        !add_item({
+            create_warp_icon("WillowsEnd.GlideRooms", 360, -3861)
+            set_warp_icon_label("WillowsEnd.GlideRooms", "#WillowsEnd.GlideRooms#")
+            item_message("#WillowsEnd.GlideRooms Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WillowsEnd.UpperHeartPath" {
+        !add_item({
+            create_warp_icon("WillowsEnd.UpperHeartPath", 506, -3711)
+            set_warp_icon_label("WillowsEnd.UpperHeartPath", "#WillowsEnd.UpperHeartPath#")
+            item_message("#WillowsEnd.UpperHeartPath Teleporter#")
+        }, 1)
+    }
+    !if anchor == "WillowsEnd.UpperHeartCheckpoint" {
+        !add_item({
+            create_warp_icon("WillowsEnd.UpperHeartCheckpoint", 514, -3638)
+            set_warp_icon_label("WillowsEnd.UpperHeartCheckpoint", "#WillowsEnd.UpperHeartCheckpoint#")
+            item_message("#WillowsEnd.UpperHeartCheckpoint Teleporter#")
+        }, 1)
+    }
+    !if anchor == "TuleyShop" {
+        !add_item({
+            create_warp_icon("TuleyShop", -173, -4139)
+            set_warp_icon_label("TuleyShop", "#TuleyShop#")
+            item_message("#TuleyShop Teleporter#")
+        }, 1)
+    }
+}

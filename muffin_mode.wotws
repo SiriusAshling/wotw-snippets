@@ -1,0 +1,7 @@
+#category("Placements")
+#name("Muffin Mode")
+#description("Spawn with Dash")
+
+!remove_item(skill(Dash), 1)
+
+on spawn skill(Dash)

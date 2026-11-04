@@ -1,0 +1,8 @@
+#category("Gameplay")
+#name("Oh no!")
+#description("What happened to my orbs?")
+
+on spawn {
+    store(player.baseMaxEnergy, 0)
+    store(player.baseMaxHealth, 0)
+}

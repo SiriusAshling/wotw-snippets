@@ -1,0 +1,179 @@
+#category("Placements")
+#name("Grow your Lauch")
+#description("Lauch takes time to grow! Plant seeds to grow your Lauch")
+
+!config_float(growth_time, 60., "Growth Time", "Baseline of how many minutes your lauch has to grow. Time passed is multiplied by the number of planted seeds")
+
+!include("tuley_shop_core", lightcatchers, sela_flowers, blue_moon, sticky_grass, spring_plants, last_tree)
+!include("delta_time", tick)
+
+!let(lime_green, "<hex_32cd32ff>")
+!let(growth_seconds, growth_time * 60)
+
+!state(growth, Float)
+!state(seeds_planted, Integer)
+
+!remove_item(skill(Launch), 1)
+on growth >= growth_seconds {
+    item_message("Your Lauch has grown!")
+    skill(Launch)
+
+    store(Wellspring.ThirdFloor.Seed, true)
+    store(Pools.Seed, true)
+    store(Woods.TreeKeeper.Seed, true)
+    store(Reach.Seed, true)
+    store(Depths.Seed, true)
+    store(Wastes.Seed, true)
+}
+
+!no_random_placement(Wellspring.ThirdFloor.Seed)
+on Wellspring.ThirdFloor.Seed lauch_seed()
+!no_random_placement(Pools.Seed)
+on Pools.Seed lauch_seed()
+!no_random_placement(Woods.TreeKeeper.Seed)
+on Woods.TreeKeeper.Seed lauch_seed()
+!no_random_placement(Reach.Seed)
+on Reach.Seed lauch_seed()
+!no_random_placement(Depths.Seed)
+on Depths.Seed lauch_seed()
+!no_random_placement(Wastes.Seed)
+on Wastes.Seed lauch_seed()
+
+fun lauch_seed() {
+    if growth < growth_seconds item_message(lime_green + "Lauch Seed</>")
+}
+!item_data_name(lauch_seed(), "Lauch Seed")
+!item_data_map_icon(lauch_seed(), Seed)
+
+on spawn {
+    store(Glades.Plants.BlueMoon, true)
+    store(Glades.Plants.StickyGrass, true)
+    store(Glades.Plants.SpringPlants, true)
+    store(Glades.Plants.Lightcatchers, true)
+    store(Glades.Plants.SelaFlowers, true)
+    store(Glades.Plants.LastTree, true)
+}
+
+on tuleyShop.lightcatchers store(seeds_planted, seeds_planted + 1)
+on tuleyShop.lightcatchers == false store(seeds_planted, seeds_planted - 1)
+on tuleyShop.selaFlowers store(seeds_planted, seeds_planted + 1)
+on tuleyShop.selaFlowers == false store(seeds_planted, seeds_planted - 1)
+on tuleyShop.blueMoon store(seeds_planted, seeds_planted + 1)
+on tuleyShop.blueMoon == false store(seeds_planted, seeds_planted - 1)
+on tuleyShop.stickyGrass store(seeds_planted, seeds_planted + 1)
+on tuleyShop.stickyGrass == false store(seeds_planted, seeds_planted - 1)
+on tuleyShop.springPlants store(seeds_planted, seeds_planted + 1)
+on tuleyShop.springPlants == false store(seeds_planted, seeds_planted - 1)
+on tuleyShop.lastTree store(seeds_planted, seeds_planted + 1)
+on tuleyShop.lastTree == false store(seeds_planted, seeds_planted - 1)
+
+!augment_fun(tick(delta: Float), if growth < growth_seconds store(growth, growth + delta * seeds_planted))
+
+!let(shop_name, lime_green + "Lauch")
+!let(first_description, "It takes patience, but gardening can be #very rewarding#!")
+!let(extra_description, "Want to plant more Lauch? Maybe it'll make it #grow faster#, somehow!")
+
+on spawn {
+    set_shop_item_icon(tuleyShop.selaFlowers, Launch)
+    set_shop_item_icon(tuleyShop.stickyGrass, Launch)
+    set_shop_item_icon(tuleyShop.lightcatchers, Launch)
+    set_shop_item_icon(tuleyShop.blueMoon, Launch)
+    set_shop_item_icon(tuleyShop.springPlants, Launch)
+    set_shop_item_icon(tuleyShop.lastTree, Launch)
+}
+
+on sela_flowers {
+    set_shop_item_name(tuleyShop.selaFlowers, shop_name)
+    update_sela_flowers_description()
+}
+on change seeds_planted update_sela_flowers_description()
+fun update_sela_flowers_description() {
+    if sela_flowers && growth == 0 {
+        if seeds_planted == 0 set_shop_item_description(tuleyShop.selaFlowers, first_description)
+        if seeds_planted > 0 set_shop_item_description(tuleyShop.selaFlowers, extra_description)
+    }
+}
+
+on sticky_grass {
+    set_shop_item_name(tuleyShop.stickyGrass, shop_name)
+    update_sticky_grass_description()
+}
+on change seeds_planted update_sticky_grass_description()
+fun update_sticky_grass_description() {
+    if sticky_grass && growth == 0 {
+        if seeds_planted == 0 set_shop_item_description(tuleyShop.stickyGrass, first_description)
+        if seeds_planted > 0 set_shop_item_description(tuleyShop.stickyGrass, extra_description)
+    }
+}
+
+on lightcatchers {
+    set_shop_item_name(tuleyShop.lightcatchers, shop_name)
+    update_lightcatchers_description()
+}
+on change seeds_planted update_lightcatchers_description()
+fun update_lightcatchers_description() {
+    if lightcatchers && growth == 0 {
+        if seeds_planted == 0 set_shop_item_description(tuleyShop.lightcatchers, first_description)
+        if seeds_planted > 0 set_shop_item_description(tuleyShop.lightcatchers, extra_description)
+    }
+}
+
+on blue_moon {
+    set_shop_item_name(tuleyShop.blueMoon, shop_name)
+    update_blue_moon_description()
+}
+on change seeds_planted update_blue_moon_description()
+fun update_blue_moon_description() {
+    if blue_moon && growth == 0 {
+        if seeds_planted == 0 set_shop_item_description(tuleyShop.blueMoon, first_description)
+        if seeds_planted > 0 set_shop_item_description(tuleyShop.blueMoon, extra_description)
+    }
+}
+
+on spring_plants {
+    set_shop_item_name(tuleyShop.springPlants, shop_name)
+    update_spring_plants_description()
+}
+on change seeds_planted update_spring_plants_description()
+fun update_spring_plants_description() {
+    if spring_plants && growth == 0 {
+        if seeds_planted == 0 set_shop_item_description(tuleyShop.springPlants, first_description)
+        if seeds_planted > 0 set_shop_item_description(tuleyShop.springPlants, extra_description)
+    }
+}
+
+on last_tree {
+    set_shop_item_name(tuleyShop.lastTree, shop_name)
+    update_last_tree_description()
+}
+on change seeds_planted update_last_tree_description()
+fun update_last_tree_description() {
+    if last_tree && growth == 0 {
+        if seeds_planted == 0 set_shop_item_description(tuleyShop.lastTree, first_description)
+        if seeds_planted > 0 set_shop_item_description(tuleyShop.lastTree, extra_description)
+    }
+}
+
+on change growth if growth < growth_seconds {
+    if growth < growth_seconds * (1. / 3.) set_string("growth", "It's still starting to sprout...")
+    if growth_seconds * (1. / 3.) <= growth && growth < growth_seconds * (2. / 3.) set_string("growth", "It's steadily growing.")
+    if growth_seconds * (2. / 3.) <= growth set_string("growth", "It might be ripe for harvest soon!")
+    set_string("growth", "Checking on your Lauch? " + get_string("growth"))
+    if tuleyShop.selaFlowers set_shop_item_description(tuleyShop.selaFlowers, get_string("growth"))
+    if tuleyShop.stickyGrass set_shop_item_description(tuleyShop.stickyGrass, get_string("growth"))
+    if tuleyShop.lightcatchers set_shop_item_description(tuleyShop.lightcatchers, get_string("growth"))
+    if tuleyShop.blueMoon set_shop_item_description(tuleyShop.blueMoon, get_string("growth"))
+    if tuleyShop.springPlants set_shop_item_description(tuleyShop.springPlants, get_string("growth"))
+    if tuleyShop.lastTree set_shop_item_description(tuleyShop.lastTree, get_string("growth"))
+}
+
+!let(finished_description, "Enjoying your Lauch? Or would you rather #swap it# for something else?")
+
+on growth >= growth_seconds {
+    set_shop_item_description(tuleyShop.selaFlowers, finished_description)
+    set_shop_item_description(tuleyShop.stickyGrass, finished_description)
+    set_shop_item_description(tuleyShop.lightcatchers, finished_description)
+    set_shop_item_description(tuleyShop.blueMoon, finished_description)
+    set_shop_item_description(tuleyShop.springPlants, finished_description)
+    set_shop_item_description(tuleyShop.lastTree, finished_description)
+}

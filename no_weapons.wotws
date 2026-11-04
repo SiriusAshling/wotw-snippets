@@ -1,0 +1,35 @@
+#category("Item Pool")
+#name("No Weapons")
+#description("Weapons are banned... but glowing is not a weapon!")
+
+!include("progress_helper", write_progress_message, write_map_progress_message)
+!include("list_core", add_row)
+
+!remove_item(skill(Sword), 1)
+!remove_item(skill(Bow), 1)
+!remove_item(skill(Spear), 1)
+!remove_item(skill(Hammer), 1)
+!remove_item(skill(Shuriken), 1)
+!remove_item(skill(Grenade), 1)
+!remove_item(skill(Blaze), 1)
+!remove_item(skill(Sentry), 1)
+
+on change bonusUpgrades.flapDamage store(bonusUpgrades.flapDamage, 0)
+
+!area_of(flash_area, skill(Flash))
+
+on spawn {
+    store(bonusUpgrades.flashCostInitial, 0.2)
+    store(bonusUpgrades.flashCostPerSecond, 0.05)
+    store(bonusUpgrades.flashDamageIntervalDurationMultiplier, 0.5)
+    store(bonusUpgrades.flashDamageMultiplier, 2)
+    item_message("Flash: " + flash_area)
+}
+
+!augment_fun(write_progress_message(), write_hint())
+!augment_fun(write_map_progress_message(), write_hint())
+
+fun write_hint() {
+    if skills.flash add_row("$Flash: " + flash_area + "$")
+    if skills.flash == false add_row("Flash: " + flash_area)
+}

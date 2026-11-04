@@ -1,0 +1,80 @@
+#category("Item Pool")
+#name("Keysanity")
+#description("Keystones only fit into their designated doors")
+
+!tags("Keysanity")
+
+!include(
+    "keysanity_core",
+    regenerate_tree_keystone_a,
+    regenerate_tree_keystone_b,
+    eyestone_a,
+    eyestone_b,
+    den_keystone_a,
+    den_keystone_b,
+    woods_entrance_keystone_a,
+    woods_entrance_keystone_b,
+    ku_section_keystone_a,
+    ku_section_keystone_b,
+    ku_section_keystone_c,
+    ku_section_keystone_d,
+    reach_trial_keystone_a,
+    reach_trial_keystone_b,
+    reach_trial_keystone_c,
+    reach_trial_keystone_d,
+    grenade_tree_keystone_a,
+    grenade_tree_keystone_b,
+    grenade_tree_keystone_c,
+    grenade_tree_keystone_d,
+    depths_entrance_keystone_a,
+    depths_entrance_keystone_b,
+    firefly_room_keystone_a,
+    firefly_room_keystone_b,
+    pools_keystone_a,
+    pools_keystone_b,
+    pools_keystone_c,
+    pools_keystone_d,
+    wastes_keystone_a,
+    wastes_keystone_b,
+    burrows_keystone_a,
+    burrows_keystone_b,
+    burrows_keystone_c,
+    burrows_keystone_d
+)
+
+!remove_item(keystone(), 34)
+
+!add_item(regenerate_tree_keystone_a(), 1)
+!add_item(regenerate_tree_keystone_b(), 1)
+!add_item(eyestone_a(), 1)
+!add_item(eyestone_b(), 1)
+!add_item(den_keystone_a(), 1)
+!add_item(den_keystone_b(), 1)
+!add_item(woods_entrance_keystone_a(), 1)
+!add_item(woods_entrance_keystone_b(), 1)
+!add_item(ku_section_keystone_a(), 1)
+!add_item(ku_section_keystone_b(), 1)
+!add_item(ku_section_keystone_c(), 1)
+!add_item(ku_section_keystone_d(), 1)
+!add_item(reach_trial_keystone_a(), 1)
+!add_item(reach_trial_keystone_b(), 1)
+!add_item(reach_trial_keystone_c(), 1)
+!add_item(reach_trial_keystone_d(), 1)
+!add_item(grenade_tree_keystone_a(), 1)
+!add_item(grenade_tree_keystone_b(), 1)
+!add_item(grenade_tree_keystone_c(), 1)
+!add_item(grenade_tree_keystone_d(), 1)
+!add_item(depths_entrance_keystone_a(), 1)
+!add_item(depths_entrance_keystone_b(), 1)
+!add_item(firefly_room_keystone_a(), 1)
+!add_item(firefly_room_keystone_b(), 1)
+!add_item(pools_keystone_a(), 1)
+!add_item(pools_keystone_b(), 1)
+!add_item(pools_keystone_c(), 1)
+!add_item(pools_keystone_d(), 1)
+!add_item(wastes_keystone_a(), 1)
+!add_item(wastes_keystone_b(), 1)
+!add_item(burrows_keystone_a(), 1)
+!add_item(burrows_keystone_b(), 1)
+!add_item(burrows_keystone_c(), 1)
+!add_item(burrows_keystone_d(), 1)
