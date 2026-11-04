@@ -13,7 +13,7 @@
 !state(growth, Float)
 !state(seeds_planted, Integer)
 
-!remove_item(skill(Launch), 1)
+!remove_item(skill(Launch))
 on growth >= growth_seconds {
     item_message("Your Lauch has grown!")
     skill(Launch)

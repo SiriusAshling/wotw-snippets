@@ -2,6 +2,6 @@
 #name("Muffin Mode")
 #description("Spawn with Dash")
 
-!remove_item(skill(Dash), 1)
+!remove_item(skill(Dash))
 
 on spawn skill(Dash)

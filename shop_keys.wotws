@@ -55,7 +55,7 @@ on ophers_key {
     set_shop_item_locked(Shop.Opher.Slot12, false)
 }
 
-!add_item(store(ophers_key, true), 1)
+!add_item(store(ophers_key, true))
 !item_data(
     store(ophers_key, true),
     "Opher's key",
@@ -100,7 +100,7 @@ on twillens_key {
     set_shop_item_locked(Shop.Twillen.Slot8, false)
 }
 
-!add_item(store(twillens_key, true), 1)
+!add_item(store(twillens_key, true))
 !item_data(
     store(twillens_key, true),
     "Twillen's key",
@@ -133,7 +133,7 @@ on lupos_key {
     set_shop_item_locked(Shop.Lupo.Slot3, false)
 }
 
-!add_item(store(lupos_key, true), 1)
+!add_item(store(lupos_key, true))
 !item_data(
     store(lupos_key, true),
     "Lupo's key",

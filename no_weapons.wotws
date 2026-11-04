@@ -5,14 +5,14 @@
 !include("progress_helper", write_progress_message, write_map_progress_message)
 !include("list_core", add_row)
 
-!remove_item(skill(Sword), 1)
-!remove_item(skill(Bow), 1)
-!remove_item(skill(Spear), 1)
-!remove_item(skill(Hammer), 1)
-!remove_item(skill(Shuriken), 1)
-!remove_item(skill(Grenade), 1)
-!remove_item(skill(Blaze), 1)
-!remove_item(skill(Sentry), 1)
+!remove_item(skill(Sword))
+!remove_item(skill(Bow))
+!remove_item(skill(Spear))
+!remove_item(skill(Hammer))
+!remove_item(skill(Shuriken))
+!remove_item(skill(Grenade))
+!remove_item(skill(Blaze))
+!remove_item(skill(Sentry))
 
 on change bonusUpgrades.flapDamage store(bonusUpgrades.flapDamage, 0)
 
