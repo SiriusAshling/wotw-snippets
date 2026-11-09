@@ -1,0 +1,61 @@
+#category("Placements")
+#name("Random Spawn Weapon")
+#description("Spawn with a random weapon. This improves weapon variety slightly.")
+
+!random_pool(weapons, String, ["Sword", "Hammer", "Bow", "Grenade", "Shuriken", "Blaze", "Spear", "Flash", "Sentry"])
+
+!random_from_pool(weapon, weapons)
+!if weapon == "Sword" {
+    on spawn {
+        skill(Sword)
+        equip(Ability1, Sword)
+    }
+}
+!if weapon == "Hammer" {
+    on spawn {
+        skill(Hammer)
+        equip(Ability1, Hammer)
+    }
+}
+!if weapon == "Bow" {
+    on spawn {
+        skill(Bow)
+        equip(Ability1, Bow)
+    }
+}
+!if weapon == "Grenade" {
+    on spawn {
+        skill(Grenade)
+        equip(Ability1, Grenade)
+    }
+}
+!if weapon == "Shuriken" {
+    on spawn {
+        skill(Shuriken)
+        equip(Ability1, Shuriken)
+    }
+}
+!if weapon == "Blaze" {
+    on spawn {
+        skill(Blaze)
+        equip(Ability1, Blaze)
+    }
+}
+!if weapon == "Spear" {
+    on spawn {
+        skill(Spear)
+        equip(Ability1, Spear)
+    }
+}
+!if weapon == "Flash" {
+    on spawn {
+        skill(Flash)
+        equip(Ability1, Flash)
+    }
+}
+!if weapon == "Sentry" {
+    on spawn {
+        skill(Sentry)
+        equip(Ability1, Sentry)
+    }
+}
