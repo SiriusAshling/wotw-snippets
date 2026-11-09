@@ -4,22 +4,22 @@
 
 !config_integer(radius, 22, "Radius", "How far you can see")
 
-!item_on(marsh_spawn_rock_hf, Marsh.Spawn.LeftHF)
-on spawn if Marsh.Spawn.LeftHF == false {
-    free_message_uninitialized("Marsh.Spawn.LeftHF")
-    set_message_text("Marsh.Spawn.LeftHF", marsh_spawn_rock_hf)
-    set_message_coordinate_system("Marsh.Spawn.LeftHF", World)
-    set_message_vertical_anchor("Marsh.Spawn.LeftHF", Middle)
-    set_message_position("Marsh.Spawn.LeftHF", -958.6, -4313.2)
+!item_on(marsh_spawn_rock_hf, Marsh.Spawn.LeftLF)
+on spawn if Marsh.Spawn.LeftLF == false {
+    free_message_uninitialized("Marsh.Spawn.LeftLF")
+    set_message_text("Marsh.Spawn.LeftLF", marsh_spawn_rock_hf)
+    set_message_coordinate_system("Marsh.Spawn.LeftLF", World)
+    set_message_vertical_anchor("Marsh.Spawn.LeftLF", Middle)
+    set_message_position("Marsh.Spawn.LeftLF", -958.6, -4313.2)
 }
 on reload {
-    position_trigger_circle("Marsh.Spawn.LeftHF", -958.6, -4313.2, radius)
-    position_trigger_enter_callback("Marsh.Spawn.LeftHF", free_message_show("Marsh.Spawn.LeftHF", true, false))
-    position_trigger_leave_callback("Marsh.Spawn.LeftHF", free_message_hide("Marsh.Spawn.LeftHF", true))
+    position_trigger_circle("Marsh.Spawn.LeftLF", -958.6, -4313.2, radius)
+    position_trigger_enter_callback("Marsh.Spawn.LeftLF", free_message_show("Marsh.Spawn.LeftLF", true, false))
+    position_trigger_leave_callback("Marsh.Spawn.LeftLF", free_message_hide("Marsh.Spawn.LeftLF", true))
 }
-on Marsh.Spawn.LeftHF {
-    destroy_message("Marsh.Spawn.LeftHF")
-    position_trigger_destroy("Marsh.Spawn.LeftHF")
+on Marsh.Spawn.LeftLF {
+    destroy_message("Marsh.Spawn.LeftLF")
+    position_trigger_destroy("Marsh.Spawn.LeftLF")
 }
 
 !item_on(marsh_spawn_first_pickup_sl, Marsh.Spawn.FirstSL)
@@ -40,22 +40,22 @@ on Marsh.Spawn.FirstSL {
     position_trigger_destroy("Marsh.Spawn.FirstSL")
 }
 
-!item_on(marsh_spawn_grapple_hf, Marsh.Spawn.GrappleHF)
-on spawn if Marsh.Spawn.GrappleHF == false {
-    free_message_uninitialized("Marsh.Spawn.GrappleHF")
-    set_message_text("Marsh.Spawn.GrappleHF", marsh_spawn_grapple_hf)
-    set_message_coordinate_system("Marsh.Spawn.GrappleHF", World)
-    set_message_vertical_anchor("Marsh.Spawn.GrappleHF", Middle)
-    set_message_position("Marsh.Spawn.GrappleHF", -718.5, -4277.9)
+!item_on(marsh_spawn_grapple_hf, Marsh.Spawn.GrappleLF)
+on spawn if Marsh.Spawn.GrappleLF == false {
+    free_message_uninitialized("Marsh.Spawn.GrappleLF")
+    set_message_text("Marsh.Spawn.GrappleLF", marsh_spawn_grapple_hf)
+    set_message_coordinate_system("Marsh.Spawn.GrappleLF", World)
+    set_message_vertical_anchor("Marsh.Spawn.GrappleLF", Middle)
+    set_message_position("Marsh.Spawn.GrappleLF", -718.5, -4277.9)
 }
 on reload {
-    position_trigger_circle("Marsh.Spawn.GrappleHF", -718.5, -4277.9, radius)
-    position_trigger_enter_callback("Marsh.Spawn.GrappleHF", free_message_show("Marsh.Spawn.GrappleHF", true, false))
-    position_trigger_leave_callback("Marsh.Spawn.GrappleHF", free_message_hide("Marsh.Spawn.GrappleHF", true))
+    position_trigger_circle("Marsh.Spawn.GrappleLF", -718.5, -4277.9, radius)
+    position_trigger_enter_callback("Marsh.Spawn.GrappleLF", free_message_show("Marsh.Spawn.GrappleLF", true, false))
+    position_trigger_leave_callback("Marsh.Spawn.GrappleLF", free_message_hide("Marsh.Spawn.GrappleLF", true))
 }
-on Marsh.Spawn.GrappleHF {
-    destroy_message("Marsh.Spawn.GrappleHF")
-    position_trigger_destroy("Marsh.Spawn.GrappleHF")
+on Marsh.Spawn.GrappleLF {
+    destroy_message("Marsh.Spawn.GrappleLF")
+    position_trigger_destroy("Marsh.Spawn.GrappleLF")
 }
 
 !item_on(marsh_spawn_bridge_sl, Marsh.CollapsingLog.HiddenSL)
@@ -652,40 +652,40 @@ on Burrows.IntoBurrows.Tablet {
     position_trigger_destroy("Burrows.IntoBurrows.Tablet")
 }
 
-!item_on(howls_den_slime_loop_hf, Marsh.Den.ExitLoopHF)
-on spawn if Marsh.Den.ExitLoopHF == false {
-    free_message_uninitialized("Marsh.Den.ExitLoopHF")
-    set_message_text("Marsh.Den.ExitLoopHF", howls_den_slime_loop_hf)
-    set_message_coordinate_system("Marsh.Den.ExitLoopHF", World)
-    set_message_vertical_anchor("Marsh.Den.ExitLoopHF", Middle)
-    set_message_position("Marsh.Den.ExitLoopHF", -332.3, -4438.6)
+!item_on(howls_den_slime_loop_hf, Marsh.DenExitLoop.LF)
+on spawn if Marsh.DenExitLoop.LF == false {
+    free_message_uninitialized("Marsh.DenExitLoop.LF")
+    set_message_text("Marsh.DenExitLoop.LF", howls_den_slime_loop_hf)
+    set_message_coordinate_system("Marsh.DenExitLoop.LF", World)
+    set_message_vertical_anchor("Marsh.DenExitLoop.LF", Middle)
+    set_message_position("Marsh.DenExitLoop.LF", -332.3, -4438.6)
 }
 on reload {
-    position_trigger_circle("Marsh.Den.ExitLoopHF", -332.3, -4438.6, radius)
-    position_trigger_enter_callback("Marsh.Den.ExitLoopHF", free_message_show("Marsh.Den.ExitLoopHF", true, false))
-    position_trigger_leave_callback("Marsh.Den.ExitLoopHF", free_message_hide("Marsh.Den.ExitLoopHF", true))
+    position_trigger_circle("Marsh.DenExitLoop.LF", -332.3, -4438.6, radius)
+    position_trigger_enter_callback("Marsh.DenExitLoop.LF", free_message_show("Marsh.DenExitLoop.LF", true, false))
+    position_trigger_leave_callback("Marsh.DenExitLoop.LF", free_message_hide("Marsh.DenExitLoop.LF", true))
 }
-on Marsh.Den.ExitLoopHF {
-    destroy_message("Marsh.Den.ExitLoopHF")
-    position_trigger_destroy("Marsh.Den.ExitLoopHF")
+on Marsh.DenExitLoop.LF {
+    destroy_message("Marsh.DenExitLoop.LF")
+    position_trigger_destroy("Marsh.DenExitLoop.LF")
 }
 
-!item_on(howls_den_secret_room_hf, Marsh.Den.SecretHF)
-on spawn if Marsh.Den.SecretHF == false {
-    free_message_uninitialized("Marsh.Den.SecretHF")
-    set_message_text("Marsh.Den.SecretHF", howls_den_secret_room_hf)
-    set_message_coordinate_system("Marsh.Den.SecretHF", World)
-    set_message_vertical_anchor("Marsh.Den.SecretHF", Middle)
-    set_message_position("Marsh.Den.SecretHF", -569.7, -4454.1)
+!item_on(howls_den_secret_room_hf, Marsh.DenDoorLoop.SecretLF)
+on spawn if Marsh.DenDoorLoop.SecretLF == false {
+    free_message_uninitialized("Marsh.DenDoorLoop.SecretLF")
+    set_message_text("Marsh.DenDoorLoop.SecretLF", howls_den_secret_room_hf)
+    set_message_coordinate_system("Marsh.DenDoorLoop.SecretLF", World)
+    set_message_vertical_anchor("Marsh.DenDoorLoop.SecretLF", Middle)
+    set_message_position("Marsh.DenDoorLoop.SecretLF", -569.7, -4454.1)
 }
 on reload {
-    position_trigger_circle("Marsh.Den.SecretHF", -569.7, -4454.1, radius)
-    position_trigger_enter_callback("Marsh.Den.SecretHF", free_message_show("Marsh.Den.SecretHF", true, false))
-    position_trigger_leave_callback("Marsh.Den.SecretHF", free_message_hide("Marsh.Den.SecretHF", true))
+    position_trigger_circle("Marsh.DenDoorLoop.SecretLF", -569.7, -4454.1, radius)
+    position_trigger_enter_callback("Marsh.DenDoorLoop.SecretLF", free_message_show("Marsh.DenDoorLoop.SecretLF", true, false))
+    position_trigger_leave_callback("Marsh.DenDoorLoop.SecretLF", free_message_hide("Marsh.DenDoorLoop.SecretLF", true))
 }
-on Marsh.Den.SecretHF {
-    destroy_message("Marsh.Den.SecretHF")
-    position_trigger_destroy("Marsh.Den.SecretHF")
+on Marsh.DenDoorLoop.SecretLF {
+    destroy_message("Marsh.DenDoorLoop.SecretLF")
+    position_trigger_destroy("Marsh.DenDoorLoop.SecretLF")
 }
 
 !item_on(howls_den_above_door_ks, Marsh.Den.AboveDoorKS)
@@ -868,22 +868,22 @@ on Marsh.DoubleJumpTree {
     position_trigger_destroy("Marsh.DoubleJumpTree")
 }
 
-!item_on(marsh_past_opher_trial_left_sl, Marsh.Trial.LeftLS)
-on spawn if Marsh.Trial.LeftLS == false {
-    free_message_uninitialized("Marsh.Trial.LeftLS")
-    set_message_text("Marsh.Trial.LeftLS", marsh_past_opher_trial_left_sl)
-    set_message_coordinate_system("Marsh.Trial.LeftLS", World)
-    set_message_vertical_anchor("Marsh.Trial.LeftLS", Middle)
-    set_message_position("Marsh.Trial.LeftLS", -527.9, -4354.1)
+!item_on(marsh_past_opher_trial_left_sl, Marsh.Trial.LeftSL)
+on spawn if Marsh.Trial.LeftSL == false {
+    free_message_uninitialized("Marsh.Trial.LeftSL")
+    set_message_text("Marsh.Trial.LeftSL", marsh_past_opher_trial_left_sl)
+    set_message_coordinate_system("Marsh.Trial.LeftSL", World)
+    set_message_vertical_anchor("Marsh.Trial.LeftSL", Middle)
+    set_message_position("Marsh.Trial.LeftSL", -527.9, -4354.1)
 }
 on reload {
-    position_trigger_circle("Marsh.Trial.LeftLS", -527.9, -4354.1, radius)
-    position_trigger_enter_callback("Marsh.Trial.LeftLS", free_message_show("Marsh.Trial.LeftLS", true, false))
-    position_trigger_leave_callback("Marsh.Trial.LeftLS", free_message_hide("Marsh.Trial.LeftLS", true))
+    position_trigger_circle("Marsh.Trial.LeftSL", -527.9, -4354.1, radius)
+    position_trigger_enter_callback("Marsh.Trial.LeftSL", free_message_show("Marsh.Trial.LeftSL", true, false))
+    position_trigger_leave_callback("Marsh.Trial.LeftSL", free_message_hide("Marsh.Trial.LeftSL", true))
 }
-on Marsh.Trial.LeftLS {
-    destroy_message("Marsh.Trial.LeftLS")
-    position_trigger_destroy("Marsh.Trial.LeftLS")
+on Marsh.Trial.LeftSL {
+    destroy_message("Marsh.Trial.LeftSL")
+    position_trigger_destroy("Marsh.Trial.LeftSL")
 }
 
 !item_on(marsh_past_opher_trial_ore, Marsh.Trial.Ore)
@@ -922,22 +922,22 @@ on Marsh.Trial.EF {
     position_trigger_destroy("Marsh.Trial.EF")
 }
 
-!item_on(marsh_past_opher_trial_hf, Marsh.Trial.MantisLureHF)
-on spawn if Marsh.Trial.MantisLureHF == false {
-    free_message_uninitialized("Marsh.Trial.MantisLureHF")
-    set_message_text("Marsh.Trial.MantisLureHF", marsh_past_opher_trial_hf)
-    set_message_coordinate_system("Marsh.Trial.MantisLureHF", World)
-    set_message_vertical_anchor("Marsh.Trial.MantisLureHF", Middle)
-    set_message_position("Marsh.Trial.MantisLureHF", -437.7, -4380.8)
+!item_on(marsh_past_opher_trial_hf, Marsh.Trial.MantisLureLF)
+on spawn if Marsh.Trial.MantisLureLF == false {
+    free_message_uninitialized("Marsh.Trial.MantisLureLF")
+    set_message_text("Marsh.Trial.MantisLureLF", marsh_past_opher_trial_hf)
+    set_message_coordinate_system("Marsh.Trial.MantisLureLF", World)
+    set_message_vertical_anchor("Marsh.Trial.MantisLureLF", Middle)
+    set_message_position("Marsh.Trial.MantisLureLF", -437.7, -4380.8)
 }
 on reload {
-    position_trigger_circle("Marsh.Trial.MantisLureHF", -437.7, -4380.8, radius)
-    position_trigger_enter_callback("Marsh.Trial.MantisLureHF", free_message_show("Marsh.Trial.MantisLureHF", true, false))
-    position_trigger_leave_callback("Marsh.Trial.MantisLureHF", free_message_hide("Marsh.Trial.MantisLureHF", true))
+    position_trigger_circle("Marsh.Trial.MantisLureLF", -437.7, -4380.8, radius)
+    position_trigger_enter_callback("Marsh.Trial.MantisLureLF", free_message_show("Marsh.Trial.MantisLureLF", true, false))
+    position_trigger_leave_callback("Marsh.Trial.MantisLureLF", free_message_hide("Marsh.Trial.MantisLureLF", true))
 }
-on Marsh.Trial.MantisLureHF {
-    destroy_message("Marsh.Trial.MantisLureHF")
-    position_trigger_destroy("Marsh.Trial.MantisLureHF")
+on Marsh.Trial.MantisLureLF {
+    destroy_message("Marsh.Trial.MantisLureLF")
+    position_trigger_destroy("Marsh.Trial.MantisLureLF")
 }
 
 !item_on(marsh_past_opher_trial_right_sl, Marsh.Trial.MantisLureSL)
@@ -1138,22 +1138,22 @@ on Marsh.UpperPoolsPath.SL {
     position_trigger_destroy("Marsh.UpperPoolsPath.SL")
 }
 
-!item_on(west_hollow_crusher_hf, Hollow.TwillenRoom.HF)
-on spawn if Hollow.TwillenRoom.HF == false {
-    free_message_uninitialized("Hollow.TwillenRoom.HF")
-    set_message_text("Hollow.TwillenRoom.HF", west_hollow_crusher_hf)
-    set_message_coordinate_system("Hollow.TwillenRoom.HF", World)
-    set_message_vertical_anchor("Hollow.TwillenRoom.HF", Middle)
-    set_message_position("Hollow.TwillenRoom.HF", -254.6, -4224.1)
+!item_on(west_hollow_crusher_hf, Hollow.TwillenRoom.LF)
+on spawn if Hollow.TwillenRoom.LF == false {
+    free_message_uninitialized("Hollow.TwillenRoom.LF")
+    set_message_text("Hollow.TwillenRoom.LF", west_hollow_crusher_hf)
+    set_message_coordinate_system("Hollow.TwillenRoom.LF", World)
+    set_message_vertical_anchor("Hollow.TwillenRoom.LF", Middle)
+    set_message_position("Hollow.TwillenRoom.LF", -254.6, -4224.1)
 }
 on reload {
-    position_trigger_circle("Hollow.TwillenRoom.HF", -254.6, -4224.1, radius)
-    position_trigger_enter_callback("Hollow.TwillenRoom.HF", free_message_show("Hollow.TwillenRoom.HF", true, false))
-    position_trigger_leave_callback("Hollow.TwillenRoom.HF", free_message_hide("Hollow.TwillenRoom.HF", true))
+    position_trigger_circle("Hollow.TwillenRoom.LF", -254.6, -4224.1, radius)
+    position_trigger_enter_callback("Hollow.TwillenRoom.LF", free_message_show("Hollow.TwillenRoom.LF", true, false))
+    position_trigger_leave_callback("Hollow.TwillenRoom.LF", free_message_hide("Hollow.TwillenRoom.LF", true))
 }
-on Hollow.TwillenRoom.HF {
-    destroy_message("Hollow.TwillenRoom.HF")
-    position_trigger_destroy("Hollow.TwillenRoom.HF")
+on Hollow.TwillenRoom.LF {
+    destroy_message("Hollow.TwillenRoom.LF")
+    position_trigger_destroy("Hollow.TwillenRoom.LF")
 }
 
 !item_on(west_hollow_far_left_sl, Hollow.Drain.SecondLeverSL)
@@ -1264,22 +1264,22 @@ on Hollow.LupoMap {
     position_trigger_destroy("Hollow.LupoMap")
 }
 
-!item_on(west_hollow_trial_hf, Hollow.Trial.HF)
-on spawn if Hollow.Trial.HF == false {
-    free_message_uninitialized("Hollow.Trial.HF")
-    set_message_text("Hollow.Trial.HF", west_hollow_trial_hf)
-    set_message_coordinate_system("Hollow.Trial.HF", World)
-    set_message_vertical_anchor("Hollow.Trial.HF", Middle)
-    set_message_position("Hollow.Trial.HF", -122.0, -4268.2)
+!item_on(west_hollow_trial_hf, Hollow.Trial.LF)
+on spawn if Hollow.Trial.LF == false {
+    free_message_uninitialized("Hollow.Trial.LF")
+    set_message_text("Hollow.Trial.LF", west_hollow_trial_hf)
+    set_message_coordinate_system("Hollow.Trial.LF", World)
+    set_message_vertical_anchor("Hollow.Trial.LF", Middle)
+    set_message_position("Hollow.Trial.LF", -122.0, -4268.2)
 }
 on reload {
-    position_trigger_circle("Hollow.Trial.HF", -122.0, -4268.2, radius)
-    position_trigger_enter_callback("Hollow.Trial.HF", free_message_show("Hollow.Trial.HF", true, false))
-    position_trigger_leave_callback("Hollow.Trial.HF", free_message_hide("Hollow.Trial.HF", true))
+    position_trigger_circle("Hollow.Trial.LF", -122.0, -4268.2, radius)
+    position_trigger_enter_callback("Hollow.Trial.LF", free_message_show("Hollow.Trial.LF", true, false))
+    position_trigger_leave_callback("Hollow.Trial.LF", free_message_hide("Hollow.Trial.LF", true))
 }
-on Hollow.Trial.HF {
-    destroy_message("Hollow.Trial.HF")
-    position_trigger_destroy("Hollow.Trial.HF")
+on Hollow.Trial.LF {
+    destroy_message("Hollow.Trial.LF")
+    position_trigger_destroy("Hollow.Trial.LF")
 }
 
 !item_on(west_hollow_spirit_trial, Hollow.SpiritTrial.Completed)
@@ -1516,22 +1516,22 @@ on Hollow.BashTreeApproach.EF {
     position_trigger_destroy("Hollow.BashTreeApproach.EF")
 }
 
-!item_on(east_hollow_bash_hf, Hollow.OutsideDepths.MortarHF)
-on spawn if Hollow.OutsideDepths.MortarHF == false {
-    free_message_uninitialized("Hollow.OutsideDepths.MortarHF")
-    set_message_text("Hollow.OutsideDepths.MortarHF", east_hollow_bash_hf)
-    set_message_coordinate_system("Hollow.OutsideDepths.MortarHF", World)
-    set_message_vertical_anchor("Hollow.OutsideDepths.MortarHF", Middle)
-    set_message_position("Hollow.OutsideDepths.MortarHF", 84.0, -4263.0)
+!item_on(east_hollow_bash_hf, Hollow.OutsideDepths.MortarLF)
+on spawn if Hollow.OutsideDepths.MortarLF == false {
+    free_message_uninitialized("Hollow.OutsideDepths.MortarLF")
+    set_message_text("Hollow.OutsideDepths.MortarLF", east_hollow_bash_hf)
+    set_message_coordinate_system("Hollow.OutsideDepths.MortarLF", World)
+    set_message_vertical_anchor("Hollow.OutsideDepths.MortarLF", Middle)
+    set_message_position("Hollow.OutsideDepths.MortarLF", 84.0, -4263.0)
 }
 on reload {
-    position_trigger_circle("Hollow.OutsideDepths.MortarHF", 84.0, -4263.0, radius)
-    position_trigger_enter_callback("Hollow.OutsideDepths.MortarHF", free_message_show("Hollow.OutsideDepths.MortarHF", true, false))
-    position_trigger_leave_callback("Hollow.OutsideDepths.MortarHF", free_message_hide("Hollow.OutsideDepths.MortarHF", true))
+    position_trigger_circle("Hollow.OutsideDepths.MortarLF", 84.0, -4263.0, radius)
+    position_trigger_enter_callback("Hollow.OutsideDepths.MortarLF", free_message_show("Hollow.OutsideDepths.MortarLF", true, false))
+    position_trigger_leave_callback("Hollow.OutsideDepths.MortarLF", free_message_hide("Hollow.OutsideDepths.MortarLF", true))
 }
-on Hollow.OutsideDepths.MortarHF {
-    destroy_message("Hollow.OutsideDepths.MortarHF")
-    position_trigger_destroy("Hollow.OutsideDepths.MortarHF")
+on Hollow.OutsideDepths.MortarLF {
+    destroy_message("Hollow.OutsideDepths.MortarLF")
+    position_trigger_destroy("Hollow.OutsideDepths.MortarLF")
 }
 
 !item_on(east_hollow_above_bash_sl, Hollow.BashTree.SL)
@@ -1876,40 +1876,40 @@ on Glades.TreeHut.EF {
     position_trigger_destroy("Glades.TreeHut.EF")
 }
 
-!item_on(glades_town_above_grom_hf, Glades.AboveGrom.HF)
-on spawn if Glades.AboveGrom.HF == false {
-    free_message_uninitialized("Glades.AboveGrom.HF")
-    set_message_text("Glades.AboveGrom.HF", glades_town_above_grom_hf)
-    set_message_coordinate_system("Glades.AboveGrom.HF", World)
-    set_message_vertical_anchor("Glades.AboveGrom.HF", Middle)
-    set_message_position("Glades.AboveGrom.HF", -326.3, -4102.1)
+!item_on(glades_town_above_grom_hf, Glades.AboveGrom.LF)
+on spawn if Glades.AboveGrom.LF == false {
+    free_message_uninitialized("Glades.AboveGrom.LF")
+    set_message_text("Glades.AboveGrom.LF", glades_town_above_grom_hf)
+    set_message_coordinate_system("Glades.AboveGrom.LF", World)
+    set_message_vertical_anchor("Glades.AboveGrom.LF", Middle)
+    set_message_position("Glades.AboveGrom.LF", -326.3, -4102.1)
 }
 on reload {
-    position_trigger_circle("Glades.AboveGrom.HF", -326.3, -4102.1, radius)
-    position_trigger_enter_callback("Glades.AboveGrom.HF", free_message_show("Glades.AboveGrom.HF", true, false))
-    position_trigger_leave_callback("Glades.AboveGrom.HF", free_message_hide("Glades.AboveGrom.HF", true))
+    position_trigger_circle("Glades.AboveGrom.LF", -326.3, -4102.1, radius)
+    position_trigger_enter_callback("Glades.AboveGrom.LF", free_message_show("Glades.AboveGrom.LF", true, false))
+    position_trigger_leave_callback("Glades.AboveGrom.LF", free_message_hide("Glades.AboveGrom.LF", true))
 }
-on Glades.AboveGrom.HF {
-    destroy_message("Glades.AboveGrom.HF")
-    position_trigger_destroy("Glades.AboveGrom.HF")
+on Glades.AboveGrom.LF {
+    destroy_message("Glades.AboveGrom.LF")
+    position_trigger_destroy("Glades.AboveGrom.LF")
 }
 
-!item_on(glades_town_lupo_swim_hf, Glades.LupoSwim.HF)
-on spawn if Glades.LupoSwim.HF == false {
-    free_message_uninitialized("Glades.LupoSwim.HF")
-    set_message_text("Glades.LupoSwim.HF", glades_town_lupo_swim_hf)
-    set_message_coordinate_system("Glades.LupoSwim.HF", World)
-    set_message_vertical_anchor("Glades.LupoSwim.HF", Middle)
-    set_message_position("Glades.LupoSwim.HF", -160.4, -4192.2)
+!item_on(glades_town_lupo_swim_hf, Glades.LupoSwim.LF)
+on spawn if Glades.LupoSwim.LF == false {
+    free_message_uninitialized("Glades.LupoSwim.LF")
+    set_message_text("Glades.LupoSwim.LF", glades_town_lupo_swim_hf)
+    set_message_coordinate_system("Glades.LupoSwim.LF", World)
+    set_message_vertical_anchor("Glades.LupoSwim.LF", Middle)
+    set_message_position("Glades.LupoSwim.LF", -160.4, -4192.2)
 }
 on reload {
-    position_trigger_circle("Glades.LupoSwim.HF", -160.4, -4192.2, radius)
-    position_trigger_enter_callback("Glades.LupoSwim.HF", free_message_show("Glades.LupoSwim.HF", true, false))
-    position_trigger_leave_callback("Glades.LupoSwim.HF", free_message_hide("Glades.LupoSwim.HF", true))
+    position_trigger_circle("Glades.LupoSwim.LF", -160.4, -4192.2, radius)
+    position_trigger_enter_callback("Glades.LupoSwim.LF", free_message_show("Glades.LupoSwim.LF", true, false))
+    position_trigger_leave_callback("Glades.LupoSwim.LF", free_message_hide("Glades.LupoSwim.LF", true))
 }
-on Glades.LupoSwim.HF {
-    destroy_message("Glades.LupoSwim.HF")
-    position_trigger_destroy("Glades.LupoSwim.HF")
+on Glades.LupoSwim.LF {
+    destroy_message("Glades.LupoSwim.LF")
+    position_trigger_destroy("Glades.LupoSwim.LF")
 }
 
 !item_on(glades_town_upper_ore, Glades.AboveMotay.Ore)
@@ -2434,22 +2434,22 @@ on Glades.BetweenLakes.Ore {
     position_trigger_destroy("Glades.BetweenLakes.Ore")
 }
 
-!item_on(west_glades_shrine_hf, Glades.Shrine.HF)
-on spawn if Glades.Shrine.HF == false {
-    free_message_uninitialized("Glades.Shrine.HF")
-    set_message_text("Glades.Shrine.HF", west_glades_shrine_hf)
-    set_message_coordinate_system("Glades.Shrine.HF", World)
-    set_message_vertical_anchor("Glades.Shrine.HF", Middle)
-    set_message_position("Glades.Shrine.HF", -688.5, -4007.9)
+!item_on(west_glades_shrine_hf, Glades.Shrine.LF)
+on spawn if Glades.Shrine.LF == false {
+    free_message_uninitialized("Glades.Shrine.LF")
+    set_message_text("Glades.Shrine.LF", west_glades_shrine_hf)
+    set_message_coordinate_system("Glades.Shrine.LF", World)
+    set_message_vertical_anchor("Glades.Shrine.LF", Middle)
+    set_message_position("Glades.Shrine.LF", -688.5, -4007.9)
 }
 on reload {
-    position_trigger_circle("Glades.Shrine.HF", -688.5, -4007.9, radius)
-    position_trigger_enter_callback("Glades.Shrine.HF", free_message_show("Glades.Shrine.HF", true, false))
-    position_trigger_leave_callback("Glades.Shrine.HF", free_message_hide("Glades.Shrine.HF", true))
+    position_trigger_circle("Glades.Shrine.LF", -688.5, -4007.9, radius)
+    position_trigger_enter_callback("Glades.Shrine.LF", free_message_show("Glades.Shrine.LF", true, false))
+    position_trigger_leave_callback("Glades.Shrine.LF", free_message_hide("Glades.Shrine.LF", true))
 }
-on Glades.Shrine.HF {
-    destroy_message("Glades.Shrine.HF")
-    position_trigger_destroy("Glades.Shrine.HF")
+on Glades.Shrine.LF {
+    destroy_message("Glades.Shrine.LF")
+    position_trigger_destroy("Glades.Shrine.LF")
 }
 
 !item_on(west_glades_combat_shrine, Glades.CombatShrine)
@@ -2578,22 +2578,22 @@ on Wellspring.OutsideTopDoor.Shard {
     position_trigger_destroy("Wellspring.OutsideTopDoor.Shard")
 }
 
-!item_on(outer_wellspring_above_tokk_hf, Wellspring.OutsideLeftDoor.HF)
-on spawn if Wellspring.OutsideLeftDoor.HF == false {
-    free_message_uninitialized("Wellspring.OutsideLeftDoor.HF")
-    set_message_text("Wellspring.OutsideLeftDoor.HF", outer_wellspring_above_tokk_hf)
-    set_message_coordinate_system("Wellspring.OutsideLeftDoor.HF", World)
-    set_message_vertical_anchor("Wellspring.OutsideLeftDoor.HF", Middle)
-    set_message_position("Wellspring.OutsideLeftDoor.HF", -877.8, -3961.0)
+!item_on(outer_wellspring_above_tokk_hf, Wellspring.OutsideLeftDoor.LF)
+on spawn if Wellspring.OutsideLeftDoor.LF == false {
+    free_message_uninitialized("Wellspring.OutsideLeftDoor.LF")
+    set_message_text("Wellspring.OutsideLeftDoor.LF", outer_wellspring_above_tokk_hf)
+    set_message_coordinate_system("Wellspring.OutsideLeftDoor.LF", World)
+    set_message_vertical_anchor("Wellspring.OutsideLeftDoor.LF", Middle)
+    set_message_position("Wellspring.OutsideLeftDoor.LF", -877.8, -3961.0)
 }
 on reload {
-    position_trigger_circle("Wellspring.OutsideLeftDoor.HF", -877.8, -3961.0, radius)
-    position_trigger_enter_callback("Wellspring.OutsideLeftDoor.HF", free_message_show("Wellspring.OutsideLeftDoor.HF", true, false))
-    position_trigger_leave_callback("Wellspring.OutsideLeftDoor.HF", free_message_hide("Wellspring.OutsideLeftDoor.HF", true))
+    position_trigger_circle("Wellspring.OutsideLeftDoor.LF", -877.8, -3961.0, radius)
+    position_trigger_enter_callback("Wellspring.OutsideLeftDoor.LF", free_message_show("Wellspring.OutsideLeftDoor.LF", true, false))
+    position_trigger_leave_callback("Wellspring.OutsideLeftDoor.LF", free_message_hide("Wellspring.OutsideLeftDoor.LF", true))
 }
-on Wellspring.OutsideLeftDoor.HF {
-    destroy_message("Wellspring.OutsideLeftDoor.HF")
-    position_trigger_destroy("Wellspring.OutsideLeftDoor.HF")
+on Wellspring.OutsideLeftDoor.LF {
+    destroy_message("Wellspring.OutsideLeftDoor.LF")
+    position_trigger_destroy("Wellspring.OutsideLeftDoor.LF")
 }
 
 !item_on(outer_wellspring_entrance_roof_sl, Wellspring.OutsideBottomDoor.CeilingSL)
@@ -2794,22 +2794,22 @@ on Wellspring.FirstFloor.WaterDashSL {
     position_trigger_destroy("Wellspring.FirstFloor.WaterDashSL")
 }
 
-!item_on(inner_wellspring_drain_hf, Wellspring.DrainSecret.HF)
-on spawn if Wellspring.DrainSecret.HF == false {
-    free_message_uninitialized("Wellspring.DrainSecret.HF")
-    set_message_text("Wellspring.DrainSecret.HF", inner_wellspring_drain_hf)
-    set_message_coordinate_system("Wellspring.DrainSecret.HF", World)
-    set_message_vertical_anchor("Wellspring.DrainSecret.HF", Middle)
-    set_message_position("Wellspring.DrainSecret.HF", -1168.6, -3989.6)
+!item_on(inner_wellspring_drain_hf, Wellspring.DrainSecret.LF)
+on spawn if Wellspring.DrainSecret.LF == false {
+    free_message_uninitialized("Wellspring.DrainSecret.LF")
+    set_message_text("Wellspring.DrainSecret.LF", inner_wellspring_drain_hf)
+    set_message_coordinate_system("Wellspring.DrainSecret.LF", World)
+    set_message_vertical_anchor("Wellspring.DrainSecret.LF", Middle)
+    set_message_position("Wellspring.DrainSecret.LF", -1168.6, -3989.6)
 }
 on reload {
-    position_trigger_circle("Wellspring.DrainSecret.HF", -1168.6, -3989.6, radius)
-    position_trigger_enter_callback("Wellspring.DrainSecret.HF", free_message_show("Wellspring.DrainSecret.HF", true, false))
-    position_trigger_leave_callback("Wellspring.DrainSecret.HF", free_message_hide("Wellspring.DrainSecret.HF", true))
+    position_trigger_circle("Wellspring.DrainSecret.LF", -1168.6, -3989.6, radius)
+    position_trigger_enter_callback("Wellspring.DrainSecret.LF", free_message_show("Wellspring.DrainSecret.LF", true, false))
+    position_trigger_leave_callback("Wellspring.DrainSecret.LF", free_message_hide("Wellspring.DrainSecret.LF", true))
 }
-on Wellspring.DrainSecret.HF {
-    destroy_message("Wellspring.DrainSecret.HF")
-    position_trigger_destroy("Wellspring.DrainSecret.HF")
+on Wellspring.DrainSecret.LF {
+    destroy_message("Wellspring.DrainSecret.LF")
+    position_trigger_destroy("Wellspring.DrainSecret.LF")
 }
 
 !item_on(inner_wellspring_drain_sl, Wellspring.DrainSecret.SL)
@@ -3082,22 +3082,22 @@ on Wellspring.ThirdFloor.TPSL {
     position_trigger_destroy("Wellspring.ThirdFloor.TPSL")
 }
 
-!item_on(inner_wellspring_blue_moon_seed, Wellspring.ThirdFloor.Seed)
-on spawn if Wellspring.ThirdFloor.Seed == false {
-    free_message_uninitialized("Wellspring.ThirdFloor.Seed")
-    set_message_text("Wellspring.ThirdFloor.Seed", inner_wellspring_blue_moon_seed)
-    set_message_coordinate_system("Wellspring.ThirdFloor.Seed", World)
-    set_message_vertical_anchor("Wellspring.ThirdFloor.Seed", Middle)
-    set_message_position("Wellspring.ThirdFloor.Seed", -1185.4, -3668.8)
+!item_on(inner_wellspring_blue_moon_seed, Wellspring.Seed)
+on spawn if Wellspring.Seed == false {
+    free_message_uninitialized("Wellspring.Seed")
+    set_message_text("Wellspring.Seed", inner_wellspring_blue_moon_seed)
+    set_message_coordinate_system("Wellspring.Seed", World)
+    set_message_vertical_anchor("Wellspring.Seed", Middle)
+    set_message_position("Wellspring.Seed", -1185.4, -3668.8)
 }
 on reload {
-    position_trigger_circle("Wellspring.ThirdFloor.Seed", -1185.4, -3668.8, radius)
-    position_trigger_enter_callback("Wellspring.ThirdFloor.Seed", free_message_show("Wellspring.ThirdFloor.Seed", true, false))
-    position_trigger_leave_callback("Wellspring.ThirdFloor.Seed", free_message_hide("Wellspring.ThirdFloor.Seed", true))
+    position_trigger_circle("Wellspring.Seed", -1185.4, -3668.8, radius)
+    position_trigger_enter_callback("Wellspring.Seed", free_message_show("Wellspring.Seed", true, false))
+    position_trigger_leave_callback("Wellspring.Seed", free_message_hide("Wellspring.Seed", true))
 }
-on Wellspring.ThirdFloor.Seed {
-    destroy_message("Wellspring.ThirdFloor.Seed")
-    position_trigger_destroy("Wellspring.ThirdFloor.Seed")
+on Wellspring.Seed {
+    destroy_message("Wellspring.Seed")
+    position_trigger_destroy("Wellspring.Seed")
 }
 
 !item_on(inner_wellspring_swim_ore, Wellspring.ThirdFloor.SwimOre)
@@ -3190,22 +3190,22 @@ on Pools.Wheel.HiddenSL {
     position_trigger_destroy("Pools.Wheel.HiddenSL")
 }
 
-!item_on(pools_approach_mill_path_hf, Pools.WellspringPath.MunchersHF)
-on spawn if Pools.WellspringPath.MunchersHF == false {
-    free_message_uninitialized("Pools.WellspringPath.MunchersHF")
-    set_message_text("Pools.WellspringPath.MunchersHF", pools_approach_mill_path_hf)
-    set_message_coordinate_system("Pools.WellspringPath.MunchersHF", World)
-    set_message_vertical_anchor("Pools.WellspringPath.MunchersHF", Middle)
-    set_message_position("Pools.WellspringPath.MunchersHF", -850.6, -4195.6)
+!item_on(pools_approach_mill_path_hf, Pools.WellspringPath.MunchersLF)
+on spawn if Pools.WellspringPath.MunchersLF == false {
+    free_message_uninitialized("Pools.WellspringPath.MunchersLF")
+    set_message_text("Pools.WellspringPath.MunchersLF", pools_approach_mill_path_hf)
+    set_message_coordinate_system("Pools.WellspringPath.MunchersLF", World)
+    set_message_vertical_anchor("Pools.WellspringPath.MunchersLF", Middle)
+    set_message_position("Pools.WellspringPath.MunchersLF", -850.6, -4195.6)
 }
 on reload {
-    position_trigger_circle("Pools.WellspringPath.MunchersHF", -850.6, -4195.6, radius)
-    position_trigger_enter_callback("Pools.WellspringPath.MunchersHF", free_message_show("Pools.WellspringPath.MunchersHF", true, false))
-    position_trigger_leave_callback("Pools.WellspringPath.MunchersHF", free_message_hide("Pools.WellspringPath.MunchersHF", true))
+    position_trigger_circle("Pools.WellspringPath.MunchersLF", -850.6, -4195.6, radius)
+    position_trigger_enter_callback("Pools.WellspringPath.MunchersLF", free_message_show("Pools.WellspringPath.MunchersLF", true, false))
+    position_trigger_leave_callback("Pools.WellspringPath.MunchersLF", free_message_hide("Pools.WellspringPath.MunchersLF", true))
 }
-on Pools.WellspringPath.MunchersHF {
-    destroy_message("Pools.WellspringPath.MunchersHF")
-    position_trigger_destroy("Pools.WellspringPath.MunchersHF")
+on Pools.WellspringPath.MunchersLF {
+    destroy_message("Pools.WellspringPath.MunchersLF")
+    position_trigger_destroy("Pools.WellspringPath.MunchersLF")
 }
 
 !item_on(pools_approach_mill_path_ef, Pools.WellspringPath.BreakWallEF)
@@ -3352,22 +3352,22 @@ on Pools.CentralTPApproach.AboveDoorOre {
     position_trigger_destroy("Pools.CentralTPApproach.AboveDoorOre")
 }
 
-!item_on(east_pools_purple_wall_hf, Pools.AboveCentralTP.PurpleWallHF)
-on spawn if Pools.AboveCentralTP.PurpleWallHF == false {
-    free_message_uninitialized("Pools.AboveCentralTP.PurpleWallHF")
-    set_message_text("Pools.AboveCentralTP.PurpleWallHF", east_pools_purple_wall_hf)
-    set_message_coordinate_system("Pools.AboveCentralTP.PurpleWallHF", World)
-    set_message_vertical_anchor("Pools.AboveCentralTP.PurpleWallHF", Middle)
-    set_message_position("Pools.AboveCentralTP.PurpleWallHF", -1277.9, -4086.0)
+!item_on(east_pools_purple_wall_hf, Pools.AboveCentralTP.PurpleWallLF)
+on spawn if Pools.AboveCentralTP.PurpleWallLF == false {
+    free_message_uninitialized("Pools.AboveCentralTP.PurpleWallLF")
+    set_message_text("Pools.AboveCentralTP.PurpleWallLF", east_pools_purple_wall_hf)
+    set_message_coordinate_system("Pools.AboveCentralTP.PurpleWallLF", World)
+    set_message_vertical_anchor("Pools.AboveCentralTP.PurpleWallLF", Middle)
+    set_message_position("Pools.AboveCentralTP.PurpleWallLF", -1277.9, -4086.0)
 }
 on reload {
-    position_trigger_circle("Pools.AboveCentralTP.PurpleWallHF", -1277.9, -4086.0, radius)
-    position_trigger_enter_callback("Pools.AboveCentralTP.PurpleWallHF", free_message_show("Pools.AboveCentralTP.PurpleWallHF", true, false))
-    position_trigger_leave_callback("Pools.AboveCentralTP.PurpleWallHF", free_message_hide("Pools.AboveCentralTP.PurpleWallHF", true))
+    position_trigger_circle("Pools.AboveCentralTP.PurpleWallLF", -1277.9, -4086.0, radius)
+    position_trigger_enter_callback("Pools.AboveCentralTP.PurpleWallLF", free_message_show("Pools.AboveCentralTP.PurpleWallLF", true, false))
+    position_trigger_leave_callback("Pools.AboveCentralTP.PurpleWallLF", free_message_hide("Pools.AboveCentralTP.PurpleWallLF", true))
 }
-on Pools.AboveCentralTP.PurpleWallHF {
-    destroy_message("Pools.AboveCentralTP.PurpleWallHF")
-    position_trigger_destroy("Pools.AboveCentralTP.PurpleWallHF")
+on Pools.AboveCentralTP.PurpleWallLF {
+    destroy_message("Pools.AboveCentralTP.PurpleWallLF")
+    position_trigger_destroy("Pools.AboveCentralTP.PurpleWallLF")
 }
 
 !item_on(east_pools_hand_to_hand_spyglass, Pools.HandToHand.Spyglass)
@@ -3442,22 +3442,22 @@ on Pools.CentralTPSwim.Shard {
     position_trigger_destroy("Pools.CentralTPSwim.Shard")
 }
 
-!item_on(east_pools_fight_room_hf, Pools.WaterArena.HF)
-on spawn if Pools.WaterArena.HF == false {
-    free_message_uninitialized("Pools.WaterArena.HF")
-    set_message_text("Pools.WaterArena.HF", east_pools_fight_room_hf)
-    set_message_coordinate_system("Pools.WaterArena.HF", World)
-    set_message_vertical_anchor("Pools.WaterArena.HF", Middle)
-    set_message_position("Pools.WaterArena.HF", -1365.2, -4109.5)
+!item_on(east_pools_fight_room_hf, Pools.WaterArena.LF)
+on spawn if Pools.WaterArena.LF == false {
+    free_message_uninitialized("Pools.WaterArena.LF")
+    set_message_text("Pools.WaterArena.LF", east_pools_fight_room_hf)
+    set_message_coordinate_system("Pools.WaterArena.LF", World)
+    set_message_vertical_anchor("Pools.WaterArena.LF", Middle)
+    set_message_position("Pools.WaterArena.LF", -1365.2, -4109.5)
 }
 on reload {
-    position_trigger_circle("Pools.WaterArena.HF", -1365.2, -4109.5, radius)
-    position_trigger_enter_callback("Pools.WaterArena.HF", free_message_show("Pools.WaterArena.HF", true, false))
-    position_trigger_leave_callback("Pools.WaterArena.HF", free_message_hide("Pools.WaterArena.HF", true))
+    position_trigger_circle("Pools.WaterArena.LF", -1365.2, -4109.5, radius)
+    position_trigger_enter_callback("Pools.WaterArena.LF", free_message_show("Pools.WaterArena.LF", true, false))
+    position_trigger_leave_callback("Pools.WaterArena.LF", free_message_hide("Pools.WaterArena.LF", true))
 }
-on Pools.WaterArena.HF {
-    destroy_message("Pools.WaterArena.HF")
-    position_trigger_destroy("Pools.WaterArena.HF")
+on Pools.WaterArena.LF {
+    destroy_message("Pools.WaterArena.LF")
+    position_trigger_destroy("Pools.WaterArena.LF")
 }
 
 !item_on(east_pools_spirit_trial, Pools.SpiritTrial.Completed)
@@ -3928,22 +3928,22 @@ on Woods.FamilyReunion.Doll {
     position_trigger_destroy("Woods.FamilyReunion.Doll")
 }
 
-!item_on(woods_entry_tree_seed, Woods.TreeKeeper.Seed)
-on spawn if Woods.TreeKeeper.Seed == false {
-    free_message_uninitialized("Woods.TreeKeeper.Seed")
-    set_message_text("Woods.TreeKeeper.Seed", woods_entry_tree_seed)
-    set_message_coordinate_system("Woods.TreeKeeper.Seed", World)
-    set_message_vertical_anchor("Woods.TreeKeeper.Seed", Middle)
-    set_message_position("Woods.TreeKeeper.Seed", 513, -4159)
+!item_on(woods_entry_tree_seed, Woods.Seed)
+on spawn if Woods.Seed == false {
+    free_message_uninitialized("Woods.Seed")
+    set_message_text("Woods.Seed", woods_entry_tree_seed)
+    set_message_coordinate_system("Woods.Seed", World)
+    set_message_vertical_anchor("Woods.Seed", Middle)
+    set_message_position("Woods.Seed", 513, -4159)
 }
 on reload {
-    position_trigger_circle("Woods.TreeKeeper.Seed", 513, -4159, radius)
-    position_trigger_enter_callback("Woods.TreeKeeper.Seed", free_message_show("Woods.TreeKeeper.Seed", true, false))
-    position_trigger_leave_callback("Woods.TreeKeeper.Seed", free_message_hide("Woods.TreeKeeper.Seed", true))
+    position_trigger_circle("Woods.Seed", 513, -4159, radius)
+    position_trigger_enter_callback("Woods.Seed", free_message_show("Woods.Seed", true, false))
+    position_trigger_leave_callback("Woods.Seed", free_message_hide("Woods.Seed", true))
 }
-on Woods.TreeKeeper.Seed {
-    destroy_message("Woods.TreeKeeper.Seed")
-    position_trigger_destroy("Woods.TreeKeeper.Seed")
+on Woods.Seed {
+    destroy_message("Woods.Seed")
+    position_trigger_destroy("Woods.Seed")
 }
 
 !item_on(woods_entry_hut_right_sl, Woods.Entrance.AboveSwampSL)
@@ -4684,22 +4684,22 @@ on Reach.HandToHand.Hat {
     position_trigger_destroy("Reach.HandToHand.Hat")
 }
 
-!item_on(lower_reach_snowball_hf, Reach.Snowball.SnowHF)
-on spawn if Reach.Snowball.SnowHF == false {
-    free_message_uninitialized("Reach.Snowball.SnowHF")
-    set_message_text("Reach.Snowball.SnowHF", lower_reach_snowball_hf)
-    set_message_coordinate_system("Reach.Snowball.SnowHF", World)
-    set_message_vertical_anchor("Reach.Snowball.SnowHF", Middle)
-    set_message_position("Reach.Snowball.SnowHF", -190.0, -4016.8)
+!item_on(lower_reach_snowball_hf, Reach.Snowball.SnowLF)
+on spawn if Reach.Snowball.SnowLF == false {
+    free_message_uninitialized("Reach.Snowball.SnowLF")
+    set_message_text("Reach.Snowball.SnowLF", lower_reach_snowball_hf)
+    set_message_coordinate_system("Reach.Snowball.SnowLF", World)
+    set_message_vertical_anchor("Reach.Snowball.SnowLF", Middle)
+    set_message_position("Reach.Snowball.SnowLF", -190.0, -4016.8)
 }
 on reload {
-    position_trigger_circle("Reach.Snowball.SnowHF", -190.0, -4016.8, radius)
-    position_trigger_enter_callback("Reach.Snowball.SnowHF", free_message_show("Reach.Snowball.SnowHF", true, false))
-    position_trigger_leave_callback("Reach.Snowball.SnowHF", free_message_hide("Reach.Snowball.SnowHF", true))
+    position_trigger_circle("Reach.Snowball.SnowLF", -190.0, -4016.8, radius)
+    position_trigger_enter_callback("Reach.Snowball.SnowLF", free_message_show("Reach.Snowball.SnowLF", true, false))
+    position_trigger_leave_callback("Reach.Snowball.SnowLF", free_message_hide("Reach.Snowball.SnowLF", true))
 }
-on Reach.Snowball.SnowHF {
-    destroy_message("Reach.Snowball.SnowHF")
-    position_trigger_destroy("Reach.Snowball.SnowHF")
+on Reach.Snowball.SnowLF {
+    destroy_message("Reach.Snowball.SnowLF")
+    position_trigger_destroy("Reach.Snowball.SnowLF")
 }
 
 !item_on(lower_reach_roof_left_sl, Reach.Snowball.CeilingSL)
@@ -4954,22 +4954,22 @@ on Reach.BurrowRoom.Shard {
     position_trigger_destroy("Reach.BurrowRoom.Shard")
 }
 
-!item_on(upper_reach_life_force_sl, Reach.BurrowRoom.ShardSL)
-on spawn if Reach.BurrowRoom.ShardSL == false {
-    free_message_uninitialized("Reach.BurrowRoom.ShardSL")
-    set_message_text("Reach.BurrowRoom.ShardSL", upper_reach_life_force_sl)
-    set_message_coordinate_system("Reach.BurrowRoom.ShardSL", World)
-    set_message_vertical_anchor("Reach.BurrowRoom.ShardSL", Middle)
-    set_message_position("Reach.BurrowRoom.ShardSL", -423.2, -3876.4)
+!item_on(upper_reach_life_force_sl, Reach.BurrowRoom.SL)
+on spawn if Reach.BurrowRoom.SL == false {
+    free_message_uninitialized("Reach.BurrowRoom.SL")
+    set_message_text("Reach.BurrowRoom.SL", upper_reach_life_force_sl)
+    set_message_coordinate_system("Reach.BurrowRoom.SL", World)
+    set_message_vertical_anchor("Reach.BurrowRoom.SL", Middle)
+    set_message_position("Reach.BurrowRoom.SL", -423.2, -3876.4)
 }
 on reload {
-    position_trigger_circle("Reach.BurrowRoom.ShardSL", -423.2, -3876.4, radius)
-    position_trigger_enter_callback("Reach.BurrowRoom.ShardSL", free_message_show("Reach.BurrowRoom.ShardSL", true, false))
-    position_trigger_leave_callback("Reach.BurrowRoom.ShardSL", free_message_hide("Reach.BurrowRoom.ShardSL", true))
+    position_trigger_circle("Reach.BurrowRoom.SL", -423.2, -3876.4, radius)
+    position_trigger_enter_callback("Reach.BurrowRoom.SL", free_message_show("Reach.BurrowRoom.SL", true, false))
+    position_trigger_leave_callback("Reach.BurrowRoom.SL", free_message_hide("Reach.BurrowRoom.SL", true))
 }
-on Reach.BurrowRoom.ShardSL {
-    destroy_message("Reach.BurrowRoom.ShardSL")
-    position_trigger_destroy("Reach.BurrowRoom.ShardSL")
+on Reach.BurrowRoom.SL {
+    destroy_message("Reach.BurrowRoom.SL")
+    position_trigger_destroy("Reach.BurrowRoom.SL")
 }
 
 !item_on(upper_reach_tongue_ks, Reach.TopKSRoom.TongueKS)
@@ -5386,22 +5386,22 @@ on Depths.MoraPath.SL {
     position_trigger_destroy("Depths.MoraPath.SL")
 }
 
-!item_on(upper_depths_keystone_hf, Depths.SecondKSRoom.HF)
-on spawn if Depths.SecondKSRoom.HF == false {
-    free_message_uninitialized("Depths.SecondKSRoom.HF")
-    set_message_text("Depths.SecondKSRoom.HF", upper_depths_keystone_hf)
-    set_message_coordinate_system("Depths.SecondKSRoom.HF", World)
-    set_message_vertical_anchor("Depths.SecondKSRoom.HF", Middle)
-    set_message_position("Depths.SecondKSRoom.HF", 530.9, -4451.7)
+!item_on(upper_depths_keystone_hf, Depths.SecondKSRoom.LF)
+on spawn if Depths.SecondKSRoom.LF == false {
+    free_message_uninitialized("Depths.SecondKSRoom.LF")
+    set_message_text("Depths.SecondKSRoom.LF", upper_depths_keystone_hf)
+    set_message_coordinate_system("Depths.SecondKSRoom.LF", World)
+    set_message_vertical_anchor("Depths.SecondKSRoom.LF", Middle)
+    set_message_position("Depths.SecondKSRoom.LF", 530.9, -4451.7)
 }
 on reload {
-    position_trigger_circle("Depths.SecondKSRoom.HF", 530.9, -4451.7, radius)
-    position_trigger_enter_callback("Depths.SecondKSRoom.HF", free_message_show("Depths.SecondKSRoom.HF", true, false))
-    position_trigger_leave_callback("Depths.SecondKSRoom.HF", free_message_hide("Depths.SecondKSRoom.HF", true))
+    position_trigger_circle("Depths.SecondKSRoom.LF", 530.9, -4451.7, radius)
+    position_trigger_enter_callback("Depths.SecondKSRoom.LF", free_message_show("Depths.SecondKSRoom.LF", true, false))
+    position_trigger_leave_callback("Depths.SecondKSRoom.LF", free_message_hide("Depths.SecondKSRoom.LF", true))
 }
-on Depths.SecondKSRoom.HF {
-    destroy_message("Depths.SecondKSRoom.HF")
-    position_trigger_destroy("Depths.SecondKSRoom.HF")
+on Depths.SecondKSRoom.LF {
+    destroy_message("Depths.SecondKSRoom.LF")
+    position_trigger_destroy("Depths.SecondKSRoom.LF")
 }
 
 !item_on(upper_depths_hive_sl, Depths.IlluminableTunnel.HiveSL)
@@ -5440,22 +5440,22 @@ on Depths.Wisp {
     position_trigger_destroy("Depths.Wisp")
 }
 
-!item_on(lower_depths_race_start_hf, Depths.TrialStart.HF)
-on spawn if Depths.TrialStart.HF == false {
-    free_message_uninitialized("Depths.TrialStart.HF")
-    set_message_text("Depths.TrialStart.HF", lower_depths_race_start_hf)
-    set_message_coordinate_system("Depths.TrialStart.HF", World)
-    set_message_vertical_anchor("Depths.TrialStart.HF", Middle)
-    set_message_position("Depths.TrialStart.HF", 496.4, -4498.2)
+!item_on(lower_depths_race_start_hf, Depths.TrialStart.LF)
+on spawn if Depths.TrialStart.LF == false {
+    free_message_uninitialized("Depths.TrialStart.LF")
+    set_message_text("Depths.TrialStart.LF", lower_depths_race_start_hf)
+    set_message_coordinate_system("Depths.TrialStart.LF", World)
+    set_message_vertical_anchor("Depths.TrialStart.LF", Middle)
+    set_message_position("Depths.TrialStart.LF", 496.4, -4498.2)
 }
 on reload {
-    position_trigger_circle("Depths.TrialStart.HF", 496.4, -4498.2, radius)
-    position_trigger_enter_callback("Depths.TrialStart.HF", free_message_show("Depths.TrialStart.HF", true, false))
-    position_trigger_leave_callback("Depths.TrialStart.HF", free_message_hide("Depths.TrialStart.HF", true))
+    position_trigger_circle("Depths.TrialStart.LF", 496.4, -4498.2, radius)
+    position_trigger_enter_callback("Depths.TrialStart.LF", free_message_show("Depths.TrialStart.LF", true, false))
+    position_trigger_leave_callback("Depths.TrialStart.LF", free_message_hide("Depths.TrialStart.LF", true))
 }
-on Depths.TrialStart.HF {
-    destroy_message("Depths.TrialStart.HF")
-    position_trigger_destroy("Depths.TrialStart.HF")
+on Depths.TrialStart.LF {
+    destroy_message("Depths.TrialStart.LF")
+    position_trigger_destroy("Depths.TrialStart.LF")
 }
 
 !item_on(lower_depths_spirit_trial, Depths.SpiritTrial.Completed)
@@ -5764,22 +5764,22 @@ on Wastes.SandMuncherTunnel.EF {
     position_trigger_destroy("Wastes.SandMuncherTunnel.EF")
 }
 
-!item_on(lower_wastes_sand_pot_hf, Wastes.SandPot.HF)
-on spawn if Wastes.SandPot.HF == false {
-    free_message_uninitialized("Wastes.SandPot.HF")
-    set_message_text("Wastes.SandPot.HF", lower_wastes_sand_pot_hf)
-    set_message_coordinate_system("Wastes.SandPot.HF", World)
-    set_message_vertical_anchor("Wastes.SandPot.HF", Middle)
-    set_message_position("Wastes.SandPot.HF", 1698.3, -3976.8)
+!item_on(lower_wastes_sand_pot_hf, Wastes.SandPot.LF)
+on spawn if Wastes.SandPot.LF == false {
+    free_message_uninitialized("Wastes.SandPot.LF")
+    set_message_text("Wastes.SandPot.LF", lower_wastes_sand_pot_hf)
+    set_message_coordinate_system("Wastes.SandPot.LF", World)
+    set_message_vertical_anchor("Wastes.SandPot.LF", Middle)
+    set_message_position("Wastes.SandPot.LF", 1698.3, -3976.8)
 }
 on reload {
-    position_trigger_circle("Wastes.SandPot.HF", 1698.3, -3976.8, radius)
-    position_trigger_enter_callback("Wastes.SandPot.HF", free_message_show("Wastes.SandPot.HF", true, false))
-    position_trigger_leave_callback("Wastes.SandPot.HF", free_message_hide("Wastes.SandPot.HF", true))
+    position_trigger_circle("Wastes.SandPot.LF", 1698.3, -3976.8, radius)
+    position_trigger_enter_callback("Wastes.SandPot.LF", free_message_show("Wastes.SandPot.LF", true, false))
+    position_trigger_leave_callback("Wastes.SandPot.LF", free_message_hide("Wastes.SandPot.LF", true))
 }
-on Wastes.SandPot.HF {
-    destroy_message("Wastes.SandPot.HF")
-    position_trigger_destroy("Wastes.SandPot.HF")
+on Wastes.SandPot.LF {
+    destroy_message("Wastes.SandPot.LF")
+    position_trigger_destroy("Wastes.SandPot.LF")
 }
 
 !item_on(lower_wastes_sand_pot_sl, Wastes.SandPot.SL)
@@ -5836,22 +5836,22 @@ on Wastes.RuinsShortcut.SL {
     position_trigger_destroy("Wastes.RuinsShortcut.SL")
 }
 
-!item_on(lower_wastes_bottom_right_hf, Wastes.RuinsShortcut.HF)
-on spawn if Wastes.RuinsShortcut.HF == false {
-    free_message_uninitialized("Wastes.RuinsShortcut.HF")
-    set_message_text("Wastes.RuinsShortcut.HF", lower_wastes_bottom_right_hf)
-    set_message_coordinate_system("Wastes.RuinsShortcut.HF", World)
-    set_message_vertical_anchor("Wastes.RuinsShortcut.HF", Middle)
-    set_message_position("Wastes.RuinsShortcut.HF", 1859.5, -4020.9)
+!item_on(lower_wastes_bottom_right_hf, Wastes.RuinsShortcut.LF)
+on spawn if Wastes.RuinsShortcut.LF == false {
+    free_message_uninitialized("Wastes.RuinsShortcut.LF")
+    set_message_text("Wastes.RuinsShortcut.LF", lower_wastes_bottom_right_hf)
+    set_message_coordinate_system("Wastes.RuinsShortcut.LF", World)
+    set_message_vertical_anchor("Wastes.RuinsShortcut.LF", Middle)
+    set_message_position("Wastes.RuinsShortcut.LF", 1859.5, -4020.9)
 }
 on reload {
-    position_trigger_circle("Wastes.RuinsShortcut.HF", 1859.5, -4020.9, radius)
-    position_trigger_enter_callback("Wastes.RuinsShortcut.HF", free_message_show("Wastes.RuinsShortcut.HF", true, false))
-    position_trigger_leave_callback("Wastes.RuinsShortcut.HF", free_message_hide("Wastes.RuinsShortcut.HF", true))
+    position_trigger_circle("Wastes.RuinsShortcut.LF", 1859.5, -4020.9, radius)
+    position_trigger_enter_callback("Wastes.RuinsShortcut.LF", free_message_show("Wastes.RuinsShortcut.LF", true, false))
+    position_trigger_leave_callback("Wastes.RuinsShortcut.LF", free_message_hide("Wastes.RuinsShortcut.LF", true))
 }
-on Wastes.RuinsShortcut.HF {
-    destroy_message("Wastes.RuinsShortcut.HF")
-    position_trigger_destroy("Wastes.RuinsShortcut.HF")
+on Wastes.RuinsShortcut.LF {
+    destroy_message("Wastes.RuinsShortcut.LF")
+    position_trigger_destroy("Wastes.RuinsShortcut.LF")
 }
 
 !item_on(lower_wastes_last_stand_shard, Wastes.SandPuzzle.Shard)
@@ -6052,22 +6052,22 @@ on Wastes.TreeToCentralTPArc.HiddenSL {
     position_trigger_destroy("Wastes.TreeToCentralTPArc.HiddenSL")
 }
 
-!item_on(lower_wastes_upper_path_hf, Wastes.TreeToCentralTPArc.SandHF)
-on spawn if Wastes.TreeToCentralTPArc.SandHF == false {
-    free_message_uninitialized("Wastes.TreeToCentralTPArc.SandHF")
-    set_message_text("Wastes.TreeToCentralTPArc.SandHF", lower_wastes_upper_path_hf)
-    set_message_coordinate_system("Wastes.TreeToCentralTPArc.SandHF", World)
-    set_message_vertical_anchor("Wastes.TreeToCentralTPArc.SandHF", Middle)
-    set_message_position("Wastes.TreeToCentralTPArc.SandHF", 1852.6, -3907.8)
+!item_on(lower_wastes_upper_path_hf, Wastes.TreeToCentralTPArc.SandLF)
+on spawn if Wastes.TreeToCentralTPArc.SandLF == false {
+    free_message_uninitialized("Wastes.TreeToCentralTPArc.SandLF")
+    set_message_text("Wastes.TreeToCentralTPArc.SandLF", lower_wastes_upper_path_hf)
+    set_message_coordinate_system("Wastes.TreeToCentralTPArc.SandLF", World)
+    set_message_vertical_anchor("Wastes.TreeToCentralTPArc.SandLF", Middle)
+    set_message_position("Wastes.TreeToCentralTPArc.SandLF", 1852.6, -3907.8)
 }
 on reload {
-    position_trigger_circle("Wastes.TreeToCentralTPArc.SandHF", 1852.6, -3907.8, radius)
-    position_trigger_enter_callback("Wastes.TreeToCentralTPArc.SandHF", free_message_show("Wastes.TreeToCentralTPArc.SandHF", true, false))
-    position_trigger_leave_callback("Wastes.TreeToCentralTPArc.SandHF", free_message_hide("Wastes.TreeToCentralTPArc.SandHF", true))
+    position_trigger_circle("Wastes.TreeToCentralTPArc.SandLF", 1852.6, -3907.8, radius)
+    position_trigger_enter_callback("Wastes.TreeToCentralTPArc.SandLF", free_message_show("Wastes.TreeToCentralTPArc.SandLF", true, false))
+    position_trigger_leave_callback("Wastes.TreeToCentralTPArc.SandLF", free_message_hide("Wastes.TreeToCentralTPArc.SandLF", true))
 }
-on Wastes.TreeToCentralTPArc.SandHF {
-    destroy_message("Wastes.TreeToCentralTPArc.SandHF")
-    position_trigger_destroy("Wastes.TreeToCentralTPArc.SandHF")
+on Wastes.TreeToCentralTPArc.SandLF {
+    destroy_message("Wastes.TreeToCentralTPArc.SandLF")
+    position_trigger_destroy("Wastes.TreeToCentralTPArc.SandLF")
 }
 
 !item_on(lower_wastes_central_tp_ore, Wastes.CentralTP.BreakWallOre)
@@ -6214,22 +6214,22 @@ on Wastes.MissilePuzzles.PurpleWallSL {
     position_trigger_destroy("Wastes.MissilePuzzles.PurpleWallSL")
 }
 
-!item_on(upper_wastes_purple_wall_hf, Wastes.MissilePuzzles.PurpleWallHF)
-on spawn if Wastes.MissilePuzzles.PurpleWallHF == false {
-    free_message_uninitialized("Wastes.MissilePuzzles.PurpleWallHF")
-    set_message_text("Wastes.MissilePuzzles.PurpleWallHF", upper_wastes_purple_wall_hf)
-    set_message_coordinate_system("Wastes.MissilePuzzles.PurpleWallHF", World)
-    set_message_vertical_anchor("Wastes.MissilePuzzles.PurpleWallHF", Middle)
-    set_message_position("Wastes.MissilePuzzles.PurpleWallHF", 2027.6, -3842.6)
+!item_on(upper_wastes_purple_wall_hf, Wastes.MissilePuzzles.PurpleWallLF)
+on spawn if Wastes.MissilePuzzles.PurpleWallLF == false {
+    free_message_uninitialized("Wastes.MissilePuzzles.PurpleWallLF")
+    set_message_text("Wastes.MissilePuzzles.PurpleWallLF", upper_wastes_purple_wall_hf)
+    set_message_coordinate_system("Wastes.MissilePuzzles.PurpleWallLF", World)
+    set_message_vertical_anchor("Wastes.MissilePuzzles.PurpleWallLF", Middle)
+    set_message_position("Wastes.MissilePuzzles.PurpleWallLF", 2027.6, -3842.6)
 }
 on reload {
-    position_trigger_circle("Wastes.MissilePuzzles.PurpleWallHF", 2027.6, -3842.6, radius)
-    position_trigger_enter_callback("Wastes.MissilePuzzles.PurpleWallHF", free_message_show("Wastes.MissilePuzzles.PurpleWallHF", true, false))
-    position_trigger_leave_callback("Wastes.MissilePuzzles.PurpleWallHF", free_message_hide("Wastes.MissilePuzzles.PurpleWallHF", true))
+    position_trigger_circle("Wastes.MissilePuzzles.PurpleWallLF", 2027.6, -3842.6, radius)
+    position_trigger_enter_callback("Wastes.MissilePuzzles.PurpleWallLF", free_message_show("Wastes.MissilePuzzles.PurpleWallLF", true, false))
+    position_trigger_leave_callback("Wastes.MissilePuzzles.PurpleWallLF", free_message_hide("Wastes.MissilePuzzles.PurpleWallLF", true))
 }
-on Wastes.MissilePuzzles.PurpleWallHF {
-    destroy_message("Wastes.MissilePuzzles.PurpleWallHF")
-    position_trigger_destroy("Wastes.MissilePuzzles.PurpleWallHF")
+on Wastes.MissilePuzzles.PurpleWallLF {
+    destroy_message("Wastes.MissilePuzzles.PurpleWallLF")
+    position_trigger_destroy("Wastes.MissilePuzzles.PurpleWallLF")
 }
 
 !item_on(upper_wastes_roof_sl, Wastes.BeforeSpinLasers.SpikesSL)
@@ -6502,22 +6502,22 @@ on Willow.Entrance.SL {
     position_trigger_destroy("Willow.Entrance.SL")
 }
 
-!item_on(willows_end_poisonfall_hf, Willow.MossWheelsHeart.HF)
-on spawn if Willow.MossWheelsHeart.HF == false {
-    free_message_uninitialized("Willow.MossWheelsHeart.HF")
-    set_message_text("Willow.MossWheelsHeart.HF", willows_end_poisonfall_hf)
-    set_message_coordinate_system("Willow.MossWheelsHeart.HF", World)
-    set_message_vertical_anchor("Willow.MossWheelsHeart.HF", Middle)
-    set_message_position("Willow.MossWheelsHeart.HF", 410.8, -3972.5)
+!item_on(willows_end_poisonfall_hf, Willow.MossWheelsHeart.LF)
+on spawn if Willow.MossWheelsHeart.LF == false {
+    free_message_uninitialized("Willow.MossWheelsHeart.LF")
+    set_message_text("Willow.MossWheelsHeart.LF", willows_end_poisonfall_hf)
+    set_message_coordinate_system("Willow.MossWheelsHeart.LF", World)
+    set_message_vertical_anchor("Willow.MossWheelsHeart.LF", Middle)
+    set_message_position("Willow.MossWheelsHeart.LF", 410.8, -3972.5)
 }
 on reload {
-    position_trigger_circle("Willow.MossWheelsHeart.HF", 410.8, -3972.5, radius)
-    position_trigger_enter_callback("Willow.MossWheelsHeart.HF", free_message_show("Willow.MossWheelsHeart.HF", true, false))
-    position_trigger_leave_callback("Willow.MossWheelsHeart.HF", free_message_hide("Willow.MossWheelsHeart.HF", true))
+    position_trigger_circle("Willow.MossWheelsHeart.LF", 410.8, -3972.5, radius)
+    position_trigger_enter_callback("Willow.MossWheelsHeart.LF", free_message_show("Willow.MossWheelsHeart.LF", true, false))
+    position_trigger_leave_callback("Willow.MossWheelsHeart.LF", free_message_hide("Willow.MossWheelsHeart.LF", true))
 }
-on Willow.MossWheelsHeart.HF {
-    destroy_message("Willow.MossWheelsHeart.HF")
-    position_trigger_destroy("Willow.MossWheelsHeart.HF")
+on Willow.MossWheelsHeart.LF {
+    destroy_message("Willow.MossWheelsHeart.LF")
+    position_trigger_destroy("Willow.MossWheelsHeart.LF")
 }
 
 !item_on(willows_end_lupo_map, Willow.LupoMap)

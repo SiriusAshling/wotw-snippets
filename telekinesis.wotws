@@ -14,11 +14,11 @@
     "Marsh.TokkCave.LizardFight",
     "Marsh.Sand.Fight",
     "Marsh.UpperPoolsPath.Floor",
-    "Marsh.Den.ExitLoopBottomWall",
-    "Marsh.Den.ExitLoopTopWall",
+    "Marsh.DenExitLoop.BottomWall",
+    "Marsh.DenExitLoop.TopWall",
     "Marsh.StormLifted",
     "Marsh.Den.BottomAreaWall",
-    "Marsh.Den.DoorLoopSecretWall",
+    "Marsh.DenDoorLoop.SecretWall",
     "Marsh.DoubleJumpTree.Fight",
     "Marsh.Den.CombatShrineCompleted",
     "Marsh.Trial.EntranceWall",
@@ -106,14 +106,14 @@
     "Ruins.PillarCorruption",
     "Ruins.Lever",
     "Woods.Ridge.ElevatorFight",
-    "Willow.GrappleWheelsHeart",
+    "Willow.MossWheelsHeart",
     "Willow.BoulderHeart",
     "Willow.RedirectHeart",
     "Willow.BurrowHeart",
     "Willow.MinibossHeart",
     "Willow.SpinLasersHeart",
-    "Willow.GlideHeart",
-    "Willow.SpinPortalsHeart",
+    "Willow.WindHeart",
+    "Willow.TopHeart",
     "Willow.Entrance.TPShortcut",
 ])
 
@@ -156,13 +156,13 @@
         item_message("Marsh.UpperPoolsPath.Floor")
         store(Marsh.UpperPoolsPath.Floor, true)
     }, 1)}
-    !if state == "Marsh.Den.ExitLoopBottomWall" { !add_item({
-        item_message("Marsh.Den.ExitLoopBottomWall")
-        store(Marsh.Den.ExitLoopBottomWall, true)
+    !if state == "Marsh.DenExitLoop.BottomWall" { !add_item({
+        item_message("Marsh.DenExitLoop.BottomWall")
+        store(Marsh.DenExitLoop.BottomWall, true)
     }, 1)}
-    !if state == "Marsh.Den.ExitLoopTopWall" { !add_item({
-        item_message("Marsh.Den.ExitLoopTopWall")
-        store(Marsh.Den.ExitLoopTopWall, true)
+    !if state == "Marsh.DenExitLoop.TopWall" { !add_item({
+        item_message("Marsh.DenExitLoop.TopWall")
+        store(Marsh.DenExitLoop.TopWall, true)
     }, 1)}
     !if state == "Marsh.StormLifted" { !add_item({
         item_message("Marsh.StormLifted")
@@ -172,9 +172,9 @@
         item_message("Marsh.Den.BottomAreaWall")
         store(Marsh.Den.BottomAreaWall, true)
     }, 1)}
-    !if state == "Marsh.Den.DoorLoopSecretWall" { !add_item({
-        item_message("Marsh.Den.DoorLoopSecretWall")
-        store(Marsh.Den.DoorLoopSecretWall, true)
+    !if state == "Marsh.DenDoorLoop.SecretWall" { !add_item({
+        item_message("Marsh.DenDoorLoop.SecretWall")
+        store(Marsh.DenDoorLoop.SecretWall, true)
     }, 1)}
     !if state == "Marsh.DoubleJumpTree.Fight" { !add_item({
         item_message("Marsh.DoubleJumpTree.Fight")
@@ -524,9 +524,9 @@
         item_message("Woods.Ridge.ElevatorFight")
         store(Woods.Ridge.ElevatorFight, true)
     }, 1)}
-    !if state == "Willow.GrappleWheelsHeart" { !add_item({
-        item_message("Willow.GrappleWheelsHeart")
-        store(Willow.GrappleWheelsHeart, true)
+    !if state == "Willow.MossWheelsHeart" { !add_item({
+        item_message("Willow.MossWheelsHeart")
+        store(Willow.MossWheelsHeart, true)
     }, 1)}
     !if state == "Willow.BoulderHeart" { !add_item({
         item_message("Willow.BoulderHeart")
@@ -548,13 +548,13 @@
         item_message("Willow.SpinLasersHeart")
         store(Willow.SpinLasersHeart, true)
     }, 1)}
-    !if state == "Willow.GlideHeart" { !add_item({
-        item_message("Willow.GlideHeart")
-        store(Willow.GlideHeart, true)
+    !if state == "Willow.WindHeart" { !add_item({
+        item_message("Willow.WindHeart")
+        store(Willow.WindHeart, true)
     }, 1)}
-    !if state == "Willow.SpinPortalsHeart" { !add_item({
-        item_message("Willow.SpinPortalsHeart")
-        store(Willow.SpinPortalsHeart, true)
+    !if state == "Willow.TopHeart" { !add_item({
+        item_message("Willow.TopHeart")
+        store(Willow.TopHeart, true)
     }, 1)}
     !if state == "Willow.Entrance.TPShortcut" { !add_item({
         item_message("Willow.Entrance.TPShortcut")

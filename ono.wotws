@@ -4,5 +4,5 @@
 
 on spawn {
     store(player.baseMaxEnergy, 0)
-    store(player.baseMaxHealth, 0)
+    store(player.baseMaxLife, 0)
 }
